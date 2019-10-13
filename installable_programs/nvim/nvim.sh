@@ -8,7 +8,7 @@
 # config install
 
 cd $DOTFILES_INSTALL
-stow nvim
+stow --verbose nvim
 cd -
 
 PLUGGED_DIR=${HOME}/.config/nvim/plugged

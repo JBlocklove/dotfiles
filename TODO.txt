@@ -1,7 +1,9 @@
-htop
-neomutt
-ranger
-tmux
+LINKING FOR:
 zsh
 i3
-	everything currently stored in i3
+everything currently stored in i3
+
+INSTALLS FOR:
+zsh
+i3
+everything under i3
