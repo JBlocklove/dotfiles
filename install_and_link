@@ -1,0 +1,83 @@
+#!/bin/sh
+
+###################################
+# Installs and links a package
+# Works with stow
+# Many aspects stolen from www.github.com/Serubin/dotfiles
+##################################
+
+export DOTFILES_INSTALL="$(dirname $(readlink -f $0))"
+# usage statement
+USAGE="Usage: install_program <prog1> <prog2> ... <progN>"
+
+if [[ "$#" -eq 0 ]]; then
+	echo $USAGE
+	exit 1
+fi
+
+echo "--------- Installing -----------"
+
+# get OS distro
+source ./util/detectos.sh
+
+echo ""
+echo "----------- Sudo/Root Required ---------------"
+echo "Root access is required for installation. Please sudo up."
+sudo echo "Now running in sudo"
+echo""
+
+AVAILABLE_PROGS=($(ls -d -1 installable_programs/*/ | cut -d'/' -f2))
+
+INSTALL_PROGS=("$@")
+
+for PROG in "${INSTALL_PROGS[@]}"; do
+	in_arr=0
+	for i in "${AVAILABLE_PROGS[@]}"; do
+		if [[ $PROG == $i ]]; then
+			in_arr=1
+			break
+		fi
+	done
+	if [[ $in_arr != 1 ]]; then
+		echo "${PROG} is not an installable program, skipping..."
+		continue
+	fi
+	echo "Installing ${PROG}..."
+	PACKAGE_INSTALL="installable_programs/${PROG}"
+	    # Every package must have a name.info file in it's directory. It must contain:
+        # * supported oses (exported to package_support [comma delemiter])
+        # * Brief description of the package (echoed)
+        # * Additional packages installed (not including dependancies, echoed)
+	source "${PACKAGE_INSTALL}/${PROG}.info"
+	PRE_INSTALL_OPTIONS
+
+    package_supported=`echo $package_support | grep -o $DISTRO`
+
+    if [ "$package_supported" != "$DISTRO" ]; then
+        echo "${PROG} cannot be installed on ${DISTRO}."
+        continue
+    fi
+
+    echo "Attempting to install ${PROG}..."
+    # Os specific
+    if [[ "$DISTRO" == "Debian" ]] || [[ "$DISTRO" == "Ubuntu" ]]; then
+        source "${PACKAGE_INSTALL}/${PROG}.debian"
+    elif [[ "$DISTRO" == "Darwin" ]]; then
+        source "${PACKAGE_INSTALL}/${PROG}.osx"
+    elif [[ "$DISTRO" == "Arch" ]]; then
+        source "${PACKAGE_INSTALL}/${PROG}.arch"
+    elif [[ "$DISTRO" == "Fedora" ]]; then
+        source "${PACKAGE_INSTALL}/${PROG}.fedora"
+    else
+        # FYI: This shouldn't ever happen - make an issue if it does?
+        echo "ERROR: This os doesn't support ${PROG} installations."a
+        continue
+    fi
+
+	# Common stuff and linking
+    if [ -r "${PACKAGE_INSTALL}/${PROG}.sh" ]; then
+        source ${PACKAGE_INSTALL}/${PROG}.sh
+    fi
+done
+
+#unset DOTFILES_INSTALL

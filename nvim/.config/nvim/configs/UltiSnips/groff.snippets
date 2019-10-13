@@ -1,0 +1,65 @@
+# Groff MS Template
+
+snippet macros "groff macros"
+.de BL
+.IP \bu 2
+..
+endsnippet
+
+# basic normal document
+snippet doc "basic doc format"
+.TL
+${1: Title}
+.AU
+${2: Author}
+$0
+endsnippet
+
+# Most of these are just for a reminder if I forget some commands
+snippet inst "institution: .AI"
+.AI
+$0
+endsnippet
+
+snippet abstract "abstract: .AB ... .AE"
+.AB
+$0
+.AE
+endsnippet
+
+snippet sec "section: .NH"
+.NH
+$0
+endsnippet
+
+snippet secno "section no numbering: .SH"
+.SH
+$0
+endsnippet
+
+snippet sub "subsection: .NH X"
+.NH ${1:2}
+$0
+endsnippet
+
+snippet para "paragrph: .PP"
+.PP
+$0
+endsnippet
+
+snippet list "list item: .BL (requires macro snippet)"
+.BL
+$0
+endsnippet
+
+snippet bold "bold: .B"
+.B "$0"
+endsnippet
+
+snippet ital "italics: .I"
+.I "$0"
+endsnippet
+
+snippet under "underline: .UL"
+.UL "$0"
+endsnippet

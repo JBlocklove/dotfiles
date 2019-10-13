@@ -1,0 +1,7 @@
+htop
+neomutt
+ranger
+tmux
+zsh
+i3
+	everything currently stored in i3
