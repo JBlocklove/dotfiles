@@ -1,0 +1,10 @@
+#!/bin/bash
+
+########################################
+# Fedora install of htop
+# Top for humans
+########################################
+
+sudo dnf install htop -y 
+
+ln -sfv "${PACKAGE_INSTALL}/config/htoprc" ~/.config/htop/
