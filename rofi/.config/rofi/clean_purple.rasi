@@ -1,0 +1,79 @@
+configuration {
+    display-drun:                   "Apps";
+}
+
+* {
+    lines: 7;
+    columns: 1;
+    background-color: #00000065;
+    border-color: #000000ff;
+    text-color: #ffffff;
+    font: "Mono 14";
+}
+
+window {
+    border: 0;
+    border-radius: 0px;
+    padding: 0;
+    width: 40%;
+    height: 30%;
+}
+
+mainbox {
+    background-color: #00000000;
+    children: [inputbar, listview];
+    spacing: 10px;
+    /*margin: 20%;*/
+    padding: 30px 0;
+    border: 0px;
+    border-color: @base0D;
+}
+
+
+listview {
+    background-color: #00000000;
+    fixed-height: 0;
+    border: 0px;
+    spacing: 5px;
+    scrollbar: false;
+    padding: 10px 20px 0px;
+}
+
+element {
+    background-color: #00000000;
+    border: 0;
+    border-radius: 0px;
+    padding: 3 0  3 4 ;
+}
+
+element selected {
+    background-color: #6629b3;
+    text-color: #ffffff;
+}
+
+
+inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    background-color: #00000000;
+	padding: 0 10px;
+}
+
+case-indicator {
+    background-color: #00000000;
+    spacing:    0;
+}
+entry {
+    background-color: #00000000;
+    spacing:    0;
+}
+prompt {
+    background-color: #00000000;
+    spacing:    0;
+}
+
+textbox-prompt-colon {
+    background-color: #00000000;
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+}
