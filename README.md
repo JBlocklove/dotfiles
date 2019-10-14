@@ -25,8 +25,8 @@ Due to the different ways with which each OS installs its programs, each OS has 
 
 ## TODO
 There's still a lot to be done in terms of moving my old dotfiles over and cleaning up this repo
-- [ ] Shell install and configs
+- [x] Shell install and configs
 - [ ] WM install and configs
-- [ ] Implementing `all` option in `install_and_link`
-- [ ] Implementing options like `-l` to list available programs in `install_and_link`
-- [ ] Cleaning up directory structure so it still works with stow
+- [x] Implementing `all` option in `install_and_link`
+- [x] Implementing options like `-l` to list available programs in `install_and_link`
+- [ ] Cleaning up directory structure so it still works with stow (might not be possible)
