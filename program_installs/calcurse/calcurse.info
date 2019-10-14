@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#
+# Calcurse Info file
+#
+
+export package_support="Arch"
+
+echo "Calcurse: NCurses Based Calendar"
+
+PRE_INSTALL_OPTIONS() {
+    echo ""
+}
+
+

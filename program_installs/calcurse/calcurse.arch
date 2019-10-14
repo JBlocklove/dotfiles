@@ -1,0 +1,8 @@
+#!/bin/bash
+
+########################################
+# Arch install of calcurse
+# ncurses based calendar app
+########################################
+
+sudo pacman -S --noconfirm --needed calcurse

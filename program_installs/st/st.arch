@@ -1,0 +1,8 @@
+#!/bin/bash
+
+########################################
+# Arch install of st dependencies
+########################################
+
+echo "Installing st build dependencies"
+sudo pacman -S --noconfirm fontconfig libX11 libXft
