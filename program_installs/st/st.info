@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#
+# Vim Info file
+#
+
+export package_support="Arch"
+
+echo "st: Suckless Terminal"
+
+PRE_INSTALL_OPTIONS() {
+	echo ""
+}
+
+

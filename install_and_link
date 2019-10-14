@@ -30,13 +30,25 @@ detectos(){
 
 export DOTFILES_INSTALL="$(dirname $(readlink -f $0))"
 # usage statement
-USAGE="Usage: install_program <prog1> <prog2> ... <progN>"
+USAGE="Usage: install_and_link <prog1> <prog2> ... <progN>"
+
+AVAILABLE_PROGS=($(ls -d -1 program_installs/*/ | cut -d'/' -f2))
 
 if [[ "$#" -eq 0 ]]; then
 	echo $USAGE
 	exit 1
 fi
 
+if [[ "$@" == "all" ]]; then
+	INSTALL_ALL=1
+	INSTALL_PROGS=$AVAILABLE_PROGS
+elif [[ "$@" == "list" ]]; then
+	echo "${AVAILABLE_PROGS[*]}"
+	exit 0
+else
+	INSTALL_ALL=0
+	INSTALL_PROGS=("$@")
+fi
 echo "--------- Installing -----------"
 
 # get OS distro
@@ -47,10 +59,6 @@ echo "----------- Sudo/Root Required ---------------"
 echo "Root access is required for installation. Please sudo up."
 sudo echo "Now running in sudo"
 echo""
-
-AVAILABLE_PROGS=($(ls -d -1 installable_programs/*/ | cut -d'/' -f2))
-
-INSTALL_PROGS=("$@")
 
 for PROG in "${INSTALL_PROGS[@]}"; do
 	in_arr=0
@@ -65,7 +73,7 @@ for PROG in "${INSTALL_PROGS[@]}"; do
 		continue
 	fi
 	echo "Installing ${PROG}..."
-	PACKAGE_INSTALL="installable_programs/${PROG}"
+	PACKAGE_INSTALL="program_installs/${PROG}"
 	    # Every package must have a name.info file in it's directory. It must contain:
         # * supported oses (exported to package_support [comma delemiter])
         # * Brief description of the package (echoed)

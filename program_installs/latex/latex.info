@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#
+# LaTeX Info file
+#
+
+export package_support="Arch Debian"
+
+echo "LaTeX: A markup language"
+
+PRE_INSTALL_OPTIONS() {
+    echo ""
+}
+
