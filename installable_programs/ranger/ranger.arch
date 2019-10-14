@@ -1,7 +1,0 @@
-#!/bin/bash
-
-############################
-# Arch install for ranger
-############################
-
-sudo pacman -S --noconfirm --needed ranger

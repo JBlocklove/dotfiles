@@ -1,9 +1,10 @@
 LINKING FOR:
 zsh
-i3
-everything currently stored in i3
 
 INSTALLS FOR:
 zsh
-i3
-everything under i3
+i3 - including certain supplemental programs from config
+dunst
+rofi
+compton
+polybar
