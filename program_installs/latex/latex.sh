@@ -6,8 +6,8 @@
 ########################################
 
 
-cd $DOTFILES_INSTALL
-stow --verbose latex
+cd $DOTFILES_INSTALL/stow_files
+stow --verbose -t ~/ latex
 cd -
 
 # Vimtex needs --remote in vim, so this puts it back for neovim

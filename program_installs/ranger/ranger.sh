@@ -4,8 +4,8 @@
 # Base install of Ranger
 ##############################
 
-cd $DOTFILES_INSTALL
-stow --verbose ranger
+cd $DOTFILES_INSTALL/stow_files
+stow --verbose -t ~/ ranger
 cd -
 
 pushd .

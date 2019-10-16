@@ -4,6 +4,6 @@
 # Base install of calcurse
 ########################################
 
-cd $DOTFILES_INSTALL
-stow --verbose calcurse
+cd $DOTFILES_INSTALL/stow_files
+stow --verbose -t ~/ calcurse
 cd -

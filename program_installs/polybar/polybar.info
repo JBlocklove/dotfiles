@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#
+# polybar info file
+#
+
+export package_support="Arch"
+
+echo "Polybar: A fast and easy-to-use status bar"
+
+PRE_INSTALL_OPTIONS() {
+	echo ""
+}

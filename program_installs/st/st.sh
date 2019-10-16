@@ -6,8 +6,8 @@
 
 # config install
 
-cd $DOTFILES_INSTALL
-stow --verbose st
+cd $DOTFILES_INSTALL/stow_files
+stow --verbose -t ~/ st
 cd -
 
 cd st_build
