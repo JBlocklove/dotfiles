@@ -1,0 +1,8 @@
+#!/bin/bash
+
+##########################
+# Arch install of Rofi
+##########################
+
+echo "Installing Rofi"
+sudo pacman -S --noconfirm rofi

@@ -1,10 +1,9 @@
 #!/bin/bash
 
 ########################################
-# Arch install of VHDL
-# Very hard description language
+# Base install of dunst
 ########################################
 
 cd $DOTFILES_INSTALL/stow_files
-stow --verbose -t ~/ vhdl
+stow --verbose -t ~/ dunst
 cd -

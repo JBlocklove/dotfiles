@@ -13,6 +13,6 @@ sudo make install
 popd
 rm -rf /tmp/mutt-wizard
 
-cd $DOTFILES_INSTALL
-stow --verbose neomutt
+cd $DOTFILES_INSTALL/stow_files
+stow --verbose -t ~/ neomutt
 cd -

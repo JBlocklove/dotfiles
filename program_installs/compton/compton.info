@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#
+# compton Info file
+#
+
+export package_support="Arch"
+
+echo "Compton: Window Compositor - tyrone fork"
+
+PRE_INSTALL_OPTIONS() {
+	echo ""
+}
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+########################################
+# Arch install of i3
+# Tiled Window Manager
+########################################
+
+echo "Installing dunst"
+#Install dunst
+sudo pacman -S --noconfirm dunst dunstify

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#
+# dunst Info file
+#
+
+export package_support="Arch"
+
+echo "Dunst notification tool"
+
+PRE_INSTALL_OPTIONS() {
+	echo ""
+}
+

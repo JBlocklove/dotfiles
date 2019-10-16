@@ -1,10 +1,10 @@
 #!/bin/bash
 
 ########################################
-# Arch install of VHDL
-# Very hard description language
+# Config install for compton
 ########################################
 
 cd $DOTFILES_INSTALL/stow_files
-stow --verbose -t ~/ vhdl
+stow --verbose -t ~/ compton
 cd -
+
