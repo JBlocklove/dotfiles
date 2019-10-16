@@ -6,6 +6,19 @@
 # Many aspects stolen from www.github.com/Serubin/dotfiles
 ##################################
 
+# Takes in input (yes or no) defaults to yes
+getInputBoolean() {
+        read -p "${1} (Y/n) " in;
+        if [ "$in" == "y" ]; then
+                echo 1;
+        elif [ "$in" == "n" ]; then
+                echo 0;
+        else
+                echo 1;
+        fi
+}
+
+# Uses lsb-release to determine what OS is being used
 detectos(){
 
 	# Get *nix distro
@@ -100,7 +113,7 @@ for PROG in "${INSTALL_PROGS[@]}"; do
         source "${PACKAGE_INSTALL}/${PROG}.fedora"
     else
         # FYI: This shouldn't ever happen - make an issue if it does?
-        echo "ERROR: This os doesn't support ${PROG} installations."a
+        echo "ERROR: This os doesn't support ${PROG} installations."
         continue
     fi
 
