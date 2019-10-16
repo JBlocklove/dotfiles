@@ -29,4 +29,4 @@ There's still a lot to be done in terms of moving my old dotfiles over and clean
 - [ ] WM install and configs
 - [x] Implementing `all` option in `install_and_link`
 - [x] Implementing options like `-l` to list available programs in `install_and_link`
-- [ ] Cleaning up directory structure so it still works with stow (might not be possible)
+- [x] Cleaning up directory structure so it still works with stow
