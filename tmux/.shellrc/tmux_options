@@ -1,2 +1,0 @@
-# Tmux As Shell
-[[ -z "$TMUX" ]] && exec tmux
