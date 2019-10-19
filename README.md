@@ -16,8 +16,10 @@ or to install all of my programs and configs:
 
 ## Linking
 If you want to link the dotfiles for a program but not install that program using `install_and_link`:
+
 ```cd stow_files```
-```stow -t ~/ <prog1> <prog2> ... <progN>````
+
+```stow -t ~/ <prog1> <prog2> ... <progN>```
 
 ## OS Support
 Due to the different ways with which each OS installs its programs, each OS has to use its own install script for now. As a result, not all are currently supported for all programs.
@@ -27,11 +29,3 @@ Due to the different ways with which each OS installs its programs, each OS has 
 * OS X (with brew)
 ### All installs working
 * Arch
-
-## TODO
-There's still a lot to be done in terms of moving my old dotfiles over and cleaning up this repo
-- [x] Shell install and configs
-- [ ] WM install and configs
-- [x] Implementing `all` option in `install_and_link`
-- [x] Implementing options like `-l` to list available programs in `install_and_link`
-- [x] Cleaning up directory structure so it still works with stow
