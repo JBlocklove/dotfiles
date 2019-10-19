@@ -7,8 +7,10 @@
 
 echo "Installing I3 and dependencies"
 #Install i3
-sudo pacman -S --noconfirm i3 perl pkgconf imagemagick ttf-liberation noto-fonts cantarell-fonts feh python-pywal qutebrowser dunst
+sudo pacman -S --noconfirm i3 perl pkgconf imagemagick ttf-liberation noto-fonts cantarell-fonts feh python-pywal qutebrowser dunst rxvt-unicode light udisks2 udiskie
+
 #Install NerdFonts
+pushd .
 cd /tmp
 git clone https://aur.archlinux.org/nerd-fonts-complete.git
 cd nerd-fonts-complete
@@ -24,10 +26,13 @@ makepkg -si
 cd -
 rm -rf /tmp/polybar
 
-echo "Installing URxvt"
-sudo pacman -S --noconfirm --needed rxvt-unicode
+#Install flashfocus
+cd /tmp
+git clone https://aur.archlinux.org/flashfocus-git.git
+cd flashfocus-git
+makepkg -si
+cd -
+rm -rf /tmp/flashfocus-git
+popd
 
-echo "Installing Rofi"
-sudo pacman -S --noconfirm rofi
 
-sudo ${PACKAGE_INSTALL}/compton_build.sh

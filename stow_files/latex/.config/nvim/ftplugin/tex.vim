@@ -16,7 +16,7 @@ let g:vimtex_fold_manual = '0'
 let g:vimtex_toc_fold = '1'
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_general_viewer = 'zathura'
-let g:vimtex_quickfix_mode = '0'
+let g:vimtex_quickfix_mode = '1'
 
 " Testing Tex stuff (not really sure what it does yet)
 if !exists('g:ycm_semantic_triggers')
