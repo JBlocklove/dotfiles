@@ -24,11 +24,9 @@ Plug 'papis/papis-vim', {'for': 'tex'}
 " LaTeX compiler and whatnot
 Plug 'lervag/vimtex', {'for': 'tex'}
 " Allows entity/component copy/paste
-Plug 'JBlocklove/VIP', {'for': 'vhdl'}
+Plug 'JBlocklove/VIP', {'for': ['vhdl', 'verilog']}
 
 """"""""""""""""""""""TESTING""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
-Plug 'xolox/vim-notes'
-Plug 'xolox/vim-misc'
 call plug#end()

@@ -1,0 +1,6 @@
+[submodule "stow_files/zsh/.shellrc/autosuggest"]
+	path = stow_files/zsh/.shellrc/autosuggest
+	url = https://github.com/Serubin/zsh-autosuggestions.git
+[submodule "stow_files/zsh/.shellrc/highlighting"]
+	path = stow_files/zsh/.shellrc/highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
