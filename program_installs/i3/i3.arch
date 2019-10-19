@@ -7,7 +7,7 @@
 
 echo "Installing I3 and dependencies"
 #Install i3
-sudo pacman -S --noconfirm i3 perl pkgconf imagemagick ttf-liberation noto-fonts cantarell-fonts feh python-pywal qutebrowser dunst rxvt-unicode light udisks2 udiskie
+sudo pacman -S --noconfirm i3 perl pkgconf imagemagick ttf-liberation noto-fonts cantarell-fonts feh qutebrowser dunst rxvt-unicode light udisks2 udiskie
 
 #Install NerdFonts
 pushd .

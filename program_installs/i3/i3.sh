@@ -7,5 +7,5 @@
 
 echo "Configuring i3"
 cd $DOTFILES_INSTALL/stow_files
-stow --verbose -t ~/ i3
+stow --verbose -t ~/ i3 dunst qutebrowser polybar
 cd -
