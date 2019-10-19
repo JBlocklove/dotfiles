@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html dir="auto">
+<head>
+  <meta charset="utf-8">
+  <title>Daily Mix Hub</title>
+  <link rel="stylesheet" href="https://zlink.app.spotify.com/css/glue.css">
+  
+<link rel="stylesheet" href="css/daily-mix-hub.css"><link rel="stylesheet" class="userCSS" href="https://zlink.app.spotify.com/css/user.css"></head>
+<body>
+  <div class="online-content">
+    <div class="header app-header"></div>
+    <div class="container mixes-container app-content">
+      <div class="row section-divider">
+        <h3 class="section-title"></h3>
+      </div>
+      <div class="row standard-grid"></div>
+    </div>
+    <div class="loading-container">
+      <div class="throbber-initial"><div></div></div>
+    </div>
+  </div>
+
+  <div class="offline-content-container"></div>
+
+  <!-- "init.js" is served by the desktop client and provides the "window.__spotify" object. -->
+  <script src="init.js"></script>
+  
+<script src="daily-mix-hub.bundle.js"></script></body>
+</html>
