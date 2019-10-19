@@ -68,10 +68,6 @@ echo "--------- Installing -----------"
 detectos
 
 echo ""
-echo "----------- Sudo/Root Required ---------------"
-echo "Root access is required for installation. Please sudo up."
-sudo echo "Now running in sudo"
-echo""
 
 for PROG in "${INSTALL_PROGS[@]}"; do
 	in_arr=0
