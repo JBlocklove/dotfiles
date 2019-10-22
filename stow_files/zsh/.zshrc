@@ -2,7 +2,7 @@
 [[ $- != *i* ]] && return
 
 # source all base config files
-for DOTFILE in ~/.shellrc/.*; do
+for DOTFILE in $HOME/.shellrc/.*; do
 	[ -d "$DOTFILE" ] && continue;
 	[ -r "$DOTFILE" ] && source "$DOTFILE"
 done
