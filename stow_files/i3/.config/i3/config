@@ -39,7 +39,6 @@ bindsym $mod+w exec urxvt -geometry 100x35 -e ranger $HOME/Pictures/Wallpapers
 bindsym $mod+i exec qutebrowser
 # Start Rofi ssh
 bindsym $mod+s exec rofi -show ssh
-bindsym $mod+F2 exec rofi -show ssh
 # Rofi theme switcher
 bindsym $mod+F7 exec $HOME/.config/rofi/scripts/pywal_theme_change.py
 # Thunar shortcut
@@ -54,10 +53,8 @@ bindsym $mod+m [class="Spotify"] scratchpad show
 bindsym Control+Mod1+l exec lock
 #rofi monitor select
 bindsym $mod+F8 exec $HOME/.config/rofi/scripts/monitor_layout.sh
-
-# Toggle between internal and external monitor configs
+# Sets monitor output to just the connected monitor of my laptop
 bindsym $mod+Shift+m exec --no-startup-id $HOME/.config/i3/scripts/1_monitor.sh
-
 # screenshots using flameshot
 bindsym $mod+Print exec flameshot gui
 ############################################################
