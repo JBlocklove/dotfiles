@@ -1,2 +1,3 @@
 stow_files/nvim/.config/nvim/plugged
 stow_files/nvim/.config/nvim/undo
+*.log
