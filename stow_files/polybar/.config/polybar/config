@@ -65,14 +65,6 @@ format-full-padding = 3
 format-charging-padding = 3
 format-discharging-padding = 3
 
-#ramp-capacity-0 = 
-#ramp-capacity-0-foreground = #f53c3c
-#ramp-capacity-1 = 
-#ramp-capacity-1-foreground = #ffa900
-#ramp-capacity-2 = 
-#ramp-capacity-3 = 
-#ramp-capacity-4 = 
-
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = #f53c3c
 ramp-capacity-1 = 
@@ -273,5 +265,5 @@ ramp-volume-2 = 
 
 [module/isrunning-nordvpn]
 type = custom/script
-exec = ~/dotfiles/packages/desktop/i3/scripts/nord_connection.py
+exec = ~/.config/polybar/scripts/nord_connection.py
 interval = 5

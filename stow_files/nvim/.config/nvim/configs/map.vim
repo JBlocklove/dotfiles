@@ -20,8 +20,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-nnoremap <Tab> :bn<cr><cr>
-nnoremap <S-Tab> :bp<cr><cr>
+nnoremap <Tab> :bn<cr>
+nnoremap <S-Tab> :bp<cr>
 
 "Various remaps which use the <leader> key
 nnoremap <leader>0 :StripWhitespace <return>
