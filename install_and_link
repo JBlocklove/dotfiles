@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ###################################
 # Installs and links a package
@@ -46,7 +46,9 @@ export DOTFILES_INSTALL="$(dirname $(readlink -f $0))"
 USAGE="Usage: install_and_link <prog1> <prog2> ... <progN>"
 
 AVAILABLE_PROGS=($(ls -d -1 program_installs/*/ | cut -d'/' -f2))
-
+for val in "${AVAILABLE_PROGS[@]}"; do
+	echo "$val"
+done
 if [[ "$#" -eq 0 ]]; then
 	echo $USAGE
 	exit 1
@@ -54,7 +56,7 @@ fi
 
 if [[ "$@" == "all" ]]; then
 	INSTALL_ALL=1
-	INSTALL_PROGS=$AVAILABLE_PROGS
+	INSTALL_PROGS=("${AVAILABLE_PROGS[@]}")
 elif [[ "$@" == "list" ]]; then
 	echo "${AVAILABLE_PROGS[*]}"
 	exit 0
@@ -119,4 +121,4 @@ for PROG in "${INSTALL_PROGS[@]}"; do
     fi
 done
 
-#unset DOTFILES_INSTALL
+unset DOTFILES_INSTALL
