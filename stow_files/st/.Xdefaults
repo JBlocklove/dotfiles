@@ -11,6 +11,7 @@ URxvt.url-launcher:		qutebrowser
 URxvt.matcher.button:	1
 
 st.font: Inconsolata-9;
+st.alpha: 0.70;
 
 ! Copy-paste. Stolen from: https://geleijn.nl/2014/copy-paste-using-ctrlshiftv-urxvt
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
