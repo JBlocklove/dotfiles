@@ -1,14 +1,7 @@
-"let g:ale_open_list = 1
-"" Toggle ALE quick list
-"noremap <Leader>e :call LoclistToggle()<CR>
-"
-"function! LoclistToggle()
-"  if exists("g:qfix_win")
-"    cclose
-"    unlet g:qfix_win
-"  else
-"    copen 10
-"    let g:qfix_win = bufnr("$")
-"  endif
-"endfunction
-"
+let g:ale_fix_on_save = 1
+
+let g:ale_fixers = {
+			\ '*' : ['remove_trailing_lines', 'trim_whitespace'],
+			\}
+
+nnoremap <leader>0 :ALEFix<cr>

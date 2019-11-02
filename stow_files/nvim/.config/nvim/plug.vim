@@ -1,8 +1,6 @@
 " set up vim plug
 call plug#begin('~/.config/nvim/plugged')
 
-" Identifies extra whitespace and makes it easy to clear
-Plug 'ntpeters/vim-better-whitespace'
 " Highlights a unique letter in each word when using f, F, t, T
 Plug 'unblevable/quick-scope'
 " Snippet engine
@@ -17,6 +15,8 @@ Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 " Undotree
 Plug 'mbbill/undotree'
+" Files exploring and whatnot
+Plug 'scrooloose/nerdtree'
 " Fuzzy finder - added to work with papis
 Plug 'junegunn/fzf', {'for': 'tex'}
 " Integration with papis for adding citations
@@ -28,5 +28,4 @@ Plug 'JBlocklove/VIP', {'for': ['vhdl', 'verilog']}
 
 """"""""""""""""""""""TESTING""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
 call plug#end()
