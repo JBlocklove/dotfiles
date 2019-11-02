@@ -10,13 +10,17 @@ augroup latex
     autocmd BufWinEnter *.tex :VimtexCompile
 augroup END
 
+"augroup quickfix
+"  autocmd!
+"  autocmd Syntax qf wincmd p
+"augroup END
+
 let g:tex_flavor='latex'
 let g:vimtex_fold_enabled = '1'
 let g:vimtex_fold_manual = '0'
 let g:vimtex_toc_fold = '1'
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_general_viewer = 'zathura'
-let g:vimtex_quickfix_mode = '1'
 
 " Testing Tex stuff (not really sure what it does yet)
 if !exists('g:ycm_semantic_triggers')
@@ -31,16 +35,3 @@ map J gj
 map K gk
 
 nnoremap <buffer> <leader><leader>p :Papis <CR>
-
-function! VimtexOutput()
-  call vimtex#compiler#output()
-
- " Move window to bottom
-  wincmd J
-
- " Set window height
-  resize 10
-
- " Return to LaTeX buffer
-  wincmd w
-endfunction
