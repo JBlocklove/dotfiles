@@ -2,7 +2,7 @@
 #### Includes configs linked through [GNU Stow](https://www.gnu.org/software/stow/) and installation scripts for all my programs
 
 ## Installation
-```git clone --recursive https://github.com/JBlocklove/new_dotfiles.git ~/.dotfiles && cd ~/.dotfiles```
+```git clone --recursive https://github.com/JBlocklove/dotfiles.git ~/.dotfiles && cd ~/.dotfiles```
 
 To install individual programs run:
 
