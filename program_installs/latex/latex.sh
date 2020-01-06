@@ -14,4 +14,4 @@ cd -
 pip3 install --user neovim-remote
 
 # Reinstall plugins for vimtex
-nvim +PluginInstall +qall
+nvim +PlugInstall +qall

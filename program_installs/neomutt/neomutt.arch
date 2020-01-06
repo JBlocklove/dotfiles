@@ -4,5 +4,7 @@
 # Arch install for neomutt
 ############################
 
-sudo pacman -S --noconfirm --needed neomutt isync msmtp pass
-
+#sudo pacman -S --noconfirm --needed neomutt isync msmtp pass
+# Preferred configs don't work with current version of neomutt. Included old version as temporary workaround
+sudo pacman -U --noconfirm --needed neomutt-20180716-8-x86_64.pkg.tar.xz
+sudo pacman -S --noconfirm --needed isync msmtp pass

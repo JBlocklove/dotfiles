@@ -5,11 +5,14 @@
 ########################################
 
 # config install
+pushd .
+cd /tmp
+git clone https://github.com/JBlocklove/st.git
+cd st
+sudo make install
+popd
+rm -rf /tmp/st
 
 cd $DOTFILES_INSTALL/stow_files
 stow --verbose -t ~/ st
-cd -
-
-cd st_build
-sudo make install
 cd -

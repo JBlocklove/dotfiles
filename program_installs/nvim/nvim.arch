@@ -5,4 +5,4 @@
 # A better Vi Improved
 ########################################
 
-sudo pacman -S --noconfirm --needed neovim python-neovim clang xsel curl
+sudo pacman -S --noconfirm --needed neovim python-neovim clang xsel curl python
