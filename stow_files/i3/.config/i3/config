@@ -37,6 +37,7 @@ bindsym $mod+g exec eidolon menu
 bindsym $mod+w exec urxvt -geometry 100x35 -e ranger $HOME/Pictures/Wallpapers
 # browser shortcut
 bindsym $mod+i exec qutebrowser
+#bindsym $mod+i exec tabbed surf -pe
 # Start Rofi ssh
 bindsym $mod+s exec rofi -show ssh
 # Rofi theme switcher
@@ -49,6 +50,8 @@ bindsym $mod+c exec urxvt -geometry 100x50 -e calcurse
 bindsym $mod+t exec urxvt -geometry 100x35
 # Spotify scratchpad
 bindsym $mod+m [class="Spotify"] scratchpad show
+# Plexmediaplayer scratchpad
+bindsym $mod+p [class="plexmediaplayer"] scratchpad show
 #lock screen
 bindsym Control+Mod1+l exec lock
 #rofi monitor select
@@ -184,6 +187,8 @@ exec compton
 exec udiskie
 exec caffeine
 exec blueman-applet
+exec plexmediaplayer
+
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #Set wallpaper
@@ -209,6 +214,7 @@ for_window [class="Chromium"] floating enable
 
 # Set programs to always open in certain workspaces
 for_window [class="Spotify"] move to scratchpad
+for_window [class="plexmediaplayer"] move to scratchpad
 assign [class="Franz"] 9
 assign [class="Signal"] 9
 for_window [ class="St" title="neomutt"] move to workspace 10

@@ -21,7 +21,7 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 config.bind('<Ctrl-Shift-m>','hint links spawn ~/.config/qutebrowser/scripts/umpv {hint-url}')
 config.bind('<Ctrl-Shift-p>','spawn --userscript qute-pass')
 
-c.url.searchengines = {"DEFAULT": "https://duckduckgo.com/?q={}", "aw": "https://wiki.archlinux.org/?search={}", "yt": "https://youtube.com/results?search_query={}", "aur": "https://aur.archlinux.org/packages/?O=0&K={}"}
+c.url.searchengines = {"DEFAULT": "https://duckduckgo.com/?q={}", "aw": "https://wiki.archlinux.org/?search={}", "yt": "https://youtube.com/results?search_query={}", "aur": "https://aur.archlinux.org/packages/?O=0&K={}", "gh": "https://github.com/search?q={}"}
 c.url.open_base_url = True
 
 c.downloads.remove_finished = 5000

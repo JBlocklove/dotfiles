@@ -51,6 +51,7 @@ entity ${1:} is
 	port(
 	);
 end $1;
+
 architecture ${2:Behavioral} of $1 is
 begin
 end $2;
@@ -63,10 +64,12 @@ entity ${1:} is
 	port(
 	);
 end $1;
+
 architecture ${2:Behavioral} of $1 is
 begin
 end $2;
 endsnippet
+
 snippet l "std_logic"
 std_logic
 endsnippet
@@ -96,8 +99,7 @@ type ${1} is (${2});
 endsnippet
 
 snippet pro "... : process(...) ..."
-${1}:process${2:(${VISUAL}${3})}
-begin
+${1} : process${2:(${VISUAL}${3})} begin
 ${0}
 end process;
 endsnippet
@@ -139,8 +141,6 @@ assert ${1:condition}
 	severity ${3:error};
 endsnippet
 
-snippet end "assert false severity failure;"
-assert false
-	report "Testbench Concluded"
-	severity failure;
+snippet end "report Testbench Concluded severity failure;"
+report "Testbench Concluded" severity failure;
 endsnippet
