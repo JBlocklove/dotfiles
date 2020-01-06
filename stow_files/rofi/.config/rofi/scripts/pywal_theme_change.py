@@ -8,7 +8,7 @@ from rofi import Rofi
 
 home = expanduser("~")
 user_path = home + "/.config/wal/colorschemes/dark/"
-dark_path = "/usr/lib/python3.7/site-packages/pywal/colorschemes/dark/"
+dark_path = "/usr/lib/python3.8/site-packages/pywal/colorschemes/dark/"
 
 user_themes = [t for t in listdir(user_path) if isfile(join(user_path,t))]
 dark_themes = [t for t in listdir(dark_path) if isfile(join(dark_path,t))]

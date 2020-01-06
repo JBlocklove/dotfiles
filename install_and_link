@@ -7,7 +7,7 @@
 ##################################
 
 # Takes in input (yes or no) defaults to yes
-getInputBoolean() {
+function getInputBoolean() {
         read -p "${1} (Y/n) " in;
         if [ "$in" == "y" ]; then
                 echo 1;
@@ -19,7 +19,7 @@ getInputBoolean() {
 }
 
 # Uses lsb-release to determine what OS is being used
-detectos(){
+function detectos(){
 
 	# Get *nix distro
 	DISTRO_RAW="" # Gets raw os output

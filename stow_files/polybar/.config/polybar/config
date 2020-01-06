@@ -244,7 +244,7 @@ type = internal/network
 interface = enp62s0u1u1
 interval = 3.0
 
-label-connected =  %{T3}%local_ip%%{T-}
+label-connected =   %{T3}%local_ip%%{T-}
 label-disconnected-foreground = #66
 
 [module/volume]

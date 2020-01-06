@@ -1,10 +1,9 @@
-" enforce purity
-nnoremap  <Up> <Nop>
+" enforce purity nnoremap  <Up> <Nop>
 nnoremap  <Down> <Nop>
 nnoremap  <Left> <Nop>
 nnoremap <Right> <Nop>
 "enfore purity in INSERT mode
-inoremap  <Up> <Nop>
+inoremap    <Up> <Nop>
 inoremap  <Down> <Nop>
 inoremap  <Left> <Nop>
 inoremap <Right> <Nop>
@@ -20,11 +19,14 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+nnoremap <S-j> :resize +5 <cr>
+nnoremap <S-k> :resize -5 <cr>
+nnoremap <S-h> :vertical resize -5 <cr>
+nnoremap <S-l> :vertical resize +5 <cr>
+
+
 nnoremap <Tab> :bn<cr>
 nnoremap <S-Tab> :bp<cr>
-
-"Various remaps which use the <leader> key
-nnoremap <leader>0 :StripWhitespace <return>
 
 nnoremap <leader>v :vsplit <cr>
 nnoremap <leader>h :split <cr>
