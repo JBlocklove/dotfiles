@@ -7,11 +7,3 @@
 cd $DOTFILES_INSTALL/stow_files
 stow --verbose -t ~/ ranger
 cd -
-
-pushd .
-cd /tmp
-git clone https://github.com/alexanderjeurissen/ranger_devicons
-cd ranger_devicons
-make install
-popd
-rm -rf /tmp/ranger_devicons

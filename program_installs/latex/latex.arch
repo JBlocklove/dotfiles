@@ -19,4 +19,3 @@ sudo pacman -S --noconfirm --needed texlive-core
 
 echo "Installing zathura"
 sudo pacman -S --noconfirm --needed zathura zathura-pdf-mupdf xdotool
-
