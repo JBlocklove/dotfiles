@@ -20,4 +20,3 @@ source ~/.config/nvim/configs/filetype.vim
 source ~/.config/nvim/configs/undo.vim
 source ~/.config/nvim/configs/nerdtree.vim
 source ~/.config/nvim/configs/quickscope.vim
-

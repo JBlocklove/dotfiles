@@ -20,12 +20,12 @@ Plug 'scrooloose/nerdtree'
 " Fuzzy finder - added to work with papis
 Plug 'junegunn/fzf', {'for': 'tex'}
 " Integration with papis for adding citations
-Plug 'papis/papis-vim', {'for': 'tex'}
+Plug 'JBlocklove/vim-papis', {'for': 'tex'}
+"Plug 'papis/papis-vim', {'for': 'tex'}
 " LaTeX compiler and whatnot
 Plug 'lervag/vimtex', {'for': 'tex'}
 " Allows entity/component copy/paste
 Plug 'JBlocklove/VIP', {'for': ['vhdl', 'verilog']}
 
 """"""""""""""""""""""TESTING""""""""""""""""""""""""
-Plug 'tpope/vim-fugitive'
 call plug#end()
