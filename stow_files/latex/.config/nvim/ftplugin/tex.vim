@@ -29,4 +29,12 @@ let g:ycm_semantic_triggers.tex = [
 map J gj
 map K gk
 
+" Close quickfix buffer while closing main document
+au BufEnter * call QuickFixQuit()
+function! QuickFixQuit()
+  if &buftype=="quickfix" && winnr('$') < 2
+    quit!
+  endif
+endfunction
+
 nnoremap <buffer> <leader><leader>p :Papis <CR>
