@@ -8,6 +8,10 @@ else
 	alias ls="ls --color=auto -N"
 fi
 
+# allow aliases in sudo
+alias sudo='sudo '
+
+# listing aliases
 alias la="ls -A"
 alias ll="ls -lhAr"
 

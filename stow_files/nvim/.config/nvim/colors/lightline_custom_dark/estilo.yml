@@ -1,0 +1,14 @@
+name: 'lightline_custom_dark'
+version: '1.0.0'
+license: 'MIT'
+author: 'Jason Blocklove'
+url: ''
+description: 'Dark theme I use for my lightline'
+colorschemes:
+  - name: custom_dark
+    background: 'dark'
+    palette: 'dark'
+lightline:
+  - name: 'custom_dark'
+    palette: 'dark'
+    style: 'custom_dark'

@@ -26,4 +26,3 @@ function pre_cmd() {
    prompt_format="$BBlue$User$BWhite:$BCyan$PathShort$BWhite $git"
    export PROMPT=$prompt_format
 }
-

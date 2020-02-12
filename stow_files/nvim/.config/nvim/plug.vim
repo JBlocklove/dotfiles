@@ -13,6 +13,7 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'w0rp/ale'
 " Pretty statusline
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 " Undotree
 Plug 'mbbill/undotree'
 " Files exploring and whatnot
@@ -21,11 +22,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', {'for': 'tex'}
 " Integration with papis for adding citations
 Plug 'JBlocklove/vim-papis', {'for': 'tex'}
-"Plug 'papis/papis-vim', {'for': 'tex'}
 " LaTeX compiler and whatnot
 Plug 'lervag/vimtex', {'for': 'tex'}
 " Allows entity/component copy/paste
 Plug 'JBlocklove/VIP', {'for': ['vhdl', 'verilog']}
 
-""""""""""""""""""""""TESTING""""""""""""""""""""""""
 call plug#end()

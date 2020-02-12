@@ -27,7 +27,6 @@ function! NumberToggle()
   else
 	set number
     set relativenumber
-	"set nonumber
   endif
 endfunc
 
