@@ -1,0 +1,15 @@
+#!/bin/sh
+
+WAL_CMD="wal -f "
+
+USER_PATH=$HOME/.config/wal/colorschemes/dark
+DARK_PATH=/usr/lib/python3.8/site-packages/pywal/colorschemes/dark
+
+function get_wal_themes(){
+	ls $USER_PATH | cut -d'.' -f1
+	ls $DARK_PATH | cut -d'.' -f1
+}
+
+SEL=$( get_wal_themes | dmenu -c -l 20 -p "theme:" | awk '{print $1}' )
+
+$WAL_CMD $SEL
