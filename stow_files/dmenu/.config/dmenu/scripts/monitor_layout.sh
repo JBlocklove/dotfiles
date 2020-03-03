@@ -1,5 +1,8 @@
 #!/bin/bash
 
+COLOR_DMENU=$HOME/.config/dmenu/scripts/color_dmenu.sh
+
+
 XRANDR=$(which xrandr)
 
 MONITORS=( $( ${XRANDR} | awk '( $2 == "connected" ){ print $1 }' ) )
@@ -93,7 +96,7 @@ function gen_entries()
 }
 
 # Call menu
-SEL=$( gen_entries | dmenu -c -l 10 -p "monitor:" | awk '{print $1}' )
+SEL=$( gen_entries | $COLOR_DMENU -c -l 10 -p "monitor:" | awk '{print $1}' )
 
 # Call xrandr
 $( ${COMMANDS[$SEL]} )
