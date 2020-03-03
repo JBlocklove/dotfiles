@@ -28,20 +28,17 @@ font pango:DejaVu Sans Mono 10
 bindsym $mod+Return exec st
 # kill focused window
 bindsym $mod+Shift+q kill
-# start rofi (a program launcher)
-bindsym $mod+d exec rofi -show run
-bindsym $mod+F3 exec rofi -show run
-# start eidolon (rofi but for steam games)
-bindsym $mod+g exec eidolon menu
+# start dmenu (a program launcher)
+bindsym $mod+d exec $HOME/.config/dmenu/scripts/color_dmenu.sh run -c -l 20
 # wallpaper file selector
 bindsym $mod+w exec urxvt -geometry 100x35 -e ranger $HOME/Pictures/Wallpapers
 # browser shortcut
 bindsym $mod+i exec qutebrowser
 #bindsym $mod+i exec tabbed surf -pe
-# Start Rofi ssh
-bindsym $mod+s exec rofi -show ssh
-# Rofi theme switcher
-bindsym $mod+F7 exec $HOME/.config/rofi/scripts/pywal_theme_change.py
+# Start dmenu ssh
+bindsym $mod+s exec $HOME/.config/dmenu/scripts/dmenu_ssh.sh
+# dmenu theme switcher
+bindsym $mod+F7 exec $HOME/.config/dmenu/scripts/select_wal_theme.sh
 # Thunar shortcut
 bindsym $mod+u exec urxvt -geometry 80x40 -e ranger $HOME/Documents
 # Calcurse
@@ -54,12 +51,16 @@ bindsym $mod+m [class="Spotify"] scratchpad show
 bindsym $mod+p [class="plexmediaplayer"] scratchpad show
 #lock screen
 bindsym Control+Mod1+l exec lock
-#rofi monitor select
-bindsym $mod+F8 exec $HOME/.config/rofi/scripts/monitor_layout.sh
+#dmenu monitor select
+bindsym $mod+F8 exec $HOME/.config/dmenu/scripts/monitor_layout.sh
 # Sets monitor output to just the connected monitor of my laptop
 bindsym $mod+Shift+m exec --no-startup-id $HOME/.config/i3/scripts/1_monitor.sh
 # screenshots using flameshot
 bindsym $mod+Print exec flameshot gui
+# open paper from papis using dmenu
+bindsym $mod+o exec $HOME/.config/dmenu/scripts/dmenu_papis.sh
+# emoji dmenu from lukesmithxyz
+bindsym $mod+e exec $HOME/.config/dmenu/scripts/dmenu_unicode.sh
 ############################################################
 #						Gaps                               #
 ############################################################
@@ -218,3 +219,4 @@ for_window [class="plexmediaplayer"] move to scratchpad
 assign [class="Franz"] 9
 assign [class="Signal"] 9
 for_window [ class="St" title="neomutt"] move to workspace 10
+for_window [ class="St" title="newsboat"] move to workspace 10
