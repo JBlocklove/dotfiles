@@ -14,11 +14,12 @@ bind index,pager g noop
 bind index,pager M noop
 bind index,pager C noop
 bind index gg first-entry
-macro index o "<shell-escape>mailsync -V jason<enter>" "run mbsync to sync jason"
+macro index o "<shell-escape>timeout 120 mailsync -V jason<enter>" "run mbsync to sync jason"
 unmailboxes *
 
 set spoolfile = "+INBOX"
-set record = "+[Gmail].Sent\ Mail"
+#set record = "+[Gmail].Sent\ Mail"
+set record = /dev/null
 set postponed = "+[Gmail].Drafts"
 set trash = "+[Gmail].Trash"
 mailboxes "=INBOX" "=[Gmail].Drafts" "=[Gmail].Sent\ Mail" "=[Gmail].Trash" "=[Gmail].Starred" "=[Gmail].Important" "=[Gmail].Spam"
