@@ -24,6 +24,8 @@ Plug 'junegunn/fzf', {'for': 'tex'}
 Plug 'JBlocklove/vim-papis', {'for': 'tex'}
 " LaTeX compiler and whatnot
 Plug 'lervag/vimtex', {'for': 'tex'}
+" Highlight hex colors in vim
+Plug 'ap/vim-css-color'
 " Allows entity/component copy/paste
 Plug 'JBlocklove/VIP', {'for': ['vhdl', 'verilog']}
 

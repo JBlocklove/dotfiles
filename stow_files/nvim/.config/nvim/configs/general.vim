@@ -17,6 +17,8 @@ set scrolloff=5
 set undolevels=1000
 set udf
 
+set splitbelow splitright
+
 "number setting toggle
 set number
 set relativenumber
