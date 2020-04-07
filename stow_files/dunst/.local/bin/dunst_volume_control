@@ -21,8 +21,8 @@ function is_mute {
 }
 
 function send_notification {
-  iconSound="/usr/share/icons/Adwaita/16x16/status/audio-volume-high-symbolic.symbolic.png"
-  iconMuted="/usr/share/icons/Adwaita/16x16/status/audio-volume-muted-symbolic.symbolic.png"
+  iconSound="/usr/share/icons/Faenza-Dark/status/16/audio-volume-high.png"
+  iconMuted="/usr/share/icons/Faenza-Dark/status/16/audio-volume-muted.png"
   if is_mute ; then
     dunstify -i $iconMuted -r 2593 -u normal "mute"
   else
