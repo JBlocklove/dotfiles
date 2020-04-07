@@ -1,12 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
-COLOR_DMENU=$HOME/.config/dmenu/scripts/color_dmenu.sh
+#LAYOUT=`ls -1 $XDG_CONFIG_HOME/screenlayout | cut -d'.' -f1 | dmenu -c -l 20 -p "monitor:"`
+
+#$XDG_CONFIG_HOME/screenlayout/$LAYOUT.sh
 
 
 XRANDR=$(which xrandr)
 
 MONITORS=( $( ${XRANDR} | awk '( $2 == "connected" ){ print $1 }' ) )
-
 
 NUM_MONITORS=${#MONITORS[@]}
 
@@ -34,11 +35,6 @@ function gen_xrandr_only()
 
 
 declare -i index=0
-TILES[$index]="Cancel"
-COMMANDS[$index]="true"
-index+=1
-
-
 for entry in $(seq 0 $((${NUM_MONITORS}-1)))
 do
     TILES[$index]="Only ${MONITORS[$entry]}"
@@ -84,19 +80,28 @@ do
 done
 
 
+layouts=(`ls -1 $XDG_CONFIG_HOME/screenlayout | cut -d'.' -f1`)
+
 ##
 #  Generate entries, where first is key.
 ##
 function gen_entries()
 {
+	for layout in "${layouts[@]}"; do
+		echo $layout
+	done
     for a in $(seq 0 $(( ${#TILES[@]} -1 )))
     do
-        echo $a ${TILES[a]}
+        echo ${TILES[a]}
     done
 }
 
 # Call menu
-SEL=$( gen_entries | $COLOR_DMENU -c -l 10 -p "monitor:" | awk '{print $1}' )
+SEL=$( gen_entries | dmenu -c -l 10 -p "monitor:" | awk '{print $1}' )
 
 # Call xrandr
-$( ${COMMANDS[$SEL]} )
+if [[ $list =~ (^|[[:space:]])$x($|[[:space:]]) ]]; then
+	$XDG_CONFIG_HOME/screenlayout/$SEL.sh
+else
+	$( ${COMMANDS[$SEL]} )
+fi
