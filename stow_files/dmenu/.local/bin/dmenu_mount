@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Partially stolen from https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/dmenumount
+
+# Gives a dmenu prompt to mount unmounted USB drives
+# Uses udisks2 to mount
+
+mountusb() { \
+	chosen="$(echo "$usbdrives" | dmenu -i -c -l 20 -p "Drive:" | awk '{print $1}')"
+	if [[ ! -z $chosen ]]; then
+		mp=`udisksctl mount -b $chosen | rev | cut -d'/' -f1 | rev`
+		notify-send " Udisks2" "$chosen mounted at /media/$mp" && exit 0
+	fi
+}
+
+usbdrives="$(lsblk -rpo "name,type,size,mountpoint" | awk '$2=="part"&&$4==""{printf "%s (%s)\n",$1,$3}')"
+
+if [ -z "$usbdrives" ]; then
+	notify-send " Udisks2" "No USB drive detected" && exit
+else
+	#echo "USB drive(s) detected."
+	mountusb
+fi
