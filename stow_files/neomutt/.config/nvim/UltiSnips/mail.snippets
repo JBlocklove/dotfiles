@@ -6,22 +6,17 @@ Cheers,
 Jason $0
 endsnippet
 
-# Prep time hours
-snippet prep "Prep-Time Hours for Rick..."
+# Hours for Rick
+snippet hours "Hours for Rick..."
 Hey Rick,
 
-I worked these hours for prep time:
-	${1:`date +'%a, %b %d'`}: ${2:15:00 - 17:00}
+Here are the hours I worked on `date +'%A, %d %B'`.
 
-Cheers,
-Jason Blocklove $0
-endsnippet
+TAing - #6571902
+	${1: `date +'%A, %d %B'`}: ${2: 15:00 - 17:00}
 
-snippet hours "Missed Hours for Rick..."
-Hey Rick,
-
-I missed a punch. Here are the hours I worked:
-	${1: `date +'%a, %b %d'`}: ${2: 15:00 - 17:00}
+Harris Project - #6571903
+	$1: ${3: 15:00 - 17:00}
 
 Cheers,
 Jason Blocklove $0
