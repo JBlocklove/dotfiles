@@ -34,6 +34,7 @@ bindsym $mod+d exec $HOME/.config/dmenu/scripts/color_dmenu.sh run -c -l 20
 bindsym $mod+w exec urxvt -geometry 100x35 -e ranger $HOME/Pictures/Wallpapers
 # browser shortcut
 bindsym $mod+i exec qutebrowser
+#bindsym $mod+i exec windsurf
 #bindsym $mod+i exec tabbed surf -pe
 # Start dmenu ssh
 bindsym $mod+s exec $HOME/.config/dmenu/scripts/dmenu_ssh.sh
@@ -61,6 +62,8 @@ bindsym $mod+Print exec flameshot gui
 bindsym $mod+o exec $HOME/.config/dmenu/scripts/dmenu_papis.sh
 # emoji dmenu from lukesmithxyz
 bindsym $mod+e exec $HOME/.config/dmenu/scripts/dmenu_unicode.sh
+# pass menu
+bindsym $mod+Shift+p exec passmenu -c -l 20
 ############################################################
 #						Gaps                               #
 ############################################################
