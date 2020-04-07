@@ -1,0 +1,17 @@
+#!/usr/bin/python
+
+# Partially stolen from https://github.com/crian/dotfiles/blob/samurai/.config/dwm/blocks/spotify
+# Modified to work with spotifyd
+
+import dbus
+
+try:
+    bus = dbus.SessionBus()
+    spotifyd = bus.get_object("org.mpris.MediaPlayer2.spotifyd", "/org/mpris/MediaPlayer2")
+    spotifyd_iface = dbus.Interface(spotifyd, 'org.freedesktop.DBus.Properties')
+    props = spotifyd_iface.Get('org.mpris.MediaPlayer2.Player', 'Metadata')
+    status = spotifyd_iface.Get('org.mpris.MediaPlayer2.Player', 'PlaybackStatus')
+    if status == "Playing":
+        print("^c#81a1c1^ ^d^" + str(props['xesam:albumArtist'][0]) + " - " + str(props['xesam:title']))
+except dbus.exceptions.DBusException:
+    exit

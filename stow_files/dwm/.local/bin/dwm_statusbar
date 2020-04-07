@@ -1,0 +1,43 @@
+#!/bin/sh
+
+SCRIPT_HOME=$XDG_CONFIG_HOME/dwm/blocks
+
+delim=" | "
+
+while :; do
+	net=`$SCRIPT_HOME/net`
+	power=`$SCRIPT_HOME/power`
+	date=`$SCRIPT_HOME/date`
+	time=`$SCRIPT_HOME/time`
+	dpms=`$SCRIPT_HOME/dpms`
+	openconnect=`$SCRIPT_HOME/openconnect`
+	spotifyd=`timeout 1 $SCRIPT_HOME/spotifyd_py`
+
+	STATUS_ARR=()
+	STATUS_BLOCKS=( "$spotifyd" "$openconnect" "$net" "$power" "$date" "$time" "$dpms" )
+	#STATUS_BLOCKS=(  "$openconnect" "$net" "$power" "$date" "$time" "$dpms" )
+
+	for i in "${!STATUS_BLOCKS[@]}"; do
+		if [[ ${STATUS_BLOCKS[i]} != "" ]]; then
+			STATUS_ARR+=("${STATUS_BLOCKS[i]}")
+		fi
+	done
+
+	STATUS=""
+
+	for i in "${!STATUS_ARR[@]}"; do
+		block=${STATUS_ARR[i]}
+		echo $block
+		STATUS="$STATUS $block"
+		if [[ $block != ${STATUS_ARR[-1]} ]]; then
+			STATUS="$STATUS $delim"
+		else
+			STATUS="$STATUS  "
+		fi
+	done
+
+
+	#STATUS="$net | $power | $date | $time"
+	xsetroot -name "$STATUS"
+	sleep 5s
+done
