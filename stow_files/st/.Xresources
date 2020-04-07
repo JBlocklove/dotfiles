@@ -4,7 +4,8 @@ URxvt*saveLines: 12000
 URxvt*font: xft:Inconsolata:pixelsize=11:antialias=true:hinting=true
 URxvt*scrollBar: false
 
-URxvt.font: xft:RobotoMono Nerd Font Mono:pixelsize=12:antialias=true:hinting=true
+URxvt.font: xft:Inconsolata:size=9:antialias=true:autohint=true
+!URxvt.font: xft:IBM Plex Mono:size=8:antialias=true:autohint=true
 
 URxvt.perl-ext-common:	default,matcher,clipboard
 URxvt.url-launcher:		qutebrowser
@@ -15,10 +16,17 @@ URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 
 
+st.font: Inconsolata:size=9:antialias=true:autohint=true
+!st.font: IBM Plex Mono:size=8:antialias=true:autohint=true
+st.fontalt0: siji:size=8:antialias=true:autohint=true
+st*alpha: 0.65;
 
-st.font: FuraMono Nerd Font Mono-8
-!st.font: InconsolataGo Nerd Font Mono-9
-!st.font: Inconsolata-9;
-st.alpha: 0.65;
+dmenu.font: Inconsolata:size=9:antialias=true:autohint=true
+dmenu.background: #2e3440
+dmenu.foreground: #d8dee9
+dmenu.selbackground:#2e3440
+dmenu.selforeground: #81a1c1
+dmenu.hiforeground: #ebcb8b
+dmenu.hibackground: #2e3440
 
 #include ".cache/wal/colors.Xresources"
