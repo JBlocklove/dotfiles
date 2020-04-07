@@ -2,4 +2,4 @@
 
 # Run merge scripts
 python3 ~/.calcurse/script/calcurse-caldav.py
-python3 ~/.calcurse/script/calcurse_merge.py valinor &
+#python3 ~/.calcurse/script/calcurse_merge.py valinor &
