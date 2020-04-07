@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [[ -d /sys/class/net/enp62s0u1u1 ]]; then
+	ethstatus=$(cat /sys/class/net/enp62s0u1u1/operstate)
+fi
+
+if [[ -d /sys/class/net/wlp2s0 ]]; then
+	wifistatus=$(cat /sys/class/net/wlp2s0/operstate)
+	wifissid="$(nmcli -t -f NAME connection show --active)"
+	wifiperc="$(grep "^\s*w" /proc/net/wireless | awk '{ print int($3 * 100 / 70) "%" }')"
+fi
+
+if [[ ! -z $ethstatus && $ethstatus == "up" ]]; then
+    netstatus="^c#81a1c1^ ^d^Ether"
+elif [[ $wifistatus == "up" ]]; then
+	wifissid=`echo $wifissid | sed 's/\\n/ /g' | cut -d' ' -f1`
+    netstatus="^c#81a1c1^ ^d^${wifissid}"
+else
+    netstatus="^c#BF616a^ ^d^Not Connected"
+fi
+echo -ne "$netstatus"

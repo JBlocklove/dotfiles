@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Mimics the function of the program caffeine, without the need of a systray
+# Utilizes DPMS and xset for the control and status
+
+dpms_status="$(xset q | awk '$1=="DPMS" && $2=="is" {print $3}')"
+echo $dpms_status
+
+if [[ $dpms_status == "Disabled" ]]; then
+	xset s on +dpms
+else
+	xset s off -dpms
+fi
