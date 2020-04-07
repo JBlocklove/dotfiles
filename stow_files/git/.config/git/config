@@ -2,7 +2,7 @@
 	name = Jason Blocklove
 	email = jason.blocklove@gmail.com
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = $XDG_CONFIG_HOME/git/gitignore
 	editor = nvim
 [alias]
 	ap = add -p
