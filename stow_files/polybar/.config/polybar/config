@@ -10,19 +10,19 @@ height = 18
 background = #aa000000
 foreground = #ccffffff
 
-line-color = ${bar/bottom.background}
-line-size = 10
+line-color = ${bar/top.background}
+line-size = 2
 
 spacing = 0
 padding-right = 2
 module-margin = 1
 
-font-0 = NotoSans-Regular:size=8;0
-font-1 = FontAwesome:style=Regular:pixelsize=8;0
-font-2 = FantasqueSansMono Nerd Font:pixelsize=9;0
+font-0 = Inconsolata:size=9;0
+font-1 = siji:pixelsize=9;0
 
-tray-position = left
-modules-center = isrunning-nordvpn
+tray-position = right
+#modules-center = isrunning-nordvpn
+modules-left = i3
 modules-right = wireless-network wired-network battery date
 
 [bar/bottom]
@@ -46,12 +46,10 @@ module-margin-left = 0
 module-margin-right = 6
 
 font-0 = NotoSans-Regular:size=6;0
-font-1 = FontAwesome:style=Regular:pixelsize=7;0
-font-2 = FantasqueSansMono Nerd Font:pixelsize=7;0
-font-3 = NotoSans-Regular:size=6;-1
+font-1 = Wuncon Siji:pixelsize=7;0
 
-modules-left = i3
-modules-right = cpu memory
+#modules-left = i3
+#modules-right = cpu memory
 
 [module/battery]
 type = internal/battery
@@ -61,24 +59,24 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full-foreground = #00cc00
 format-full = <ramp-capacity> <label-full>
-format-full-padding = 3
-format-charging-padding = 3
-format-discharging-padding = 3
+format-full-padding = 0
+format-charging-padding = 0
+format-discharging-padding = 0
 
-ramp-capacity-0 = 
+ramp-capacity-0 = 
 ramp-capacity-0-foreground = #f53c3c
-ramp-capacity-1 = 
+ramp-capacity-1 = 
 ramp-capacity-1-foreground = #ffa900
-ramp-capacity-2 = 
+ramp-capacity-2 = 
 ramp-capacity-2-foreground = #ffa900
-ramp-capacity-3 = 
+ramp-capacity-3 = 
 ramp-capacity-3-foreground = #ffa900
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
-ramp-capacity-9 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
 
 
 bar-capacity-width = 10
@@ -91,13 +89,11 @@ bar-capacity-empty-font = 3
 bar-capacity-empty-foreground = #44ffffff
 
 animation-charging-foreground = #0033cc
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-5 = 
-animation-charging-6 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-framerate = 750
 
 [module/i3]
@@ -115,34 +111,34 @@ label-urgent-font = 9
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 0
 label-mode-foreground = #f00
 label-mode-background = #ffb52a
 
-ws-icon-1 = 1;1
-ws-icon-2 = 2;2
-ws-icon-3 = 3;3
-ws-icon-4 = 4;4
-ws-icon-5 = 5;5
-ws-icon-6 = 6;6
-ws-icon-7 = 7;7
-ws-icon-8 = 8;8
+ws-icon-1 = 1;
+ws-icon-2 = 2;
+ws-icon-3 = 3;
+ws-icon-4 = 4;
+ws-icon-5 = 5;
+ws-icon-6 = 6;
+ws-icon-7 = 7;
+ws-icon-8 = 8;
 ;ws-icon-9 = 9;9
 ;ws-icon-0 = 10;10
 ;ws-icon-8 = 8;
-ws-icon-9 = 9;
-ws-icon-0 = 10;
+ws-icon-9 = 9;
+ws-icon-0 = 10;
 ws-icon-default = 
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
 label-focused-background = $#773f3f3f
 label-focused-underline = #4a1599
-label-focused-padding =4
+label-focused-padding =1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
-label-unfocused-padding = 4
+label-unfocused-padding = 1
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
@@ -153,7 +149,7 @@ label-visible-padding = ${self.label-focused-padding}
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
 label-urgent-background = #bd2c40
-label-urgent-padding = 4
+label-urgent-padding = 1
 
 [module/backlight]
 type = internal/backlight
@@ -196,8 +192,8 @@ ramp-coreload-7-foreground = #ff5555
 
 [module/date]
 type = internal/date
-date =   %%{F#99}%d %b, %Y%%{F-}  %%{F#fff}%H:%M%%{F-}
-date-alt =   %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+date =  %%{F#99}%d %b, %Y%%{F-}  %%{F#fff}%H:%M%%{F-}
+date-alt =  %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
 #
 [module/memory]
 type = internal/memory
@@ -228,10 +224,10 @@ format-connected = <ramp-signal> <label-connected>
 format-connected-paddingleft = 0
 format-disconnected-padding-left = 0
 label-connected = %essid%
-label-disconnected = 睊not connected
+label-disconnected =  not connected
 label-disconnected-foreground = #66
 
-ramp-signal-0 = 直
+ramp-signal-0 = 
 
 animation-packetloss-0 = 
 animation-packetloss-0-foreground = #ffa64c
