@@ -1,25 +1,12 @@
-!*SystemFont:-adobe-helvetica-medium-r-normal--14-100-100-100-p-76-iso8859-1
-URxvt*termName: rxvt-256color
-URxvt*saveLines: 12000
-URxvt*font: xft:Inconsolata:pixelsize=11:antialias=true:hinting=true
-URxvt*scrollBar: false
-
-URxvt.font: xft:Inconsolata:size=9:antialias=true:autohint=true
-!URxvt.font: xft:IBM Plex Mono:size=8:antialias=true:autohint=true
-
-URxvt.perl-ext-common:	default,matcher,clipboard
-URxvt.url-launcher:		qutebrowser
-URxvt.matcher.button:	1
-
-! Copy-paste. Stolen from: https://geleijn.nl/2014/copy-paste-using-ctrlshiftv-urxvt
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.iso14755: False
-
+! Defaults
+*.font: Inconsolata:size=9:antialias=true:autohint=true
+*.fontalt0: siji:size=8:antialias=true:autohint=true
+*.alpha: 0.80;
 
 st.font: Inconsolata:size=9:antialias=true:autohint=true
 !st.font: IBM Plex Mono:size=8:antialias=true:autohint=true
 st.fontalt0: siji:size=8:antialias=true:autohint=true
-st*alpha: 0.65;
+st.alpha: 0.70;
 
 dmenu.font: Inconsolata:size=9:antialias=true:autohint=true
 dmenu.background: #2e3440
