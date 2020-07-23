@@ -12,10 +12,10 @@ while :; do
 	dpms=`$SCRIPT_HOME/dpms`
 	openconnect=`$SCRIPT_HOME/openconnect`
 	spotifyd=`timeout 1 $SCRIPT_HOME/spotifyd_py`
+	mpd=`$SCRIPT_HOME/mpd`
 
 	STATUS_ARR=()
-	STATUS_BLOCKS=( "$spotifyd" "$openconnect" "$net" "$power" "$date" "$time" "$dpms" )
-	#STATUS_BLOCKS=(  "$openconnect" "$net" "$power" "$date" "$time" "$dpms" )
+	STATUS_BLOCKS=( "$mpd" "$spotifyd" "$openconnect" "$net" "$power" "$date" "$time" "$dpms" )
 
 	for i in "${!STATUS_BLOCKS[@]}"; do
 		if [[ ${STATUS_BLOCKS[i]} != "" ]]; then
@@ -36,8 +36,6 @@ while :; do
 		fi
 	done
 
-
-	#STATUS="$net | $power | $date | $time"
 	xsetroot -name "$STATUS"
 	sleep 5s
 done

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+current_song="$(mpc -f '[%albumartist% - ]%title%' current)"
+
+play_status="$(mpc status | awk -v RS='' -v FS='\n' '{print $2}' | awk '{print $1}')"
+
+case $play_status in
+	"[playing]" )
+		echo -ne "^c#81a1c1^ ^d^${current_song}"
+		;;
+	"[paused]" )
+		echo -ne "^c#81a1c1^ ^d^${current_song}"
+		;;
+	* )
+		;;
+esac
