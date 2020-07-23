@@ -2,7 +2,7 @@
 
 # partially stolen from https://github.com/crian/dotfiles/blob/samurai/.bin/dmn_power
 
-DIALOG_RESULT=$(echo -e 'logout\nreboot\npoweroff' | dmenu -i -c -l 20 -f -p "Power:" )
+DIALOG_RESULT=$(echo -e 'logout\nsleep\nreboot\npoweroff' | dmenu -i -c -l 20 -f -p "Power:" )
 
 echo "This result is : $DIALOG_RESULT"
 sleep 1;
@@ -10,6 +10,9 @@ sleep 1;
 if [ "$DIALOG_RESULT" = "logout" ];
 then
     exec pkill dwm
+elif [ "$DIALOG_RESULT" = "sleep" ];
+then
+    exec sudo systemctl suspend
 elif [ "$DIALOG_RESULT" = "reboot" ];
 then
     exec sudo reboot
