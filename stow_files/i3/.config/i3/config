@@ -29,7 +29,7 @@ bindsym $mod+Return exec st
 # kill focused window
 bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
-bindsym $mod+d exec $HOME/.config/dmenu/scripts/color_dmenu.sh run -c -l 20
+bindsym $mod+d exec dmenu_run -c -l 20
 # wallpaper file selector
 bindsym $mod+w exec urxvt -geometry 100x35 -e ranger $HOME/Pictures/Wallpapers
 # browser shortcut
@@ -37,38 +37,22 @@ bindsym $mod+i exec qutebrowser
 #bindsym $mod+i exec windsurf
 #bindsym $mod+i exec tabbed surf -pe
 # Start dmenu ssh
-bindsym $mod+s exec $HOME/.config/dmenu/scripts/dmenu_ssh.sh
+bindsym $mod+s exec $HOME/.local/bin/dmenu_ssh
 # dmenu theme switcher
-bindsym $mod+F7 exec $HOME/.config/dmenu/scripts/select_wal_theme.sh
-# Thunar shortcut
-bindsym $mod+u exec urxvt -geometry 80x40 -e ranger $HOME/Documents
-# Calcurse
-bindsym $mod+c exec urxvt -geometry 100x50 -e calcurse
-# Floating terminal
-bindsym $mod+t exec urxvt -geometry 100x35
-# Spotify scratchpad
-bindsym $mod+m [class="Spotify"] scratchpad show
-# Plexmediaplayer scratchpad
-bindsym $mod+p [class="plexmediaplayer"] scratchpad show
+bindsym $mod+F7 exec $HOME/.local/bin/dmenu_wal_theme
 #lock screen
 bindsym Control+Mod1+l exec lock
 #dmenu monitor select
-bindsym $mod+F8 exec $HOME/.config/dmenu/scripts/monitor_layout.sh
+bindsym $mod+F8 exec $HOME/.local/bin/dmenu_monitor
 # Sets monitor output to just the connected monitor of my laptop
-bindsym $mod+Shift+m exec --no-startup-id $HOME/.config/i3/scripts/1_monitor.sh
-# screenshots using flameshot
-bindsym $mod+Print exec flameshot gui
-# open paper from papis using dmenu
-bindsym $mod+o exec $HOME/.config/dmenu/scripts/dmenu_papis.sh
-# emoji dmenu from lukesmithxyz
-bindsym $mod+e exec $HOME/.config/dmenu/scripts/dmenu_unicode.sh
+bindsym $mod+Shift+m exec --no-startup-id $HOME/.config/screenlayout/laptop.sh
 # pass menu
 bindsym $mod+Shift+p exec passmenu -c -l 20
 ############################################################
 #						Gaps                               #
 ############################################################
 #Remove Winodw Titlebars and set size of border(needed for gaps)
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 smart_borders on
 #smart_gaps on
 gaps inner 25
@@ -88,9 +72,6 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# check focus with flashfocus
-bindsym $mod+n exec --no-startup-id flash_window
 
 # toggle split
 bindsym $mod+z split toggle
@@ -184,23 +165,20 @@ bindsym XF86AudioPrev exec playerctl previous
 ############################################################
 #Autostart programs
 exec wal -R
-exec spotify
-exec franz
+exec ferdi
 exec signal-desktop
 exec compton
 exec udiskie
-exec caffeine
 exec blueman-applet
-exec plexmediaplayer
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #Set wallpaper
-exec_always $HOME/.config/i3/scripts/set_last_wp.sh
+exec_always $HOME/.local/bin/wm_set_last_wp
 
 #flashfocus
 #https://github.com/fennerm/flashfocus
-exec_always --no-startup-id flashfocus
+#exec_always --no-startup-id flashfocus
 
 exec $HOME/.local/bin/neomutt_run
 ###########################################################
@@ -215,11 +193,11 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="Chromium"] floating enable
+for_window [class="zoom"] floating enable
 
 # Set programs to always open in certain workspaces
 for_window [class="Spotify"] move to scratchpad
 for_window [class="plexmediaplayer"] move to scratchpad
-assign [class="Franz"] 9
+assign [class="Ferdi"] 9
 assign [class="Signal"] 9
 for_window [ class="St" title="neomutt"] move to workspace 10
-for_window [ class="St" title="newsboat"] move to workspace 10

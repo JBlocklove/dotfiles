@@ -16,7 +16,7 @@ snippet article "\documentclass{article}...template"
 
 \\title{${1}}
 \\author{${2}}
-\\date{`date +%b\ %d,%Y`}
+\\date{\\today}
 
 \\begin{document}
 \\begin{titlepage}
@@ -125,22 +125,50 @@ snippet beamer "\beamer base template"
 % Fixes how references look
 \\setbeamertemplate{bibliography item}{\insertbiblabel}
 
-\\usetheme[height=10mm]{Rochester}
-\\usecolortheme{dove}
-\\definecolor{darkred}{rgb}{0.55, 0.0, 0.0}
-\\definecolor{purpleish}{HTML}{483EEB}
-\\definecolor{greenish}{HTML}{57f4bd}
-\\setbeamercolor{frametitle}{bg=darkred, fg=white}
+\usetheme[height=6mm]{Rochester}
+\usecolortheme{seagull}
+
+%% PURPLE COLORS
+\\definecolor{darkpurple}{HTML}{750491}
+\\setbeamercolor{frametitle}{bg=darkpurple, fg=white}
 \\setbeamertemplate{itemize items}[circle]
-\\setbeamercolor{title}{bg=darkred, fg=white}
-\\setbeamercolor{itemize item}{fg=darkred}
-\\setbeamercolor{itemize subitem}{fg=darkred}
-\\setbeamercolor{enumerate item}{fg=darkred}
-\\setbeamercolor{enumerate subitem}{fg=darkred}
+\\setbeamercolor{title}{bg=darkpurple,fg=white}
+\\setbeamercolor{itemize item}{fg=darkpurple}
+\\setbeamercolor{itemize subitem}{fg=darkpurple}
+\\setbeamercolor{enumerate item}{fg=darkpurple}
+\\setbeamercolor{enumerate subitem}{fg=darkpurple}
 \\setbeamerfont{button}{size=\large}
 \\setbeamercolor{button}{bg=white,fg=black}
-\\setbeamercolor{section number projected}{bg=darkred,fg=white}
-\\setbeamercolor{subsection number projected}{bg=darkred,fg=white}
+\\setbeamercolor{section number projected}{bg=darkpurple,fg=white}
+\\setbeamercolor{subsection number projected}{bg=darkpurple,fg=white}
+
+%%% BLUE COLORS
+%\definecolor{bleudefrance}{rgb}{0.19, 0.55, 0.91}
+%\setbeamercolor{frametitle}{bg=bleudefrance, fg=white}
+%\setbeamertemplate{itemize items}[circle]
+%\setbeamercolor{title}{bg=bleudefrance,fg=white}
+%\setbeamercolor{itemize item}{fg=bleudefrance}
+%\setbeamercolor{itemize subitem}{fg=bleudefrance}
+%\setbeamercolor{enumerate item}{fg=bleudefrance}
+%\setbeamercolor{enumerate subitem}{fg=bleudefrance}
+%\setbeamerfont{button}{size=\large}
+%\setbeamercolor{button}{bg=white,fg=black}
+%\setbeamercolor{section number projected}{bg=bleudefrance,fg=white}
+%\setbeamercolor{subsection number projected}{bg=bleudefrance,fg=white}
+
+%% MAROON COLORS
+%\definecolor{darkred}{rgb}{0.55, 0.0, 0.0}
+%\setbeamercolor{frametitle}{bg=darkred, fg=white}
+%\setbeamertemplate{itemize items}[circle]
+%\setbeamercolor{title}{bg=darkred, fg=white}
+%\setbeamercolor{itemize item}{fg=darkred}
+%\setbeamercolor{itemize subitem}{fg=darkred}
+%\setbeamercolor{enumerate item}{fg=darkred}
+%\setbeamercolor{enumerate subitem}{fg=darkred}
+%\setbeamerfont{button}{size=\large}
+%\setbeamercolor{button}{bg=white,fg=black}
+%\setbeamercolor{section number projected}{bg=darkred,fg=white}
+%\setbeamercolor{subsection number projected}{bg=darkred,fg=white}
 
 \\graphicspath{{Figures/}}
 
@@ -169,6 +197,20 @@ $0
 \\end{document}
 endsnippet
 
+snippet circuit "circuitikz template"
+\\documentclass{standalone}
+\\usepackage[nooldvoltagedirection]{circuitikz}
+\\begin{document}
+	\\begin{circuitikz} \\draw
+		${1:(0,2) node[or port] (or1) {0}}
+		${2:(or1.in 1) node[left=0.25em] (A) {A}}
+		${3:(or1.in 2) node[left=0.25em] (B) {B}}
+		;
+	\\end{circuitikz}
+
+\\end{document}
+endsnippet
+
 snippet frame "\basic frame setup"
 \\frame{\frametitle{$1}
 	$0
@@ -176,10 +218,10 @@ snippet frame "\basic frame setup"
 endsnippet
 
 snippet note "\frame note setup"
-\\note{
+\\note{%
 	\\begin{itemize}
 		\\item $0
-\\end{itemize}
+	\\end{itemize}
 }
 endsnippet
 

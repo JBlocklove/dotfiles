@@ -23,7 +23,7 @@ font-1 = siji:pixelsize=9;0
 tray-position = right
 #modules-center = isrunning-nordvpn
 modules-left = i3
-modules-right = wireless-network wired-network battery date
+modules-right = wireless-network battery date
 
 [bar/bottom]
 #monitor = HDMI-1

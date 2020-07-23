@@ -1,11 +1,11 @@
-set recolor
+#set recolor
 
 # light grey
 #set recolor-lightcolor "#cccccc"
 #set recolor-darkcolor "#000000"
 
 # nord
-set recolor-darkcolor "#D8DEE9"
-set recolor-lightcolor "#2E3440"
+#set recolor-darkcolor "#D8DEE9"
+#set recolor-lightcolor "#2E3440"
 
 set selection-clipboard "clipboard"
