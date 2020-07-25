@@ -59,11 +59,6 @@ function cdls()
   fi
 }
 
-function clock() {
-    figlet -f big -W "$(date +%l:%M:%S)" | toilet -f term --gay | perl -pe "s,0;1,01,g"
-}
-
-
 # less coloring
 export LESS=-R
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold

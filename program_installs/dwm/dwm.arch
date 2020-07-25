@@ -1,0 +1,8 @@
+#!/bin/bash
+
+########################################
+# Arch install of st dependencies
+########################################
+
+echo "Installing dwm build dependencies"
+sudo pacman -S --noconfirm xorg-server libX11 libXft libxinerama
