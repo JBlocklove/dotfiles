@@ -6,16 +6,25 @@
 # Many aspects stolen from www.github.com/Serubin/dotfiles
 ##################################
 
-# Takes in input (yes or no) defaults to yes
+# Takes in input (yes or no) defaults to yes, but can default to no with a parameter
 function getInputBoolean() {
+	if [[ $2 == "no" ]]; then
         read -p "${1} (Y/n) " in;
-        if [ "$in" == "y" ]; then
-                echo 1;
-        elif [ "$in" == "n" ]; then
-                echo 0;
-        else
-                echo 1;
-        fi
+	else
+        read -p "${1} (y/N) " in;
+	fi
+
+    if [ "$in" == "y" ]; then
+            echo 1;
+    elif [ "$in" == "n" ]; then
+            echo 0;
+    else
+		if [[ $2 == "no" ]]; then
+			echo 0;
+		else
+			echo 1;
+		fi
+    fi
 }
 
 # Uses lsb-release to determine what OS is being used
@@ -39,6 +48,22 @@ function detectos(){
 	# Parses out specific distro
 	export DISTRO=`echo $DISTRO_RAW | perl -lne '/(Ubuntu)|(Debian)|(Darwin)|(Arch)|(Fedora)/gi && print $&' | head -n1`
 
+}
+
+function addDeps(){
+	echo Installing GNU Stow as a dependency for all package linking
+	case $DISTRO in
+		"Arch")
+			sudo pacman --noconfirm --needed -S stow
+			;;
+		"Ubuntu")
+			sudo apt install -y stow
+			;;
+		*)
+			echo "NON-SUPPORTED OS -- Please install Stow if able"
+			continue=`getInputBoolean "NON-SUPPORTED OS -- Please install GNU Stow if able. Continue?" "no"`
+			;;
+		esac
 }
 
 export DOTFILES_INSTALL="$(dirname $(readlink -f $0))"
@@ -68,6 +93,8 @@ echo "--------- Installing -----------"
 
 # get OS distro
 detectos
+
+addDeps
 
 echo ""
 
