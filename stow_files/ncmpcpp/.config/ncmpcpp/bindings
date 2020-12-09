@@ -1,0 +1,91 @@
+# HJKL keys. vim-like keybinds
+def_key "l"
+  next_column
+
+def_key "h"
+  previous_column
+
+def_key "k"
+  scroll_up
+
+def_key "j"
+  scroll_down
+
+def_key "H"
+    seek_backward
+
+def_key "J"
+    scroll_down
+    scroll_down
+    scroll_down
+
+def_key "K"
+    scroll_up
+    scroll_up
+    scroll_up
+
+def_key "L"
+    seek_forward
+
+# gg (Jump to top)
+def_key "g"
+    execute_command
+
+def_command "g" [immediate]
+    move_home
+
+# G (Jump to bottom)
+def_key "G"
+    move_end
+
+def_key "ctrl-f"
+	page_down
+def_key "ctrl-b"
+	page_up
+
+def_key "f"
+	apply_filter
+
+# next/prev search result
+def_key "n"
+    next_found_item
+
+def_key "N"
+    previous_found_item
+
+def_key "l"
+	jump_to_playlist_editor
+def_key "l"
+	enter_directory
+def_key "h"
+	jump_to_parent_directory
+
+def_key "1"
+  show_playlist
+def_key "2"
+	show_browser
+def_key "2"
+	change_browse_mode
+def_key "3"
+  show_search_engine
+def_key "3"
+  reset_search_engine
+def_key "4"
+	show_playlist_editor
+def_key "5"
+	show_media_library
+def_key "5"
+  toggle_media_library_columns_mode
+def_key "6"
+	dummy
+def_key "7"
+	dummy
+def_key "8"
+	dummy
+
+def_key "d"
+  delete_playlist_items
+def_key "d"
+  delete_browser_items
+def_key "d"
+  delete_stored_playlist

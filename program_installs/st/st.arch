@@ -5,4 +5,4 @@
 ########################################
 
 echo "Installing st build dependencies"
-sudo pacman -S --noconfirm fontconfig libX11 libXft
+sudo pacman -S --noconfirm fontconfig libx11 libxft
