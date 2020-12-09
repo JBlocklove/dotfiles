@@ -1,0 +1,43 @@
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.local/share/lyrics
+mpd_host = localhost
+mpd_port = 6600
+mpd_connection_timeout = 15
+mpd_music_dir = ~/Music/library
+system_encoding = "utf-8"
+
+song_list_format = {$4%a - }{%t}$R{$3(%l)$9}
+song_status_format = {{$b$2%A$8 - }{$4%t}}
+#song_status_format = "$b$7 $2%a $8- $3%b $8- $8%t "
+song_library_format = {%n - }{%t}|{%f}
+current_item_prefix = $(yellow)$r
+current_item_suffix = $/r$(end)
+current_item_inactive_column_prefix = $(white)$r
+current_item_inactive_column_suffix = $/r$(end)
+
+playlist_display_mode = columns
+
+playlist_editor_display_mode = columns
+
+browser_display_mode = columns
+
+search_engine_display_mode = columns
+
+###progressbar_look = =>
+###progressbar_look="─█·"
+###progressbar_look="─┅─"
+###progressbar_look="─╼ "
+###progressbar_look="▪▪▫"
+progressbar_look="┅┅┄"
+
+startup_screen = "browser"
+external_editor = nvim
+use_console_editor = yes
+
+song_columns_list_format = "(7)[yellow]{n} (23)[red]{a} (26)[yellow]{t} (38)[green]{b} (4)[blue]{l}"
+
+execute_on_song_change="notify-send "Now playing" "$(mpc current)""
+
+default_find_mode = wrapped
+
+browser_sort_format = "%n"
