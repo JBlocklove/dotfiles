@@ -1,0 +1,43 @@
+--------- Installing -----------
+
+Installing git...
+Git: A version control system
+
+Attempting to install git...
+ there is nothing to do
+/home/jason/.dotfiles
+Installing htop...
+Htop: Top for humans
+
+Attempting to install htop...
+ there is nothing to do
+/home/jason/.dotfiles
+Installing st...
+st: Suckless Terminal
+
+Attempting to install st...
+Installing st build dependencies
+~/.dotfiles ~/.dotfiles
+c99 -I/usr/X11R6/include  `pkg-config --cflags fontconfig`  `pkg-config --cflags freetype2` -DVERSION=\"0.8.2\" -D_XOPEN_SOURCE=600  -O1 -c st.c
+c99 -I/usr/X11R6/include  `pkg-config --cflags fontconfig`  `pkg-config --cflags freetype2` -DVERSION=\"0.8.2\" -D_XOPEN_SOURCE=600  -O1 -c x.c
+~/.dotfiles
+/home/jason/.dotfiles
+Installing tmux...
+Tmux: Terminal Multiplexer
+
+Attempting to install tmux...
+ there is nothing to do
+/home/jason/.dotfiles
+Installing dwm...
+dwm: Suckless Dynamic Window Manager
+
+Attempting to install dwm...
+Installing dwm build dependencies
+~/.dotfiles ~/.dotfiles
+dwm build options:
+CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os -I/usr/X11R6/include -I/usr/include/freetype2 -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION="6.2" -DXINERAMA
+LDFLAGS  = -L/usr/X11R6/lib -lX11 -lXinerama -lfontconfig -lXft -lXrender
+CC       = cc
+cc -c -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os -I/usr/X11R6/include -I/usr/include/freetype2 -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\"6.2\" -DXINERAMA drw.c
+~/.dotfiles
+/home/jason/.dotfiles
