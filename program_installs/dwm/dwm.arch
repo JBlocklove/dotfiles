@@ -5,4 +5,4 @@
 ########################################
 
 echo "Installing dwm build dependencies"
-sudo pacman -S --noconfirm xorg-server libX11 libXft libxinerama
+sudo pacman -S --noconfirm xorg-server libx11 libxft libxinerama
