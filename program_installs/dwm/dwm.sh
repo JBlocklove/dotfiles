@@ -14,5 +14,5 @@ popd
 rm -rf /tmp/st
 
 cd $DOTFILES_INSTALL/stow_files
-stow --verbose -t ~/ dwm wm
+stow --verbose -t ~/ dwm wm pywal
 cd -
