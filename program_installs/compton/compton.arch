@@ -7,7 +7,7 @@
 ###########################
 
 echo "Installing compton dependencies"
-sudo pacman -S --noconfirm --needed libx11 libxcomposite libxdamage libxfixes libxext libxrender libxrandr libxinerama xproto xorg-xprop xorg-xwininfo libconfig libdrm asciidoc
+sudo pacman -S --noconfirm --needed libx11 libxcomposite libxdamage libxfixes libxext libxrender libxrandr libxinerama xorg-xprop xorg-xwininfo libconfig libdrm asciidoc
 
 echo "Making compton from the git repo"
 pushd .

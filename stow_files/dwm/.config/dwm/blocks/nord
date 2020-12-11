@@ -1,6 +1,6 @@
 #!/bin/sh
 
-nord_status="$(nordvpn status | awk 'NR=1{print $4;exit;}')"
+nord_status="$(nordvpn status | awk '$2 ~ /Status:/ {print $3}')"
 
 if [[ $nord_status == "Connected" ]]; then
 	nord_server="$(nordvpn status | awk '$3 ~ /nordvpn.com/ {print $3}')"

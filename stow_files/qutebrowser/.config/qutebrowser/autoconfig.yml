@@ -6,5 +6,9 @@
 
 config_version: 2
 settings:
-  content.media_capture:
-    https://hangouts.google.com: true
+  content.media.audio_capture:
+    https://telehealth.px.athena.io: true
+  content.media.audio_video_capture:
+    https://telehealth.px.athena.io: true
+  content.media.video_capture:
+    https://telehealth.px.athena.io: true
