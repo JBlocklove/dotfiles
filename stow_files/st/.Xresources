@@ -8,7 +8,8 @@ st.font: Inconsolata:size=9:antialias=true:autohint=true
 st.fontalt0: siji:size=8:antialias=true:autohint=true
 st.alpha: 0.70;
 
-dmenu.font: Inconsolata:size=9:antialias=true:autohint=true
+!dmenu.font: Inconsolata:size=9:antialias=true:autohint=true
+dmenu.font: IBM Plex Mono:size=8:antialias=true:autohint=true
 dmenu.background: #2e3440
 dmenu.foreground: #d8dee9
 dmenu.selbackground:#2e3440

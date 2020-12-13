@@ -5,4 +5,4 @@
 ########################################
 
 echo "Installing dwm build dependencies"
-sudo pacman -S --noconfirm xorg xorg-xinit xorg-xmodmap libx11 libxft libxinerama feh python-pywal
+sudo pacman -S --noconfirm xorg xorg-xinit xorg-xmodmap libx11 libxft libxinerama feh python-pywal i3lock ttf-inconsolata
