@@ -1,0 +1,9 @@
+#!/bin/sh
+
+nord_status="$(nordvpn status | awk '$2 ~ /Status:/ {print $3}')"
+
+if [[ $nord_status == "Connected" ]]; then
+	nordvpn disconnect
+else
+	nordvpn connect United_States
+fi
