@@ -7,4 +7,4 @@
 
 echo "Installing dunst"
 #Install dunst
-sudo pacman -S --noconfirm dunst dunstify
+sudo pacman -S --noconfirm dunst libnotify

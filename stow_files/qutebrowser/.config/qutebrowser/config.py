@@ -11,7 +11,7 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 config.bind('<Ctrl-Shift-m>','hint links spawn ~/.config/qutebrowser/scripts/umpv {hint-url}')
 
 # qute-pass userscript
-config.bind('<Ctrl-Shift-p>','spawn --userscript qute-pass')
+config.bind('<Ctrl-Shift-p>','spawn --userscript qute-pass -d "/usr/local/bin/dmenu -c -l 20"')
 
 # Searchengines
 c.url.searchengines = {"DEFAULT": "https://duckduckgo.com/?q={}", "aw": "https://wiki.archlinux.org/?search={}", "yt": "https://youtube.com/results?search_query={}", "aur": "https://aur.archlinux.org/packages/?O=0&K={}", "gh": "https://github.com/search?q={}"}
