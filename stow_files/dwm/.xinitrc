@@ -39,12 +39,12 @@ wm_set_last_wp &
 dwm_statusbar &
 
 mopidy &
-sshfs valinor:/data_pool/plex/media/Music ~/Music/remote_lib -o reconnect &
+sshfs erebor:/homes/media/Music ~/Music/remote_lib -o reconnect &
 
 blueman-applet &
 #
 #cd $HOME
-ferdi &
+discord &
 signal-desktop-beta &
 neomutt_run &
 
