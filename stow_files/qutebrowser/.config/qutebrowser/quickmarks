@@ -41,3 +41,5 @@ coursera https://www.coursera.org/
 lazy http://192.168.1.128:5299/home
 calibre_web http://192.168.1.128:8083/
 calibre http://192.168.1.128:8080/#/client/bXljb25maWcAYwBub2F1dGg=
+bazarr http://192.168.1.128:6767/settings/general
+binance https://www.binance.us/en/usercenter/dashboard/overview
