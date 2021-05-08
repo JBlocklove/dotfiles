@@ -45,7 +45,7 @@ blueman-applet &
 #
 #cd $HOME
 discord &
-signal-desktop-beta &
+signal-desktop &
 neomutt_run &
 
 while type dwm >/dev/null ; do dwm && continue || break ; done

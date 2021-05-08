@@ -4,4 +4,4 @@
 # Arch install for ranger
 ############################
 
-sudo pacman -S --noconfirm --needed ranger
+sudo pacman -S --noconfirm --needed ranger ueberzug
