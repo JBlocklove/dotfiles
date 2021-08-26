@@ -100,7 +100,14 @@ function gen_entries()
 SEL=$( gen_entries | dmenu -c -l 10 -p "monitor:" | awk '{print $1}' )
 
 # Call xrandr
-if [[ $list =~ (^|[[:space:]])$x($|[[:space:]]) ]]; then
+for layout in "${layouts[@]}"; do
+	if [[ $SEL = "$layout" ]]; then
+		match=1
+		break
+	fi
+done
+
+if [[ $match == 1 ]]; then
 	$XDG_CONFIG_HOME/screenlayout/$SEL.sh
 else
 	$( ${COMMANDS[$SEL]} )

@@ -14,10 +14,14 @@ source ~/.config/nvim/configs/sniprc.vim
 source ~/.config/nvim/configs/map.vim
 source ~/.config/nvim/configs/general.vim
 source ~/.config/nvim/configs/searching.vim
-source ~/.config/nvim/configs/ycmrc.vim
+"source ~/.config/nvim/configs/ycmrc.vim
 source ~/.config/nvim/configs/lightLinerc.vim
 source ~/.config/nvim/configs/filetype.vim
 source ~/.config/nvim/configs/undo.vim
 source ~/.config/nvim/configs/nerdtree.vim
 source ~/.config/nvim/configs/quickscope.vim
 "source ~/.config/nvim/configs/statusline.vim
+"source ~/.config/nvim/configs/ddcrc.vim
+source ~/.config/nvim/configs/completion.vim
+source ~/.config/nvim/configs/lsp.vim
+luafile ~/.config/nvim/configs/lsp.lua

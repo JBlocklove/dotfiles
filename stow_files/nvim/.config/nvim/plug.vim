@@ -8,7 +8,12 @@ Plug 'SirVer/ultisnips'
 " Collection of useful snippets
 Plug 'honza/vim-snippets'
 " Completer for vim
-Plug 'ycm-core/YouCompleteMe'
+"Plug 'ycm-core/YouCompleteMe'
+"Plug 'Shougo/ddc.vim'
+"Plug 'vim-denops/denops.vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+"Plug 'hrsh7th/nvim-compe'
 " Syntax checker
 Plug 'w0rp/ale'
 " Pretty statusline

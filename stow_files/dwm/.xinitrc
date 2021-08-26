@@ -40,6 +40,7 @@ dwm_statusbar &
 
 mopidy &
 sshfs erebor:/homes/media/Music ~/Music/remote_lib -o reconnect &
+sshfs erebor:/homes/media/Podcasts ~/Music/remote_podcasts -o reconnect &
 
 blueman-applet &
 #

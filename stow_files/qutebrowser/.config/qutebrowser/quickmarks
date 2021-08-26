@@ -22,7 +22,6 @@ suckless https://suckless.org/
 spotify https://open.spotify.com/
 ieee https://ieeexplore-ieee-org.ezproxy.rit.edu/Xplore/home.jsp
 wolfram https://www.wolframalpha.com/
-dnd https://thetrove.net/Books/Dungeons%20&%20Dragons/5th%20Edition%20(5e)/Core/
 dropout https://www.dropout.tv/series
 albums https://www.listchallenges.com/1001-albums-you-must-hear-before-you-die-2016
 patient_portal https://21236.portal.athenahealth.com/?section=health&sub=care_summaries&eidh=d4caedeeefbe4e9cd70811f97ca19e71&athenareferrer=EPATIENTCARESUMMARY_BASICEPATIENTCARESUMMARY_CTA&&document=27543&CSRFPROTECT=d6213b2672dc3127b6a9f0d6211c33c7167bac205896988db86bc7191e1ead91
@@ -43,3 +42,9 @@ calibre_web http://192.168.1.128:8083/
 calibre http://192.168.1.128:8080/#/client/bXljb25maWcAYwBub2F1dGg=
 bazarr http://192.168.1.128:6767/settings/general
 binance https://www.binance.us/en/usercenter/dashboard/overview
+gitlab https://gitlab.com/
+trezor_wallet https://wallet.trezor.io/#/
+trezor_suite https://suite.trezor.io/web/
+foundry http://192.168.1.162:30000/join
+self_gitlab http://96.244.220.22/users/sign_in
+dnd_background https://www.skullsplitterdice.com/pages/background-and-ambiance-music-for-dnd-game-night

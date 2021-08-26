@@ -14,7 +14,7 @@ bind index,pager g noop
 bind index,pager M noop
 bind index,pager C noop
 bind index gg first-entry
-macro index o "<shell-escape>timeout 120 mailsync -V jason.blocklove@gmail.com<enter>" "run mbsync to sync jason"
+macro index o "<shell-escape>timeout 120 mailsync jason.blocklove@gmail.com<enter>" "run mbsync to sync jason"
 unmailboxes *
 unalternates *
 unset signature

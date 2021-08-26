@@ -6,9 +6,5 @@
 
 config_version: 2
 settings:
-  content.media.audio_capture:
-    https://telehealth.px.athena.io: true
-  content.media.audio_video_capture:
-    https://telehealth.px.athena.io: true
-  content.media.video_capture:
-    https://telehealth.px.athena.io: true
+  content.notifications.enabled:
+    https://www.reddit.com: false
