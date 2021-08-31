@@ -1,4 +1,4 @@
-vim.g.UltiSnipsSnippetDir = "~/.config/nvim/snippets/"
+vim.g.UltiSnipsSnippetDir = "~/.config/nvim/UltiSnips/"
 
 vim.g.vhdl_indent_genportmap = 0
 vim.g.HDL_Clock_Period = 10

@@ -228,7 +228,6 @@ return packer.startup({function(use)
 
 	use {
 		"SirVer/ultisnips",
-		opt = "true",
 		config = function()
 			require("plugin_settings.ultisnips").setup()
 		end,
@@ -236,7 +235,62 @@ return packer.startup({function(use)
 
 	use {
 		"honza/vim-snippets",
-		opt = "true",
+	}
+
+	use {
+		"rockerBOO/boo-colorscheme-nvim",
+	}
+
+	use {
+		"marko-cerovac/material.nvim",
+		config = function()
+			vim.g.material_style = "deep ocean"
+		end
+	}
+
+	use {
+		"bluz71/vim-nightfly-guicolors"
+	}
+
+	use {
+		"Th3Whit3Wolf/one-nvim"
+	}
+
+	use {
+		"arcticicestudio/nord-vim"
+	}
+
+	use {
+		"Th3Whit3Wolf/space-nvim"
+	}
+
+	use {
+		"novakne/kosmikoa.nvim"
+	}
+
+	use {
+		"fenetikm/falcon"
+	}
+
+	use {
+		"MordechaiHadad/nvim-papadark",
+		requires = {"rktjmp/lush.nvim"}
+	}
+
+	use {
+		"shaunsingh/moonlight.nvim"
+	}
+
+	use {
+		"projekt0n/github-nvim-theme"
+	}
+
+	use {
+		"Pocco81/Catppuccino.nvim"
+	}
+
+	use {
+		"rose-pine/neovim"
 	}
 end,
 config = {

@@ -8,7 +8,7 @@ cmd [[ set spellfile=~/.config/nvim/spell/en.utf-8.add ]]
 
 nvim = {
   leader = "\\",
-  colorscheme = "spacegray",
+  colorscheme = "dark_catppuccino",
   line_wrap_cursor_movement = false,
   transparent_window = true,
   format_on_save = true,

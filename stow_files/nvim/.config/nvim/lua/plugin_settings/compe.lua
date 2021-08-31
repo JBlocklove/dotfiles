@@ -35,15 +35,13 @@ M.config = function()
       snippets_nvim = false,
       ultisnips = { kind = "(Snippet)" }, --true,
       treesitter = false,
-      emoji = { kind = "(Emoji)", filetypes = { "markdown", "text" } },
-      -- for emoji press : (idk if that in compe tho)
     },
 
     keymap = {
       values = {
         insert_mode = {
-          ["<C-j>"] = { 'pumvisible() ? "<C-n>" : "<Tab>"', { silent = true, noremap = true, expr = true } },
-          ["<C-k>"] = { 'pumvisible() ? "<C-p>" : "<S-Tab>"', { silent = true, noremap = true, expr = true } },
+          -- ["<C-j>"] = { 'pumvisible() ? "<C-n>" : "<Tab>"', { silent = true, noremap = true, expr = true } },
+          -- ["<C-k>"] = { 'pumvisible() ? "<C-p>" : "<S-Tab>"', { silent = true, noremap = true, expr = true } },
           ["<C-Space>"] = { "compe#complete()", { silent = true, noremap = true, expr = true } },
           ["<C-e>"] = { "compe#close('<C-e>')", { silent = true, noremap = true, expr = true } },
           ["<C-f>"] = { "compe#scroll({ 'delta': +4 })", { silent = true, noremap = true, expr = true } },
