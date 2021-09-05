@@ -8,12 +8,11 @@ cmd [[ set spellfile=~/.config/nvim/spell/en.utf-8.add ]]
 
 nvim = {
   leader = "\\",
-  colorscheme = "dark_catppuccino",
+  colorscheme = "moonlight",
+  galaxyline_pallette = {},
   line_wrap_cursor_movement = false,
   transparent_window = true,
   format_on_save = true,
-  vsnip_dir = CONFIG_PATH .. "snippets",
-  --database = { save_location = "~/.config/lunarvim_db", auto_execute = 1 },
   keys = {},
 
   -- TODO why do we need this?
@@ -30,9 +29,6 @@ nvim = {
     rooter = {},
     galaxyline = {},
     bufferline = {},
-    dap = {},
-    dashboard = {},
-    --terminal = {},
   },
 
   lsp = {
@@ -77,7 +73,7 @@ nvim = {
       },
       virtual_text = {
         prefix = "=>",
-        spacing = 0,
+        spacing = 2,
       },
       underline = true,
       severity_sort = true,
@@ -348,8 +344,6 @@ require("plugin_settings.which-key").config()
 require "plugin_settings.status_colors"
 require("plugin_settings.gitsigns").config()
 require("plugin_settings.compe").config()
---require("plugin_settings.dashboard").config()
---require("plugin_settings.dap").config()
 require("plugin_settings.telescope").config()
 require("plugin_settings.treesitter").config()
 require("plugin_settings.nvimtree").config()
@@ -412,8 +406,6 @@ local options = {
 
 opt.shortmess:append "c"
 
-cmd('highlight LineNr ctermfg=grey')
-
 -- Loop to set all options
 for k, v in pairs(options) do
 	vim.opt[k] = v
@@ -427,4 +419,9 @@ if nvim.transparent_window then
 	cmd "au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none"
 	cmd "au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none"
 	cmd "let &fcs='eob: '"
+end
+
+if nvim.colorscheme == "moonlight" then
+	cmd "au ColorScheme * hi Folded ctermfg=233 guifg=#a1abe0"
+	vim.g.moonlight_disable_background = true
 end

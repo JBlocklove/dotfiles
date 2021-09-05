@@ -84,23 +84,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/jason/.local/share/nvim/site/pack/packer/opt/barbar.nvim"
   },
-  ["boo-colorscheme-nvim"] = {
-    loaded = true,
-    path = "/home/jason/.local/share/nvim/site/pack/packer/start/boo-colorscheme-nvim"
-  },
-  falcon = {
-    loaded = true,
-    path = "/home/jason/.local/share/nvim/site/pack/packer/start/falcon"
-  },
   ["galaxyline.nvim"] = {
     config = { "\27LJ\1\2™\1\0\0\3\0\6\0\0184\0\0\0%\1\1\0>\0\2\0014\0\2\0007\0\3\0007\0\4\0007\0\5\0\15\0\0\0T\1\b€4\0\2\0007\0\3\0007\0\4\0007\0\5\0004\1\0\0%\2\4\0>\1\2\0=\0\0\1G\0\1\0\19on_config_done\15galaxyline\fbuiltin\tnvim\31plugin_settings.galaxyline\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jason/.local/share/nvim/site/pack/packer/opt/galaxyline.nvim"
-  },
-  ["github-nvim-theme"] = {
-    loaded = true,
-    path = "/home/jason/.local/share/nvim/site/pack/packer/start/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
     config = { "\27LJ\1\2£\1\0\0\3\0\a\0\0204\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0007\0\5\0007\0\6\0\15\0\0\0T\1\b€4\0\3\0007\0\4\0007\0\5\0007\0\6\0004\1\0\0%\2\5\0>\1\2\0=\0\0\1G\0\1\0\19on_config_done\rgitsigns\fbuiltin\tnvim\nsetup\29plugin_settings.gitsigns\frequire\0" },
@@ -108,20 +96,8 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/jason/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
   },
-  ["kosmikoa.nvim"] = {
-    loaded = true,
-    path = "/home/jason/.local/share/nvim/site/pack/packer/start/kosmikoa.nvim"
-  },
-  ["lush.nvim"] = {
-    loaded = true,
-    path = "/home/jason/.local/share/nvim/site/pack/packer/start/lush.nvim"
-  },
-  ["material.nvim"] = {
-    config = { "\27LJ\1\2;\0\0\2\0\4\0\0054\0\0\0007\0\1\0%\1\3\0:\1\2\0G\0\1\0\15deep ocean\19material_style\6g\bvim\0" },
-    loaded = true,
-    path = "/home/jason/.local/share/nvim/site/pack/packer/start/material.nvim"
-  },
   ["moonlight.nvim"] = {
+    config = { "\27LJ\1\2G\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\30plugin_settings.moonlight\frequire\0" },
     loaded = true,
     path = "/home/jason/.local/share/nvim/site/pack/packer/start/moonlight.nvim"
   },
@@ -132,10 +108,6 @@ _G.packer_plugins = {
   ["nlsp-settings.nvim"] = {
     loaded = true,
     path = "/home/jason/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim"
-  },
-  ["nord-vim"] = {
-    loaded = true,
-    path = "/home/jason/.local/share/nvim/site/pack/packer/start/nord-vim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -168,10 +140,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/jason/.local/share/nvim/site/pack/packer/opt/nvim-lspinstall"
   },
-  ["nvim-papadark"] = {
-    loaded = true,
-    path = "/home/jason/.local/share/nvim/site/pack/packer/start/nvim-papadark"
-  },
   ["nvim-tree.lua"] = {
     config = { "\27LJ\1\2´\1\0\0\3\0\b\0\0204\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0007\0\5\0007\0\6\0\15\0\0\0T\1\b€4\0\3\0007\0\4\0007\0\5\0007\0\6\0004\1\0\0%\2\a\0>\1\2\0=\0\0\1G\0\1\0\21nvim-tree.config\19on_config_done\rnvimtree\fbuiltin\tnvim\nsetup\29plugin_settings.nvimtree\frequire\0" },
     loaded = true,
@@ -181,10 +149,6 @@ _G.packer_plugins = {
     config = { "\27LJ\1\2¿\1\0\0\3\0\b\0\0204\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0007\0\5\0007\0\6\0\15\0\0\0T\1\b€4\0\3\0007\0\4\0007\0\5\0007\0\6\0004\1\0\0%\2\a\0>\1\2\0=\0\0\1G\0\1\0\28nvim-treesitter.configs\19on_config_done\15treesitter\fbuiltin\tnvim\nsetup\31plugin_settings.treesitter\frequire\0" },
     loaded = true,
     path = "/home/jason/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
-  },
-  ["one-nvim"] = {
-    loaded = true,
-    path = "/home/jason/.local/share/nvim/site/pack/packer/start/one-nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -203,10 +167,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jason/.local/share/nvim/site/pack/packer/start/quick-scope"
   },
-  ["space-nvim"] = {
-    loaded = true,
-    path = "/home/jason/.local/share/nvim/site/pack/packer/start/space-nvim"
-  },
   ["telescope.nvim"] = {
     config = { "\27LJ\1\2¥\1\0\0\3\0\a\0\0204\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0007\0\5\0007\0\6\0\15\0\0\0T\1\b€4\0\3\0007\0\4\0007\0\5\0007\0\6\0004\1\0\0%\2\5\0>\1\2\0=\0\0\1G\0\1\0\19on_config_done\14telescope\fbuiltin\tnvim\nsetup\30plugin_settings.telescope\frequire\0" },
     loaded = true,
@@ -216,10 +176,6 @@ _G.packer_plugins = {
     config = { "\27LJ\1\2G\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\30plugin_settings.ultisnips\frequire\0" },
     loaded = true,
     path = "/home/jason/.local/share/nvim/site/pack/packer/start/ultisnips"
-  },
-  ["vim-nightfly-guicolors"] = {
-    loaded = true,
-    path = "/home/jason/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors"
   },
   ["vim-rooter"] = {
     config = { "\27LJ\1\2“\1\0\0\2\0\a\0\0174\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0007\0\5\0007\0\6\0\15\0\0\0T\1\5€4\0\3\0007\0\4\0007\0\5\0007\0\6\0>\0\1\1G\0\1\0\19on_config_done\vrooter\fbuiltin\tnvim\nsetup\27plugin_settings.rooter\frequire\0" },
@@ -245,14 +201,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: quick-scope
-time([[Config for quick-scope]], true)
-try_loadstring("\27LJ\1\2I\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup plugin_settings.quick-scope\frequire\0", "config", "quick-scope")
-time([[Config for quick-scope]], false)
--- Config for: material.nvim
-time([[Config for material.nvim]], true)
-try_loadstring("\27LJ\1\2;\0\0\2\0\4\0\0054\0\0\0007\0\1\0%\1\3\0:\1\2\0G\0\1\0\15deep ocean\19material_style\6g\bvim\0", "config", "material.nvim")
-time([[Config for material.nvim]], false)
+-- Config for: moonlight.nvim
+time([[Config for moonlight.nvim]], true)
+try_loadstring("\27LJ\1\2G\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\30plugin_settings.moonlight\frequire\0", "config", "moonlight.nvim")
+time([[Config for moonlight.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\1\2¥\1\0\0\3\0\a\0\0204\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0007\0\5\0007\0\6\0\15\0\0\0T\1\b€4\0\3\0007\0\4\0007\0\5\0007\0\6\0004\1\0\0%\2\5\0>\1\2\0=\0\0\1G\0\1\0\19on_config_done\14telescope\fbuiltin\tnvim\nsetup\30plugin_settings.telescope\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\1\2´\1\0\0\3\0\b\0\0204\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0007\0\5\0007\0\6\0\15\0\0\0T\1\b€4\0\3\0007\0\4\0007\0\5\0007\0\6\0004\1\0\0%\2\a\0>\1\2\0=\0\0\1G\0\1\0\21nvim-tree.config\19on_config_done\rnvimtree\fbuiltin\tnvim\nsetup\29plugin_settings.nvimtree\frequire\0", "config", "nvim-tree.lua")
@@ -269,10 +225,10 @@ time([[Config for nvim-treesitter]], false)
 time([[Config for ultisnips]], true)
 try_loadstring("\27LJ\1\2G\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\30plugin_settings.ultisnips\frequire\0", "config", "ultisnips")
 time([[Config for ultisnips]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\1\2¥\1\0\0\3\0\a\0\0204\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0007\0\5\0007\0\6\0\15\0\0\0T\1\b€4\0\3\0007\0\4\0007\0\5\0007\0\6\0004\1\0\0%\2\5\0>\1\2\0=\0\0\1G\0\1\0\19on_config_done\14telescope\fbuiltin\tnvim\nsetup\30plugin_settings.telescope\frequire\0", "config", "telescope.nvim")
-time([[Config for telescope.nvim]], false)
+-- Config for: quick-scope
+time([[Config for quick-scope]], true)
+try_loadstring("\27LJ\1\2I\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup plugin_settings.quick-scope\frequire\0", "config", "quick-scope")
+time([[Config for quick-scope]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
@@ -282,7 +238,7 @@ vim.cmd [[au FileType tex ++once lua require("packer.load")({'vimtex'}, { ft = "
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'galaxyline.nvim', 'which-key.nvim', 'barbar.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'which-key.nvim', 'barbar.nvim', 'galaxyline.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim-lspinstall'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-compe'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'gitsigns.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]

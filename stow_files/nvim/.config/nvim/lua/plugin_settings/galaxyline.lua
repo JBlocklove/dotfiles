@@ -7,10 +7,12 @@ if not status_ok then
 end
 
 -- NOTE: if someone defines colors but doesn't have them then this will break
-local palette_status_ok, colors = pcall(require, nvim.colorscheme .. ".palette")
+local palette_status_ok, colors = pcall(require, nvim.galaxyline_pallette[nvim.colorscheme])
 if not palette_status_ok then
   colors = nvim.builtin.galaxyline.colors
 end
+
+--local colors = require(nvim.galaxyline_pallette)
 
 local condition = require "galaxyline.condition"
 local gls = gl.section
@@ -26,7 +28,7 @@ table.insert(gls.left, {
         v = colors.purple,
         [""] = colors.purple,
         V = colors.purple,
-        c = colors.magenta,
+        c = colors.red,
         no = colors.blue,
         s = colors.orange,
         S = colors.orange,

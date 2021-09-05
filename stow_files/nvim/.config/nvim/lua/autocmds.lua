@@ -42,7 +42,7 @@ nvim.autocommands = {
 		--{
 		--	"BufWritePre",
 		--	"*",
-		--	":%s/\s\+$//e$",
+		--	":%s/\\s\\+$//e$",
 		--},
 	},
 	_filetypechanges = {

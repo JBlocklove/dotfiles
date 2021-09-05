@@ -6,6 +6,8 @@ return packer.startup({function(use)
 
 	-- Packer can manage itself as an optional plugin
 	use { "wbthomason/packer.nvim" }
+
+	-- LSP
 	use { "neovim/nvim-lspconfig" }
 	use { "tamago324/nlsp-settings.nvim" }
 	use { "jose-elias-alvarez/null-ls.nvim" }
@@ -20,7 +22,7 @@ return packer.startup({function(use)
 			end
 		end,
 	}
-	
+
 	use { "nvim-lua/popup.nvim" }
 	use { "nvim-lua/plenary.nvim" }
 	-- Telescope
@@ -33,7 +35,7 @@ return packer.startup({function(use)
 	    end
 	  end,
 	}
-	
+
 	-- Completion & Snippets
 	use {
 		"hrsh7th/nvim-compe",
@@ -44,29 +46,19 @@ return packer.startup({function(use)
 				nvim.builtin.compe.on_config_done(require "compe")
 			end
 		end,
-		-- wants = "vim-vsnip",
-		-- requires = {
-		-- {
-		--	 "hrsh7th/vim-vsnip",
-		--	 wants = "friendly-snippets",
-		--	 event = "InsertCharPre",
-		-- },
-		-- {
-		--	 "rafamadriz/friendly-snippets",
-		--	 event = "InsertCharPre",
-		-- },
-		-- },
 	}
-	--use {
-	--	"hrsh7th/vim-vsnip",
-	--	-- wants = "friendly-snippets",
-	--	event = "InsertEnter",
-	--}
-	--use {
-	--	"rafamadriz/friendly-snippets",
-	--	event = "InsertCharPre",
-	--}
-	
+
+	use {
+		"SirVer/ultisnips",
+		config = function()
+			require("plugin_settings.ultisnips").setup()
+		end,
+	}
+
+	use {
+		"honza/vim-snippets",
+	}
+
 	-- Autopairs
 	use {
 		"windwp/nvim-autopairs",
@@ -79,7 +71,7 @@ return packer.startup({function(use)
 			end
 		end,
 	}
-	
+
 	-- Treesitter
 	use {
 		"nvim-treesitter/nvim-treesitter",
@@ -92,13 +84,10 @@ return packer.startup({function(use)
 			end
 		end,
 	}
-	
+
 	-- NvimTree
 	use {
 		"kyazdani42/nvim-tree.lua",
-		-- event = "BufWinOpen",
-		-- cmd = "NvimTreeToggle",
-		-- commit = "fd7f60e242205ea9efc9649101c81a07d5f458bb",
 		config = function()
 			require("plugin_settings.nvimtree").setup()
 			if nvim.builtin.nvimtree.on_config_done then
@@ -106,10 +95,9 @@ return packer.startup({function(use)
 			end
 		end,
 	}
-	
+
 	use {
 		"lewis6991/gitsigns.nvim",
-	
 		config = function()
 			require("plugin_settings.gitsigns").setup()
 			if nvim.builtin.gitsigns.on_config_done then
@@ -118,7 +106,7 @@ return packer.startup({function(use)
 		end,
 		event = "BufRead",
 	}
-	
+
 	-- Whichkey
 	use {
 		"folke/which-key.nvim",
@@ -130,7 +118,7 @@ return packer.startup({function(use)
 		end,
 		event = "BufWinEnter",
 	}
-	
+
 	-- Comments
 	--use {
 	--	"terrortylor/nvim-comment",
@@ -146,7 +134,7 @@ return packer.startup({function(use)
 	--		end
 	--	end,
 	--}
-	
+
 	-- vim-rooter
 	use {
 		"airblade/vim-rooter",
@@ -159,10 +147,7 @@ return packer.startup({function(use)
 		end,
 		disable = not nvim.builtin.rooter.active,
 	}
-	
-	-- Icons
-	--use { "kyazdani42/nvim-web-devicons" }
-	
+
 	-- Status Line and Bufferline
 	use {
 		"glepnir/galaxyline.nvim",
@@ -175,7 +160,7 @@ return packer.startup({function(use)
 		event = "BufWinEnter",
 		disable = not nvim.builtin.galaxyline.active,
 	}
-	
+
 	use {
 		"romgrk/barbar.nvim",
 		config = function()
@@ -187,20 +172,7 @@ return packer.startup({function(use)
 		event = "BufWinEnter",
 		disable = not nvim.builtin.bufferline.active,
 	}
-	
-	-- Dashboard
-	--use {
-	--	"ChristianChiarulli/dashboard-nvim",
-	--	event = "BufWinEnter",
-	--	config = function()
-	--		require("plugin_settings.dashboard").setup()
-	--		if nvim.builtin.dashboard.on_config_done then
-	--			nvim.builtin.dashboard.on_config_done(require "dashboard")
-	--		end
-	--	end,
-	--	disable = not nvim.builtin.dashboard.active,
-	--}
-	
+
 	-- Quickscope
 	use {
 		"unblevable/quick-scope",
@@ -208,7 +180,7 @@ return packer.startup({function(use)
 			require("plugin_settings.quick-scope").setup()
 		end
 	}
-	
+
 	-- VimTex
 	use {
 		"lervag/vimtex",
@@ -218,7 +190,7 @@ return packer.startup({function(use)
 			require("plugin_settings.vimtex").setup()
 		end,
 	}
-	
+
 	-- Copying/pasting VHDL entities
 	use {
 		"JBlocklove/VIP",
@@ -227,66 +199,17 @@ return packer.startup({function(use)
 	}
 
 	use {
-		"SirVer/ultisnips",
+		"shaunsingh/moonlight.nvim",
 		config = function()
-			require("plugin_settings.ultisnips").setup()
-		end,
-	}
-
-	use {
-		"honza/vim-snippets",
-	}
-
-	use {
-		"rockerBOO/boo-colorscheme-nvim",
-	}
-
-	use {
-		"marko-cerovac/material.nvim",
-		config = function()
-			vim.g.material_style = "deep ocean"
+			require("plugin_settings.moonlight").setup()
 		end
 	}
 
 	use {
-		"bluz71/vim-nightfly-guicolors"
-	}
-
-	use {
-		"Th3Whit3Wolf/one-nvim"
-	}
-
-	use {
-		"arcticicestudio/nord-vim"
-	}
-
-	use {
-		"Th3Whit3Wolf/space-nvim"
-	}
-
-	use {
-		"novakne/kosmikoa.nvim"
-	}
-
-	use {
-		"fenetikm/falcon"
-	}
-
-	use {
-		"MordechaiHadad/nvim-papadark",
-		requires = {"rktjmp/lush.nvim"}
-	}
-
-	use {
-		"shaunsingh/moonlight.nvim"
-	}
-
-	use {
-		"projekt0n/github-nvim-theme"
-	}
-
-	use {
-		"Pocco81/Catppuccino.nvim"
+		"Pocco81/Catppuccino.nvim",
+		--config = function()
+		--	require("plugin_settings.catppuccino").setup()
+		--end
 	}
 
 	use {

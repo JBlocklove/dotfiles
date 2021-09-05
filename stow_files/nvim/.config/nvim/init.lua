@@ -1,27 +1,25 @@
 cmd = vim.cmd
 opt = vim.opt
 
-cmd [[
-  set packpath+=~/.config/nvim
-  set packpath+=~/.config/nvim/after
-  set packpath+=~/.local/share/nvim/site
-
-  set runtimepath+=~/.config/nvim
-  set runtimepath^=~/.config/nvim/after
-]]
-
-USER_CONFIG_PATH = os.getenv "XDG_CONFIG_HOME" .. "/nvim/init.lua"
+--cmd [[
+--  set packpath+=~/.config/nvim
+--  set packpath+=~/.config/nvim/after
+--  set packpath+=~/.local/share/nvim/site
+--
+--  set runtimepath+=~/.config/nvim
+--  set runtimepath^=~/.config/nvim/after
+--]]
 
 require "settings"
 local autocmds = require "autocmds"
 autocmds.define_augroups(nvim.autocommands)
 
-require('plugins')
+require("plugins")
 
 cmd("colorscheme " .. nvim.colorscheme)
 
---local utils = require "utils"
---utils.toggle_autoformat()
+-- local utils = require "utils"
+-- utils.toggle_autoformat()
 
 require("lsp").config()
 

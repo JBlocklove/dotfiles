@@ -17,4 +17,4 @@ dmenu.selforeground: #81a1c1
 dmenu.hiforeground: #ebcb8b
 dmenu.hibackground: #2e3440
 
-#include ".cache/wal/colors.Xresources"
+!#include ".cache/wal/colors.Xresources"
