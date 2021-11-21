@@ -30,8 +30,8 @@ athlean https://athleanonline.com/dashboard/index/index/m-infshred/m-xero
 moria http://192.168.1.128:5000/?dc=1611166143143
 router http://router.asus.com/Main_Login.asp
 nzbget http://192.168.1.128:6789/
-sonarr http://192.168.1.128:8989/
-radarr http://192.168.1.128:7878/
+sonarr http://192.168.1.162:8989/
+radarr http://192.168.1.162:7878/
 octopi http://192.168.1.39/
 lidarr http://192.168.1.128:8686/
 kgcoe https://kgcoe-git.rit.edu/users/sign_in
@@ -49,3 +49,4 @@ foundry http://192.168.1.162:30000/join
 self_gitlab http://96.244.220.22/users/sign_in
 dnd_background https://www.skullsplitterdice.com/pages/background-and-ambiance-music-for-dnd-game-night
 geek https://nzbgeek.info/
+archives https://2e.aonprd.com/
