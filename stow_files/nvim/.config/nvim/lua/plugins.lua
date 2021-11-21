@@ -26,15 +26,15 @@ return packer.startup({function(use)
 	use { "nvim-lua/popup.nvim" }
 	use { "nvim-lua/plenary.nvim" }
 	-- Telescope
-	use {
-	  "nvim-telescope/telescope.nvim",
-	  config = function()
-	    require("plugin_settings.telescope").setup()
-	    if nvim.builtin.telescope.on_config_done then
-	      nvim.builtin.telescope.on_config_done(require "telescope")
-	    end
-	  end,
-	}
+	--use {
+	--  "nvim-telescope/telescope.nvim",
+	--  config = function()
+	--    require("plugin_settings.telescope").setup()
+	--    if nvim.builtin.telescope.on_config_done then
+	--      nvim.builtin.telescope.on_config_done(require "telescope")
+	--    end
+	--  end,
+	--}
 
 	-- Completion & Snippets
 	use {
