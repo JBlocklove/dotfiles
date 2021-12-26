@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  content.notifications.enabled:
-    https://www.reddit.com: false
+  downloads.prevent_mixed_content:
+    '*://us.7digital.com/*': false

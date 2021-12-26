@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=qutebrowser
-Path=/usr/bin/qutebrowser
-Exec=qutebrowser
-Terminal=false
-MimeType=x-scheme-handler/unknown;x-scheme-handler/about;x-scheme-handler/https;x-scheme-handler/http;text/html;

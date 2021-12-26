@@ -1,17 +1,7 @@
 local autocommands = {}
 
-nvim.autocommands = {
+defined_autocommands = {
 	_general_settings = {
-		{
-			"Filetype",
-			"*",
-			"lua require('utils.ft').do_filetype(vim.fn.expand(\"<amatch>\"))",
-		},
-		{
-			"TextYankPost",
-			"*",
-			"lua require('vim.highlight').on_yank({higroup = 'Search', timeout = 200})",
-		},
 		{
 			"BufWinEnter",
 			"*",
@@ -32,18 +22,21 @@ nvim.autocommands = {
 			"*",
 			"setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
 		},
-		--{ "BufWritePost", USER_CONFIG_PATH, "lua require('utils').reload_lv_config()" },
 		{
 			"FileType",
 			"qf",
 			"set nobuflisted",
 		},
-		-- { "VimLeavePre", "*", "set title set titleold=" },
-		--{
-		--	"BufWritePre",
-		--	"*",
-		--	":%s/\\s\\+$//e$",
-		--},
+		{
+			"VimLeavePre",
+			"*",
+			"set title set titleold="
+		},
+		{
+			"BufWritePre",
+			"*",
+			":%s/\\s\\+$//e",
+		},
 	},
 	_filetypechanges = {
 		{ "BufWinEnter", ".zsh", "setlocal filetype=sh" },

@@ -1,5 +1,5 @@
 text/plain; nvim %s ;
-text/html; qutebrowser %s; nametemplate=%s.html
+text/html; firefox %s; nametemplate=%s.html
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
 text/calendar; calcurse -i %s;
 text/csv; sc-im %s;
