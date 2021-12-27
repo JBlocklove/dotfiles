@@ -12,8 +12,8 @@ local function map_key(mapping) --mode, key, val, opts)
 	vim.api.nvim_set_keymap(mode, key, val, options)
 end
 
-function M.config()
-	keys = {
+function M.setup()
+	local keys = {
 		-- Enforce purity
 		{"i", "<Up>", "<Nop>"},
 		{"i", "<Down>", "<Nop>"},
@@ -36,10 +36,6 @@ function M.config()
 		{"n", "<C-S-h>", ":vertical resize -2<CR>"},
 		{"n", "<C-S-l>", ":vertical resize +2<CR>"},
 
-		-- Tab to switch buffers
-		{"n", "<Tab>", ":BufferNext<CR>"},
-		{"n", "<S-Tab>", ":BufferPrevious<CR>"},
-
 		-- Splitting
 		{"n", "<leader>v", ":vsplit<CR>"},
 		{"n", "<leader>h", ":split<CR>"},
@@ -51,10 +47,19 @@ function M.config()
 		{"n", "/", "/\\v"},
 		{"v", "/", "/\\v"},
 
-	}
-end
+		-- Nvim Tree
+	  	{"n", "<leader>t", ":NvimTreeToggle<CR>"},
 
-function M.setup()
+		-- Barbar
+		{"n", "<Tab>", ":BufferNext<CR>"},
+		{"n", "<S-Tab>", ":BufferPrevious<CR>"},
+		{"n", "<leader>bj", ":BufferPick<CR>"},
+		{"n", "<leader>bd", ":BufferClose<CR>"},
+		{"n", "<leader>bp", ":BufferPin<CR>"},
+		{"n", "<leader>bda", ":BufferCloseAllButPinned<CR>"},
+
+
+	  }
 	for _, mapping in ipairs(keys) do
 		map_key(mapping)
 	end

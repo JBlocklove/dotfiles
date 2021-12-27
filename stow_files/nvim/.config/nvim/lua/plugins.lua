@@ -19,10 +19,10 @@ return packer.startup(function()
 
 	-- Bufferline
 	use {
-	  'romgrk/barbar.nvim',
-	  requires = {'kyazdani42/nvim-web-devicons'}
+		'romgrk/barbar.nvim',
+		requires = {'kyazdani42/nvim-web-devicons'},
+		config = function() require('barbar').setup() end,
 	}
-
 
 --	-- Treesitter
 --	use { 'nvim-treesitter/nvim-treesitter' }
@@ -36,48 +36,60 @@ return packer.startup(function()
 --	-- LSP plugins
 --	use { 'neovim/nvim-lspconfig' }
 --
---	-- Completion
---	use { 'hrsh7th/nvim-cmp' }
---
---	-- Snippets
---	use { 'SirVer/ultisnips' }
+	-- Completion
+	use { 'hrsh7th/cmp-buffer' }
+	use { 'hrsh7th/cmp-path' }
+	--use { 'hrsh7th/cmp-cmdline' }
+	use {
+		'hrsh7th/nvim-cmp',
+		config = function() require('completion').setup() end,
+	}
+
+	-- Snippets
+	use { 'SirVer/ultisnips' }
+	use {
+		'honza/vim-snippets',
+		requires = { 'SirVer/ultisnips' }
+	}
 --	use {
---		'honza/vim-snippets',
+--		'quangnguyen30192/cmp-nvim-ultisnips',
 --		requires = { 'SirVer/ultisnips' }
 --	}
---
---	-- Tree for files
---	use {
---		'kyazdani42/nvim-tree.lua',
---		requires = { 'kyazdani42/nvim-web-devicons' },
---		config = function() require'nvim-tree'.setup {} end
---	}
---
---	-- Git signs for the gutter
---	use {
---		'lewis6991/gitsigns.nvim',
---		requires = { 'nvim-lua/plenary.nvim' }
---	}
 
-	---- Markdown stuff
-	--use {
-	--	'iamcco/markdown-preview.nvim',
-    --	run = "call mkdp#util#install()",
-    --	ft = 'markdown'
-	--}
+	-- Tree for files
+	use {
+		'kyazdani42/nvim-tree.lua',
+		requires = { 'kyazdani42/nvim-web-devicons' },
+		config = function() require'nvim-tree'.setup {} end
+	}
 
-	---- LaTeX stuff
-	--use {
-	--	'lervag/vimtex',
-    --	ft= 'tex',
-    --	opt=true
-	--}
+	-- Git signs for the gutter
+	use {
+		'lewis6991/gitsigns.nvim',
+		requires = { 'nvim-lua/plenary.nvim' },
+		config = function() require('gitsigns').setup() end
+	}
 
-	---- VHDL stuff
-	--use {
-	--	'JBlocklove/vip',
-	--	ft='vhdl',
-	--	opt=true
-	--}
+	-- Markdown stuff
+	use {
+		'iamcco/markdown-preview.nvim',
+    	run = "call mkdp#util#install()",
+		config = function() require('markdown').setup() end,
+    	ft = 'markdown'
+	}
+
+	-- LaTeX stuff
+	use {
+		'lervag/vimtex',
+    	ft= 'tex',
+    	opt=true
+	}
+
+	-- VHDL stuff
+	use {
+		'JBlocklove/vip',
+		ft='vhdl',
+		opt=true
+	}
 
 end)

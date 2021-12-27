@@ -12,6 +12,7 @@ local options = {
 	colorcolumn = "99999", -- fixes indentline for now
 	completeopt = { "menuone", "noselect" },
 	conceallevel = 0, -- so that `` is visible in markdown files
+	confirm = true,
 	fileencoding = "utf-8", -- the encoding written to a file
 	foldmethod = "manual", -- folding, set to "expr" for treesitter based folding
 	foldexpr = "", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
@@ -65,18 +66,18 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
-require("mappings").config()
+--require("mappings").config()
 
 -- transparent window overrides
 cmd "au ColorScheme * hi Normal ctermbg=none guibg=none"
 cmd "au ColorScheme * hi SignColumn ctermbg=none guibg=none"
 cmd "au ColorScheme * hi NormalNC ctermbg=none guibg=none"
 cmd "au ColorScheme * hi MsgArea ctermbg=none guibg=none"
-cmd "au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none"
 cmd "au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none"
 cmd "let &fcs='eob: '"
 
 --if nvim.colorscheme == "moonlight" then
+--	-- Fix fold colors
 --	cmd "au ColorScheme * hi Folded ctermfg=233 guifg=#a1abe0"
 --	vim.g.moonlight_disable_background = true
 --end
