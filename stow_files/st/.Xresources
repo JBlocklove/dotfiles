@@ -9,11 +9,9 @@ st.alpha: 0.70;
 
 !dmenu.font: Inconsolata Regular:family=mono:size=9:antialias=true:autohint=true
 dmenu.font: IBM Plex Mono:size=8:antialias=true:autohint=true
-dmenu.background: #2e3440
-dmenu.foreground: #d8dee9
-dmenu.selbackground:#2e3440
-dmenu.selforeground: #81a1c1
-dmenu.hiforeground: #ebcb8b
-dmenu.hibackground: #2e3440
-
-!#include ".cache/wal/colors.Xresources"
+dmenu.background: #212337
+dmenu.foreground: #e4f3fa
+dmenu.selbackground:#212337
+dmenu.selforeground: #2df4c0
+dmenu.hiforeground: #b4a4f4
+dmenu.hibackground: #212337

@@ -3,14 +3,14 @@
 status="$(cat /sys/class/power_supply/BAT0/status)"
 battery="$(cat /sys/class/power_supply/BAT0/capacity)"
 if [[ "${status}" == "Charging" ]]; then
-    echo -ne "^c#EBCB8B^ ^d^${battery}%"
+    echo -ne "^c#ffc777^ ^d^${battery}%"
 else
 	if [[ $battery -gt 97 ]]; then
-		echo -ne "^c#3ea290^ ^d^${battery}%"
+		echo -ne "^c#2df4c0^ ^d^${battery}%"
 	elif [[ $battery -le 97 && $battery -gt 50 ]]; then
-		echo -ne "^c#81a1c1^ ^d^${battery}%"
+		echo -ne "^c#ffffff^ ^d^${battery}%"
 	elif [[ $battery -le 50 && $battery -gt 20 ]]; then
-		echo -ne "^c#81a1c1^ ^d^${battery}%"
+		echo -ne "^c#ffffff^ ^d^${battery}%"
 	else
 		echo -ne "^c#BF616a^ ^d^${battery}%"
 	fi

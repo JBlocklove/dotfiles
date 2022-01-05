@@ -12,6 +12,6 @@ try:
     props = spotifyd_iface.Get('org.mpris.MediaPlayer2.Player', 'Metadata')
     status = spotifyd_iface.Get('org.mpris.MediaPlayer2.Player', 'PlaybackStatus')
     if status == "Playing":
-        print("^c#81a1c1^ ^d^" + str(props['xesam:albumArtist'][0]) + " - " + str(props['xesam:title']))
+        print("^c#04d1f9^ ^d^" + str(props['xesam:albumArtist'][0]) + " - " + str(props['xesam:title']))
 except dbus.exceptions.DBusException:
     exit

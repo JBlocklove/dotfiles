@@ -1,4 +1,4 @@
 #!/bin/sh
 
 date="$(LC_ALL=C date "+%a, %d %b")"
-echo -ne "^c#81a1c1^ ^d^${date}"
+echo -ne "^c#ffffff^ ^d^${date}"

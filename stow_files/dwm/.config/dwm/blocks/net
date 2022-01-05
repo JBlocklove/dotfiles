@@ -11,11 +11,11 @@ if [[ -d /sys/class/net/wlp2s0 ]]; then
 fi
 
 if [[ ! -z $ethstatus && $ethstatus == "up" ]]; then
-    netstatus="^c#81a1c1^ ^d^Ether"
+    netstatus="^c#ffffff^ ^d^Ether"
 elif [[ $wifistatus == "up" ]]; then
 	wifissid=`echo $wifissid | sed 's/\\n/ /g' | cut -d' ' -f1`
-    netstatus="^c#81a1c1^ ^d^${wifissid}"
+    netstatus="^c#ffffff^ ^d^${wifissid}"
 else
-    netstatus="^c#BF616a^ ^d^Not Connected"
+    netstatus="^c#ff757f^ ^d^Not Connected"
 fi
 echo -ne "$netstatus"

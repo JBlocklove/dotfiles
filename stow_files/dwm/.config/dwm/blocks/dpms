@@ -3,7 +3,7 @@
 dpms_status="$(xset q | awk '$1=="DPMS" && $2=="is" {print $3}')"
 
 if [[ $dpms_status == "Disabled" ]]; then
-    echo -ne "^c#3ea290^^d^"
+    echo -ne "^c#ffffff^^d^"
 #else
-#    echo -ne " ^c#81a1c1^ "
+#    echo -ne " ^c#ffffff^ "
 fi

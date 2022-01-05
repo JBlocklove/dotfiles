@@ -3,5 +3,5 @@
 openconnect_status="$(pgrep -a -x openconnect | awk '$2=="openconnect" { print $NF }')"
 
 if [[ $openconnect_status != "" ]]; then
-    echo -ne "^c#81a1c1^ ^d^${openconnect_status}"
+    echo -ne "^c#ffffff^ ^d^${openconnect_status}"
 fi
