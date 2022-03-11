@@ -39,7 +39,7 @@ wm_set_last_wp &
 dwm_statusbar &
 
 mopidy &
-sshfs erebor:/homes/media/Music ~/Music/remote_lib -o reconnect &
+sshfs erebor:/homes/media/Music ~/Music/remote_music -o reconnect &
 sshfs erebor:/homes/media/Podcasts ~/Music/remote_podcasts -o reconnect &
 sshfs erebor:/homes/media/Audiobooks ~/Music/remote_audiobooks -o reconnect &
 

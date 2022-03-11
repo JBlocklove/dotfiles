@@ -1,14 +1,14 @@
 ! Defaults
-*.font: Inconsolata:size=9:antialias=true:autohint=true
-*.fontalt0: siji:size=8:antialias=true:autohint=true
+*.font: Inconsolata:size=12:antialias=true:autohint=true
+*.fontalt0: siji:size=11:antialias=true:autohint=true
 *.alpha: 0.80;
 
-st.font: Inconsolata:size=9:antialias=true:autohint=true
-st.fontalt0: siji:size=8:antialias=true:autohint=true
+st.font: Inconsolata:size=12:antialias=true:autohint=true
+st.fontalt0: siji:size=11:antialias=true:autohint=true
 st.alpha: 0.70;
 
 !dmenu.font: Inconsolata Regular:family=mono:size=9:antialias=true:autohint=true
-dmenu.font: IBM Plex Mono:size=8:antialias=true:autohint=true
+dmenu.font: IBM Plex Mono:size=11:antialias=true:autohint=true
 dmenu.background: #212337
 dmenu.foreground: #e4f3fa
 dmenu.selbackground:#212337

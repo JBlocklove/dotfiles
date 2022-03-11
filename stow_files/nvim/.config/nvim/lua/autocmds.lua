@@ -30,7 +30,7 @@ defined_autocommands = {
 		{
 			"VimLeavePre",
 			"*",
-			"set title set titleold="
+			"set title titleold="
 		},
 		{
 			"BufWritePre",
@@ -66,12 +66,10 @@ defined_autocommands = {
 		{ "FileType", "lspinfo", "nnoremap <silent> <buffer> q :q<CR>" },
 	},
 	_latex = {
-		{ "BufWinEnter", "*.tex", ":VimtexCompile"},
-		{ "User", "VimtexEventQuit", "call system('latexmk -c')"},
-		{"FileType", "*.tex", "setlocal spell"}
-	},
-	_mail = {
-		{"FileType", "*.mail", "setlocal spell"}
+		{ "BufWinEnter", "*.tex", ":VimtexCompile" },
+		{ "User", "VimtexEventQuit", "call system('latexmk -c')" },
+		{ "FileType", "*.tex", "set spell" },
+		--{ "BufWinEnter", "*.tex", "call QuickFixQuit()" },
 	},
 	custom_groups = {},
 }

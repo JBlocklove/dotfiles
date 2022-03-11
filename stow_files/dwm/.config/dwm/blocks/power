@@ -1,9 +1,9 @@
 #!/bin/sh
 
-status="$(cat /sys/class/power_supply/BAT0/status)"
-battery="$(cat /sys/class/power_supply/BAT0/capacity)"
+status="$(cat /sys/class/power_supply/BAT1/status)"
+battery="$(cat /sys/class/power_supply/BAT1/capacity)"
 if [[ "${status}" == "Charging" ]]; then
-    echo -ne "^c#ffc777^ ^d^${battery}%"
+    echo -ne "^c#ffc777^ ^d^${battery}%"
 else
 	if [[ $battery -gt 97 ]]; then
 		echo -ne "^c#2df4c0^ ^d^${battery}%"

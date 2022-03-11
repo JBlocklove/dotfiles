@@ -51,10 +51,10 @@ return packer.startup(function()
 		'honza/vim-snippets',
 		requires = { 'SirVer/ultisnips' }
 	}
---	use {
---		'quangnguyen30192/cmp-nvim-ultisnips',
---		requires = { 'SirVer/ultisnips' }
---	}
+	use {
+		'quangnguyen30192/cmp-nvim-ultisnips',
+		requires = { 'SirVer/ultisnips' }
+	}
 
 	-- Tree for files
 	use {
@@ -82,6 +82,7 @@ return packer.startup(function()
 	use {
 		'lervag/vimtex',
     	ft= 'tex',
+		config = function() require('latex').setup() end,
     	opt=true
 	}
 
