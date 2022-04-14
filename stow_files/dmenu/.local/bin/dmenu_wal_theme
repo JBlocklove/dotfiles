@@ -10,6 +10,6 @@ function get_wal_themes(){
 	ls $DARK_PATH | cut -d'.' -f1
 }
 
-SEL=$( get_wal_themes | dmenu -c -l 20 -p "theme:" | awk '{print $1}' )
+SEL=$( get_wal_themes | dmenu -c -l 20 -z 500 -p "theme:" | awk '{print $1}' )
 
 $WAL_CMD $SEL

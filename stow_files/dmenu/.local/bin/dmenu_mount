@@ -6,7 +6,7 @@
 # Uses udisks2 to mount
 
 mountusb() { \
-	chosen="$(echo "$usbdrives" | dmenu -i -c -l 20 -p "Drive:" | awk '{print $1}')"
+	chosen="$(echo "$usbdrives" | dmenu -i -c -l 20 -z 500 -p "Drive:" | awk '{print $1}')"
 	if [[ ! -z $chosen ]]; then
 		mp=`udisksctl mount -b $chosen | rev | cut -d'/' -f1 | rev`
 		notify-send " Udisks2" "$chosen mounted at /media/$mp" && exit 0

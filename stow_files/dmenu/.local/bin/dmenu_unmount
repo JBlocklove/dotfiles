@@ -6,7 +6,7 @@
 
 unmountusb() {
 	[ -z "$drives" ] && exit
-	chosen=$(echo "$drives" | dmenu -i -c -l 20 -p "Unmount:" | awk '{print $1}')
+	chosen=$(echo "$drives" | dmenu -i -c -l 20 -z 500 -p "Unmount:" | awk '{print $1}')
 	[ -z "$chosen" ] && exit
 	udisksctl unmount -b "$chosen" && notify-send " Udisks2" "$chosen unmounted"
 	}

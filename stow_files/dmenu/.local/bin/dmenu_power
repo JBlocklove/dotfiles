@@ -2,7 +2,7 @@
 
 # partially stolen from https://github.com/crian/dotfiles/blob/samurai/.bin/dmn_power
 
-DIALOG_RESULT=$(echo -e 'logout\nsleep\nreboot\npoweroff' | dmenu -i -c -l 20 -f -p "Power:" )
+DIALOG_RESULT=$(echo -e 'logout\nsleep\nreboot\npoweroff' | dmenu -i -c -l 20 -z 500 -f -p "Power:" )
 
 echo "This result is : $DIALOG_RESULT"
 sleep 1;

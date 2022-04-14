@@ -97,7 +97,7 @@ function gen_entries()
 }
 
 # Call menu
-SEL=$( gen_entries | dmenu -c -l 10 -p "monitor:" | awk '{print $1}' )
+SEL=$( gen_entries | dmenu -c -l 10 -z 500 -p "monitor:" | awk '{print $1}' )
 
 # Call xrandr
 for layout in "${layouts[@]}"; do

@@ -4,7 +4,7 @@ source $HOME/.cache/wal/colors.sh
 
 if [[ $1 == "run" ]]; then
 	shift 1
-	dmenu_run -nf $foreground -nb $background -sf $foreground -sb $color5 $@
+	dmenu_run -nf $foreground -nb $background -sf $foreground -sb $color5 -z 500 $@
 else
-	dmenu -nf $foreground -nb $background -sf $foreground -sb $color5 $@
+	dmenu -nf $foreground -nb $background -sf $foreground -sb $color5 -z 500 $@
 fi
