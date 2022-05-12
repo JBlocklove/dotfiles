@@ -18,7 +18,7 @@ M.setup = function()
 				i = cmp.mapping.abort(),
 				c = cmp.mapping.close(),
 			}),
-			['<C-j>'] = cmp.mapping.confirm({ select = true }),
+			['<C-l>'] = cmp.mapping.confirm({ select = true }),
 		},
 		sources = cmp.config.sources({
 			--{ name = 'nvim_lsp' },
@@ -26,11 +26,13 @@ M.setup = function()
 		},
 		{
 			{ name = 'buffer' },
+			{ name = 'path' },
 		})
 	})
 
 	-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 	cmp.setup.cmdline('/', {
+		mapping = cmp.mapping.preset.cmdline(),
 		sources = {
 			{ name = 'buffer' }
 		}
@@ -38,6 +40,7 @@ M.setup = function()
 
 	-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 	cmp.setup.cmdline(':', {
+		mapping = cmp.mapping.preset.cmdline(),
 		sources = cmp.config.sources({
 			{ name = 'path' }
 		},
