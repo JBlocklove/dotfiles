@@ -5,11 +5,11 @@ battery="$(cat /sys/class/power_supply/BAT1/capacity)"
 if [[ "${status}" == "Charging" ]]; then
     echo -ne "^c#ffc777^ ^d^${battery}%"
 else
-	if [[ $battery -gt 97 ]]; then
+	if [[ $battery -gt 87 ]]; then
 		echo -ne "^c#2df4c0^ ^d^${battery}%"
-	elif [[ $battery -le 97 && $battery -gt 50 ]]; then
+	elif [[ $battery -le 87 && $battery -gt 40 ]]; then
 		echo -ne "^c#ffffff^ ^d^${battery}%"
-	elif [[ $battery -le 50 && $battery -gt 20 ]]; then
+	elif [[ $battery -le 40 && $battery -gt 15 ]]; then
 		echo -ne "^c#ffffff^ ^d^${battery}%"
 	else
 		echo -ne "^c#BF616a^ ^d^${battery}%"

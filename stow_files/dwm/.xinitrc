@@ -32,7 +32,7 @@ fi
 
 [ -f ~/.xprofile ] && . ~/.xprofile
 
-compton &
+picom --experimental-backend &
 wal -R &
 
 wm_set_last_wp &
@@ -47,5 +47,7 @@ sshfs erebor:/homes/media/Audiobooks ~/Music/remote_audiobooks -o reconnect &
 discord &
 signal-desktop &
 neomutt_run &
+
+wm_autolock_setup &
 
 while type dwm >/dev/null ; do dwm && continue || break ; done
