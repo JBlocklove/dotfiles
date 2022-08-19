@@ -4,8 +4,8 @@ if [[ -d /sys/class/net/enp0s13f0u4u3 ]]; then
 	ethstatus=$(cat /sys/class/net/enp0s13f0u4u3/operstate)
 fi
 
-if [[ -d /sys/class/net/wlp170s0 ]]; then
-	wifistatus=$(cat /sys/class/net/wlp170s0/operstate)
+if [[ -d /sys/class/net/wlp4s0 ]]; then
+	wifistatus=$(cat /sys/class/net/wlp4s0/operstate)
 	wifissid="$(nmcli -t -f NAME connection show --active)"
 	wifiperc="$(grep "^\s*w" /proc/net/wireless | awk '{ print int($3 * 100 / 70) "%" }')"
 fi
