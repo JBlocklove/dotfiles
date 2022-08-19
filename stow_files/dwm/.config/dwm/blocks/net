@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [[ -d /sys/class/net/enp62s0u1u1 ]]; then
-	ethstatus=$(cat /sys/class/net/enp62s0u1u1/operstate)
+if [[ -d /sys/class/net/enp0s13f0u4u3 ]]; then
+	ethstatus=$(cat /sys/class/net/enp0s13f0u4u3/operstate)
 fi
 
 if [[ -d /sys/class/net/wlp170s0 ]]; then
@@ -11,7 +11,7 @@ if [[ -d /sys/class/net/wlp170s0 ]]; then
 fi
 
 if [[ ! -z $ethstatus && $ethstatus == "up" ]]; then
-    netstatus="^c#ffffff^ ^d^Ether"
+    netstatus="^c#ffffff^ ^d^Ethernet"
 elif [[ $wifistatus == "up" ]]; then
 	wifissid=`echo $wifissid | sed 's/\\n/ /g' | cut -d' ' -f1`
     netstatus="^c#ffffff^ ^d^${wifissid}"
