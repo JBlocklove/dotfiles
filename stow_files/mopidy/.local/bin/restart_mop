@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pkill mopidy
+sleep 3
+mopidy &
