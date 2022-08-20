@@ -1,13 +1,13 @@
 #!/bin/sh
 
-connecteddevices=$(nmcli device | awk '$3=="connected" {print $4}')
+connecteddevices=$(nmcli device | awk '$3=="connected" {$1=$2=$3=""; print $0}')
 
 if [[ ! -n $connecteddevices ]]; then
 	netstatus="^c#ff757f^ ^d^Not Connected"
 else
 	device=$(echo $connecteddevices | head -1)
 
-	if [[ $device == "wired" ]]; then
+	if [[ $device == "wired connection" ]]; then
 	    netstatus="^c#ffffff^ ^d^Ethernet"
 	else
 	    netstatus="^c#ffffff^ ^d^${device}"
