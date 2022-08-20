@@ -1,21 +1,17 @@
 #!/bin/sh
 
-if [[ -d /sys/class/net/enp0s13f0u4u3 ]]; then
-	ethstatus=$(cat /sys/class/net/enp0s13f0u4u3/operstate)
-fi
+connecteddevices=$(nmcli device | awk '$3=="connected" {print $4}')
 
-if [[ -d /sys/class/net/wlp170s0 ]]; then
-	wifistatus=$(cat /sys/class/net/wlp170s0/operstate)
-	wifissid="$(nmcli -t -f NAME connection show --active)"
-	wifiperc="$(grep "^\s*w" /proc/net/wireless | awk '{ print int($3 * 100 / 70) "%" }')"
-fi
-
-if [[ ! -z $ethstatus && $ethstatus == "up" ]]; then
-    netstatus="^c#ffffff^ ^d^Ethernet"
-elif [[ $wifistatus == "up" ]]; then
-	wifissid=`echo $wifissid | sed 's/\\n/ /g' | cut -d' ' -f1`
-    netstatus="^c#ffffff^ ^d^${wifissid}"
+if [[ ! -n $connecteddevices ]]; then
+	netstatus="^c#ff757f^ ^d^Not Connected"
 else
-    netstatus="^c#ff757f^ ^d^Not Connected"
+	device=$(echo $connecteddevices | head -1)
+
+	if [[ $device == "wired" ]]; then
+	    netstatus="^c#ffffff^ ^d^Ethernet"
+	else
+	    netstatus="^c#ffffff^ ^d^${device}"
+	fi
 fi
+
 echo -ne "$netstatus"
