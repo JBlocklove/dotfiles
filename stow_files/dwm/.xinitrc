@@ -44,8 +44,8 @@ sshfs erebor:/homes/media/Podcasts ~/Music/remote_podcasts -o reconnect &
 sshfs erebor:/homes/media/Audiobooks ~/Music/remote_audiobooks -o reconnect &
 
 #blueman-applet &
-discord &
 signal-desktop &
+ferdium &
 neomutt_run &
 
 wm_autolock_setup &

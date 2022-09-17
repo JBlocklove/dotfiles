@@ -12,6 +12,12 @@ local function map_key(mapping) --mode, key, val, opts)
 	vim.api.nvim_set_keymap(mode, key, val, options)
 end
 
+function M.map_key_list(keys)
+	for _, mapping in ipairs(keys) do
+		map_key(mapping)
+	end
+end
+
 function M.setup()
 	local keys = {
 		-- Enforce purity
@@ -50,19 +56,16 @@ function M.setup()
 		-- Nvim Tree
 	  	{"n", "<leader>t", ":NvimTreeToggle<CR>"},
 
-		-- Barbar
-		{"n", "<Tab>", ":BufferNext<CR>"},
-		{"n", "<S-Tab>", ":BufferPrevious<CR>"},
-		{"n", "<leader>bj", ":BufferPick<CR>"},
-		{"n", "<leader>bd", ":BufferClose<CR>"},
-		{"n", "<leader>bp", ":BufferPin<CR>"},
-		{"n", "<leader>bda", ":BufferCloseAllButPinned<CR>"},
-
-
+		-- Bufferline
+		{"n", "<Tab>", ":BufferLineCycleNext<CR>"},
+		{"n", "<S-Tab>", ":BufferLineCyclePrev<CR>"},
+		{"n", "<leader><Tab>", ":BufferLineMoveNext<CR>"},
+		{"n", "<leader><S-Tab>", ":BufferLineMovePrev<CR>"},
+		{"n", "<leader>bj", ":BufferLinePick<CR>"},
+		{"n", "<leader>bd", ":BufferLinePickClose<CR>"},
+		{"n", "<leader>bp", ":BufferLineTogglePin<CR>"},
 	  }
-	for _, mapping in ipairs(keys) do
-		map_key(mapping)
-	end
+	M.map_key_list(keys)
 end
 
 return M

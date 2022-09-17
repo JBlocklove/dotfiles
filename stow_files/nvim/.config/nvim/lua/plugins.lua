@@ -10,6 +10,9 @@ return packer.startup(function()
 	-- Colorscheme
 	use { 'shaunsingh/moonlight.nvim' }
 
+	-- Icons
+	use { 'kyazdani42/nvim-web-devicons' }
+
 	-- Statusline
 	use {
 		'nvim-lualine/lualine.nvim',
@@ -19,9 +22,10 @@ return packer.startup(function()
 
 	-- Bufferline
 	use {
-		'romgrk/barbar.nvim',
+		'akinsho/bufferline.nvim',
+		tag="v2.*",
 		requires = {'kyazdani42/nvim-web-devicons'},
-		config = function() require('barbar').setup() end,
+		config = function() require('buffers').setup() end,
 	}
 
 --	-- Treesitter
@@ -73,9 +77,10 @@ return packer.startup(function()
 	-- Markdown stuff
 	use {
 		'iamcco/markdown-preview.nvim',
-    	run = "call mkdp#util#install()",
+    	run = function() vim.fn["mkdp#util#install"]() end,
+    	ft = 'markdown',
 		config = function() require('markdown').setup() end,
-    	ft = 'markdown'
+		opt=true
 	}
 
 	-- LaTeX stuff

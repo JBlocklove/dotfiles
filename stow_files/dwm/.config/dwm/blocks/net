@@ -7,7 +7,7 @@ if [[ ! -n $connecteddevices ]]; then
 else
 	device=$(echo $connecteddevices | head -1)
 
-	if [[ $device == "wired connection" ]]; then
+	if [[ $device == "Wired connection 1" ]]; then
 	    netstatus="^c#ffffff^ ^d^Ethernet"
 	else
 	    netstatus="^c#ffffff^ ^d^${device}"
