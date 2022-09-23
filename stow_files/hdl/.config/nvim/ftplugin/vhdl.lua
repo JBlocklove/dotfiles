@@ -2,15 +2,6 @@ vim.g.vhdl_indent_genportmap = 0
 vim.g.HDL_Clock_Period = 10
 vim.g.HDL_Author = "system('git config --global user.name')"
 
---local keys = {
---	{"n", "<leader>vc", "<Plug>SpecialVHDLPasteComponent"},
---	{"n", "<leader>vi", "<Plug>SpecialVHDLPasteInstance"},
---	{"n", "<leader>ve", "<Plug>SpecialVHDLPasteEntity"},
---	{"n", "<leader>vy", "<Plug>SpecialVHDLAction"},
---}
---
---require("mappings").map_key_list(keys)
-
 vim.cmd("iabbrev <buffer> dt downto")
 vim.cmd("iabbrev <buffer> sig signal")
 vim.cmd("iabbrev <buffer> gen generate")

@@ -93,7 +93,7 @@ type ${1} is (${2});
 endsnippet
 
 snippet proc "... : process (...) ..."
-${1} : process ${2:(${VISUAL}${3})} begin
+${1} : process (${2:${VISUAL}}) begin
 ${0}
 end process;
 endsnippet

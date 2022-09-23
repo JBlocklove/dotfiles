@@ -118,7 +118,7 @@ local statusline = {
 			--	color = { fg = '#ffffff', gui = 'bold' },
 			--},
 			{
-				'filetype'
+				'filetype', icons_enabled=false
 			},
 		},
 		lualine_y = { 'location' },
