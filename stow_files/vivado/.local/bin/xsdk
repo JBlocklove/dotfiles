@@ -1,3 +1,0 @@
-#!/bin/bash
-source /tools/Xilinx/SDK/2020.1/settings64.sh
-/tools/Xilinx/SDK/2020.1/bin/xsdk

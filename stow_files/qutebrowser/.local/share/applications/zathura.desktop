@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=zathura
-Path=/usr/bin/zathura
-Exec=zathura
-Terminal=false
-MimeType=application/pdf
