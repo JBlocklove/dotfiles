@@ -7,6 +7,7 @@ cmd "au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none"
 cmd "let &fcs='eob: '"
 
 vim.g.moonlight_disable_background = true
+vim.g.moonlight_borders = true
 cmd("colorscheme moonlight")
 
 -- Fixes for moonlight colorscheme

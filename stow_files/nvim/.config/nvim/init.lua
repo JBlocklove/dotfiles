@@ -16,4 +16,4 @@ require("colorscheme")
 require("mappings").setup()
 
 -- Setup LSP
---require("lsp")
+require("lsp")

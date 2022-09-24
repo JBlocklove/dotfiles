@@ -29,35 +29,37 @@ return packer.startup(function()
 		requires = {'kyazdani42/nvim-web-devicons'},
 		config = function() require('configs.bufferline').setup() end,
 	}
-	-- LSP plugins
-	--use {
-	--	'williamboman/mason.nvim',
-	--	config = function() require('configs.mason').setup() end,
-	--}
-	--use {
-	--	'williamboman/mason-lspconfig.nvim',
-	--	config = function() require('configs.mason-lspconfig').setup() end,
-	--}
-	--use { 'neovim/nvim-lspconfig' }
 
+	-- LSP plugins
+	use {
+		'williamboman/mason.nvim',
+		config = function() require('configs.mason').setup() end,
+	}
+	use {
+		'williamboman/mason-lspconfig.nvim',
+		config = function() require('configs.mason-lspconfig').setup() end,
+	}
+	use { 'neovim/nvim-lspconfig' }
+
+	-- Null-LS for formatting and linting
+	use { }
 
 	-- Treesitter
-	--use {
-	--	'nvim-treesitter/nvim-treesitter',
-	--	config = function() require('configs.treesitter').setup() end,
-	--}
-	--use {
-	--	'p00f/nvim-ts-rainbow',
-	--	'windwp/nvim-ts-autotag',
-	--	'romgrk/nvim-treesitter-context',
-	--	requires = { 'nvim-treesitter/nvim-treesitter' }
-	--}
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate',
+		config = function() require('configs.treesitter').setup() end,
+	}
+	use { 'windwp/nvim-ts-autotag' }
+	use { 'romgrk/nvim-treesitter-context'}
+	use { 'nvim-treesitter/playground' }
 
 	-- Completion
 	use { 'hrsh7th/cmp-buffer' }
 	use { 'hrsh7th/cmp-path' }
 	use { 'hrsh7th/cmp-cmdline' }
 	use { 'hrsh7th/cmp-nvim-lsp' }
+	use { 'hrsh7th/cmp-nvim-lua' }
 	use {
 		'hrsh7th/nvim-cmp',
 		config = function() require('configs.cmp').setup() end,
@@ -78,7 +80,7 @@ return packer.startup(function()
 	use {
 		'kyazdani42/nvim-tree.lua',
 		requires = { 'kyazdani42/nvim-web-devicons' },
-		config = function() require('configs.nvim-tree').setup {} end
+		config = function() require('configs.nvim-tree').setup() end
 	}
 
 	-- Git signs for the gutter

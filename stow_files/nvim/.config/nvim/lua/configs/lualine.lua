@@ -74,7 +74,7 @@ local statusline = {
 				symbols = { added = ' ', modified = ' ', removed = ' ' },
 				diff_color = {
 					added = { fg = colors.green },
-					modified = { fg = colors.pink },
+					modified = { fg = colors.yellow },
 					removed = { fg = colors.red },
 				},
 				cond = conditions.hide_in_width,
@@ -86,6 +86,8 @@ local statusline = {
 				cond = conditions.buffer_not_empty,
 				color = { fg = colors.magenta, gui = 'bold' },
 			},
+		},
+		lualine_x = {
 			{
 				'diagnostics',
 				sources = { 'nvim_diagnostic' },
@@ -96,27 +98,24 @@ local statusline = {
 					color_info = { fg = colors.cyan },
 				}
 			},
-		},
-		lualine_x = {
-			--{
-			--	function()
-			--		local msg = 'No Active Lsp'
-			--		local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-			--		local clients = vim.lsp.get_active_clients()
-			--		if next(clients) == nil then
-			--			return msg
-			--		end
-			--		for _, client in ipairs(clients) do
-			--			local filetypes = client.config.filetypes
-			--			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-			--				return client.name
-			--			end
-			--		end
-			--		return msg
-			--	end,
-			--	icon = 'LSP:',
-			--	color = { fg = '#ffffff', gui = 'bold' },
-			--},
+			{
+				function()
+					local msg = 'No Active Lsp'
+					local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+					local clients = vim.lsp.get_active_clients()
+					if next(clients) == nil then
+						return msg
+					end
+					for _, client in ipairs(clients) do
+						local filetypes = client.config.filetypes
+						if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+							return client.name
+						end
+					end
+					return msg
+				end,
+				color = { fg = '#ffffff', gui = 'bold' },
+			},
 			{
 				'filetype', icons_enabled=false
 			},
@@ -140,17 +139,6 @@ local statusline = {
 	tabline = {},
 	extensions = {}
 }
-
-
-local ins_left = function(component)
-  table.insert(statusline.sections.lualine_c, component)
-end
-
--- Inserts a component in lualine_x ot right section
-local ins_right = function(component)
-  table.insert(statusline.sections.lualine_x, component)
-end
-
 
 M.setup = function()
 	local lualine = require 'lualine'
