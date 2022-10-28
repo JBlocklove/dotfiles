@@ -14,6 +14,7 @@ M.setup = function()
     		    cancel_installation = "<C-c>",
     		    apply_language_filter = "<C-f>",
     		},
+			border = "single",
     	},
     	log_level = vim.log.levels.INFO,
     	max_concurrent_installers = 4,

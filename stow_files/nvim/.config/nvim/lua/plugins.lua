@@ -8,6 +8,19 @@ return packer.startup(function()
 
 	-- Colorscheme
 	use { '/home/jason/Repos/moonlight.nvim' }
+	use {
+		'norcalli/nvim-colorizer.lua',
+		config = function() require('colorizer').setup() end,
+	}
+	use {
+		'catppuccin/nvim',
+		config = function() require('configs.catppuccin').setup() end,
+	 }
+	use {
+		'baliestri/aura-theme',
+		rtp = 'packages/neovim',
+		--config = function() require('configs.aura').setup() end,
+	}
 
 	-- Icons
 	use { 'kyazdani42/nvim-web-devicons' }
@@ -41,9 +54,6 @@ return packer.startup(function()
 	}
 	use { 'neovim/nvim-lspconfig' }
 
-	-- Null-LS for formatting and linting
-	use { }
-
 	-- Treesitter
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -51,8 +61,14 @@ return packer.startup(function()
 		config = function() require('configs.treesitter').setup() end,
 	}
 	use { 'windwp/nvim-ts-autotag' }
-	use { 'romgrk/nvim-treesitter-context'}
 	use { 'nvim-treesitter/playground' }
+
+	-- Navic for context
+	use {
+		'SmiteshP/nvim-navic',
+		requires = {'neovim/nvim-lspconfig'},
+		config = function() require('configs.navic').setup() end,
+	}
 
 	-- Completion
 	use { 'hrsh7th/cmp-buffer' }
@@ -90,6 +106,12 @@ return packer.startup(function()
 		config = function() require('gitsigns').setup() end
 	}
 
+	-- Toggleterm
+	use {
+		'akinsho/toggleterm.nvim',
+		config = function() require('configs.toggleterm').setup() end,
+	}
+
 	-- Markdown stuff
 	use {
 		'iamcco/markdown-preview.nvim',
@@ -112,6 +134,19 @@ return packer.startup(function()
 		'JBlocklove/vip',
 		ft='vhdl',
 		opt=true
+	}
+
+	-- RISC-V Syntax
+	use {
+		'henry-hsieh/riscv-asm-vim',
+		ft='riscv_asm',
+		opt=true
+	}
+
+-- Random stuff to play with
+	use {
+		'github/copilot.vim',
+		config = function() require('configs.copilot').setup() end,
 	}
 
 end)

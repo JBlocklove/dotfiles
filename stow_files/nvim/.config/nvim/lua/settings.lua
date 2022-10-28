@@ -56,6 +56,7 @@ local options = {
 	autoread = true,
 	undolevels = 1000,
 	udf = true,
+	mouse = '',
 
 }
 

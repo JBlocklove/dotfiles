@@ -21,9 +21,6 @@ M.setup = function()
 		autotag = { -- added by windwp/nvim-ts-autotag
 			enable = true,
 		},
-		context = { -- added by romgrk/nvim-treesitter-context
-			enable = true,
-		},
 		matchup = {
 			enable = true,
 		},

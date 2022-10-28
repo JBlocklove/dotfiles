@@ -5,14 +5,18 @@ local servers = {
 	"sumneko_lua",
 	"bashls",
 	"texlab",
+	"clangd",
+	--"rust_hdl",
+	--"vhdl-tool",
+	"hdl_checker",
 }
 
 local lspconfig  = require("lspconfig")
 
 M.setup = function()
 	require('mason-lspconfig').setup{
-		ensure_installed = servers,
-		automatic_installation = true,
+		--ensure_installed = servers,
+		--automatic_installation = true,
 	}
 
 	for _, server in pairs(servers) do
@@ -27,18 +31,6 @@ M.setup = function()
 			opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
 		end
 		lspconfig[server].setup(opts)
-
-		--if server == "pyright" then
-		--	local pyright_opts = require("lsp.configs.pyright")
-		--	opts = vim.tbl_deep_extend("force", pyright_opts, opts)
-		--end
-
-		--if server == "sumneko_lua" then
-		--	local sumneko_lua_opts = require("lsp.configs.sumneko_lua")
-		--	opts = vim.tbl_deep_extend("force", sumneko_lua_opts, opts)
-		--end
-		--lspconfig[server].setup(opts)
-		--::continue::
 	end
 end
 
