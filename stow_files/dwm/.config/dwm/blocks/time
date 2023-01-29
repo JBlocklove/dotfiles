@@ -1,4 +1,4 @@
 #!/bin/sh
 
 time="$(date "+%H:%M")"
-echo -ne "^c#ffffff^ ^d^${time}"
+echo -ne "^c#b4a4f4^ ^c#eeffff^${time}"

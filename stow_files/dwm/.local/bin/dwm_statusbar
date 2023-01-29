@@ -16,7 +16,7 @@ while :; do
 	nord=`$SCRIPT_HOME/nord`
 
 	STATUS_ARR=()
-	STATUS_BLOCKS=( "$mpd" "$spotifyd" "$nord" "$openconnect" "$net" "$date" "$time" "$power" "$dpms" )
+	STATUS_BLOCKS=( "$openconnect" "$net" "$date" "$time" "$power" "$dpms" )
 
 	for i in "${!STATUS_BLOCKS[@]}"; do
 		if [[ ${STATUS_BLOCKS[i]} != "" ]]; then

@@ -57,6 +57,7 @@ local options = {
 	undolevels = 1000,
 	udf = true,
 	mouse = '',
+	modeline = false,
 
 }
 

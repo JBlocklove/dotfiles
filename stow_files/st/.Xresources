@@ -1,14 +1,20 @@
+XTerm*allowSendEvents: true
+
 ! Defaults
-*.font: Inconsolata:size=12:antialias=true:autohint=true
-*.fontalt0: siji:size=11:antialias=true:autohint=true
-*.alpha: 0.80;
+!*.font: JetBrains Mono NL:size=12:antialias=true:autohint=true
+*.font: Cascadia Mono:size=13:antialias=true:autohint=true
+*.fontalt0: Nerd Font Mono:size=11:antialias=true:autohint=true
+*.alpha: 1;
 
-st.font: Inconsolata:size=12:antialias=true:autohint=true
-st.fontalt0: siji:size=11:antialias=true:autohint=true
-st.alpha: 0.70;
+!st.font: IBM Plex Mono:size=11:antialias=true:autohint=true
+!st.font: JetBrains Mono NL:size=12:antialias=true:autohint=true
+st.font: Cascadia Mono:size=13:antialias=true:autohint=true
+st.fontalt0: Nerd Font Mono:size=11:antialias=true:autohint=true
+st.alpha: 0.8;
 
-!dmenu.font: Inconsolata Regular:family=mono:size=9:antialias=true:autohint=true
-dmenu.font: IBM Plex Mono:size=11:antialias=true:autohint=true
+!dmenu.font: IBM Plex Mono:size=11:antialias=true:autohint=true
+!dmenu.font: JetBrains Mono NL:size=11:antialias=true:autohint=true
+dmenu.font: Cascadia Mono:size=12:antialias=true:autohint=true
 dmenu.background: #212337
 dmenu.foreground: #e4f3fa
 dmenu.selbackground:#212337

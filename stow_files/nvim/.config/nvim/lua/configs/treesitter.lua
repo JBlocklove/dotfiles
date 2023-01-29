@@ -3,8 +3,17 @@ local M = {}
 local servers = {
 	'python',
 	'lua',
-	'verilog',
+	'vhdl',
 	'latex',
+}
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.vhdl = {
+  install_info = {
+    url = "~/Repos/tree-sitter-vhdl",
+    files = {"src/parser.c"}
+  },
+  filetype = "vhdl"
 }
 
 M.setup = function()
@@ -47,11 +56,3 @@ end
 
 return M
 
---local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
---parser_config.vhdl = {
---  install_info = {
---    url = "~/.local/share/tree-sitter/tree-sitter-vhdl",
---    files = {"src/parser.c"}
---  },
---  filetype = "vhdl"
---}

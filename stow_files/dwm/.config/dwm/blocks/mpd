@@ -6,10 +6,10 @@ play_status="$(mpc status | awk -v RS='' -v FS='\n' '{print $2}' | awk '{print $
 
 case $play_status in
 	"[playing]" )
-		echo -ne "^c#ffffff^ ^d^${current_song}"
+		echo -ne "^c#b4a4f4^ ^c#eeffff^${current_song}"
 		;;
 	"[paused]" )
-		echo -ne "^c#ffffff^ ^d^${current_song}"
+		echo -ne "^c#b4a4f4^ ^c#eeffff^${current_song}"
 		;;
 	* )
 		;;

@@ -12,7 +12,7 @@ then
     exec pkill dwm
 elif [ "$DIALOG_RESULT" = "suspend" ];
 then
-    exec sudo systemctl suspend-then-hibernate
+    exec sudo systemctl suspend
 elif [ "$DIALOG_RESULT" = "hibernate" ];
 then
 	exec sudo systemctl hibernate

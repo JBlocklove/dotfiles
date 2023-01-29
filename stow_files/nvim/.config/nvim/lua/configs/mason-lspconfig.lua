@@ -6,18 +6,33 @@ local servers = {
 	"bashls",
 	"texlab",
 	"clangd",
-	--"rust_hdl",
+	"vhdl_ls",
 	--"vhdl-tool",
-	"hdl_checker",
+	--"hdl_checker",
 }
 
 local lspconfig  = require("lspconfig")
+local configs = require("lspconfig.configs")
 
 M.setup = function()
 	require('mason-lspconfig').setup{
 		--ensure_installed = servers,
 		--automatic_installation = true,
 	}
+
+	if not configs.vhdl_ls then
+		configs.vhdl_ls = {
+			default_config = {
+				cmd = { "vhdl_ls" },
+				filetypes = { "vhdl" },
+				root_dir = function(fname)
+					local util = require("lspconfig").util
+					return util.root_pattern("vhdl_ls.toml")(fname)
+				end,
+				settings = {},
+			},
+		}
+	end
 
 	for _, server in pairs(servers) do
 		local opts = {

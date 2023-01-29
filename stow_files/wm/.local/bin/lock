@@ -90,4 +90,5 @@ eval convert -size ${OUTPUT_IMG_WIDTH}x${OUTPUT_IMG_HEIGHT} 'xc:black' $OUTPUT_I
 eval convert $OUTPUT_IMG $PARAMS $OUTPUT_IMG
 
 #Lock the screen:
+gpg-connect-agent --no-autostart reloadagent /bye
 $LOCK_CMD

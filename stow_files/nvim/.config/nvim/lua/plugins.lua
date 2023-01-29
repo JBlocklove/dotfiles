@@ -143,10 +143,15 @@ return packer.startup(function()
 		opt=true
 	}
 
--- Random stuff to play with
+	-- Random stuff to play with
 	use {
 		'github/copilot.vim',
 		config = function() require('configs.copilot').setup() end,
+	}
+
+	-- PlatformIO stuff
+	use {
+		'normen/vim-pio',
 	}
 
 end)

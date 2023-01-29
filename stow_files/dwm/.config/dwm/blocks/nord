@@ -4,5 +4,5 @@ nord_status="$(nordvpn status | awk '$3 ~ /Status:/ {print $4}')"
 
 if [[ $nord_status == "Connected" ]]; then
 	nord_server="$(nordvpn status | awk '$3 ~ /nordvpn.com/ {print $3}')"
-    echo -ne "^c#ffffff^ ^d^${nord_server}"
+    echo -ne "^c#b4a4f4^ ^c#eeffff^${nord_server}"
 fi

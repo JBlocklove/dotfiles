@@ -3,6 +3,7 @@ text/html; firefox %s &; nametemplate=%s.html
 text/html; w3m -I %{charset} -T text/html &; copiousoutput;
 text/calendar; calcurse -i %s;
 text/csv; sc-im %s;
+text/*; nvim %s;
 image/*; sxiv %s &;
 video/*; setsid mpv --quiet %s &; copiousoutput
 application/pdf; zathura %s &;
@@ -12,3 +13,5 @@ application/vnd.openxmlformats-officedocument.wordprocessingml.document; libreof
 application/vnd.oasis.opendocument.spreadsheet; libreoffice %s &; copiousoutput;
 application/msword; libreoffice %s &; copiousoutput;
 application/octet-stream; nvim %s;
+application/ics; calcurse -i %s;
+application/*; nvim %s;
