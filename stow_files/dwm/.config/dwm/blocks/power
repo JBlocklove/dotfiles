@@ -2,7 +2,9 @@
 
 status="$(cat /sys/class/power_supply/BAT1/status)"
 battery="$(cat /sys/class/power_supply/BAT1/capacity)"
-if [[ "${status}" == "Charging" ]]; then
+if [[ "${status}" == "" ]]; then
+	#DO NOTHING -- no output if no battery (desktop)
+elif [[ "${status}" == "Charging" ]]; then
     echo -ne "^c#ffc777^ ^c#eeffff^${battery}%"
 else
 	if [[ $battery -gt 90 ]]; then
