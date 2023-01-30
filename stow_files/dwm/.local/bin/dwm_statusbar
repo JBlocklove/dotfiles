@@ -10,13 +10,9 @@ while :; do
 	date=`$SCRIPT_HOME/date`
 	time=`$SCRIPT_HOME/time`
 	dpms=`$SCRIPT_HOME/dpms`
-	openconnect=`$SCRIPT_HOME/openconnect`
-	spotifyd=`timeout 1 $SCRIPT_HOME/spotifyd_py`
-	mpd=`$SCRIPT_HOME/mpd`
-	nord=`$SCRIPT_HOME/nord`
 
 	STATUS_ARR=()
-	STATUS_BLOCKS=( "$openconnect" "$net" "$date" "$time" "$power" "$dpms" )
+	STATUS_BLOCKS=( "$net" "$date" "$time" "$power" "$dpms" )
 
 	for i in "${!STATUS_BLOCKS[@]}"; do
 		if [[ ${STATUS_BLOCKS[i]} != "" ]]; then

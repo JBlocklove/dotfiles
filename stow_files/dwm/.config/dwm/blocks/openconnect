@@ -1,7 +1,0 @@
-#!/bin/sh
-
-openconnect_status="$(pgrep -a -x openconnect | awk '$2=="openconnect" { print $NF }')"
-
-if [[ $openconnect_status != "" ]]; then
-    echo -ne "^c#b4a4f4^ ^c#eeffff^${openconnect_status}"
-fi

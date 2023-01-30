@@ -3,19 +3,29 @@
 OIFS=$IFS
 
 IFS=$'\n' connecteddevices=($(nmcli device | awk '$3=="connected" {$1=$2=$3=""; print $0}'))
+IFS=$'\n' connecteddevice_types=($(nmcli device | awk '$3=="connected" {print $2}'))
 
 IFS=$OIFS
 
+
+netstatus=""
 if [[ ! -n $connecteddevices ]]; then
 	netstatus="^c#ff757f^ ^c#eeffff^Not Connected"
 else
-	device=`echo ${connecteddevices[0]}`
+	for (( i=0; i<${#connecteddevice_types[@]}; i++ )); do
+		if [[ ${connecteddevice_types[$i]} == "tun" ]]; then
+			netstatus+="^c#b4a4f4^ ^c#eeffff^VPN"
+		elif [[ ${connecteddevice_types[$i]} == "ethernet" ]]; then
+			netstatus+="^c#b4a4f4^ ^c#eeffff^Ethernet"
+		else
+			device=`echo ${connecteddevices[$i]}`
+			netstatus+="^c#b4a4f4^ ^c#eeffff^$device"
+		fi
 
-	if [[ $device == "Wired connection 1" ]]; then
-	    netstatus="^c#b4a4f4^ ^c#eeffff^Ethernet"
-	else
-	    netstatus="^c#b4a4f4^ ^c#eeffff^${device}"
-	fi
+		if [[ $i -lt $((${#connecteddevice_types[@]} - 1)) ]]; then
+			netstatus+="  |  "
+		fi
+	done
 fi
 
 echo -ne "$netstatus"
