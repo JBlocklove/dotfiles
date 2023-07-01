@@ -36,7 +36,7 @@ use_console_editor = yes
 
 song_columns_list_format = "(7)[yellow]{n} (23)[red]{a} (26)[yellow]{t} (38)[green]{b} (4)[blue]{l}"
 
-execute_on_song_change="notify-send "Now playing" "$(mpc current)""
+execute_on_song_change="notify-send -r 1562 "Now playing" "$(mpc current)""
 
 default_find_mode = wrapped
 

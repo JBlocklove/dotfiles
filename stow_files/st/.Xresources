@@ -1,23 +1,21 @@
 XTerm*allowSendEvents: true
 
 ! Defaults
-!*.font: JetBrains Mono NL:size=12:antialias=true:autohint=true
-*.font: Cascadia Mono:size=13:antialias=true:autohint=true
-*.fontalt0: Nerd Font Mono:size=11:antialias=true:autohint=true
+!*.font: CaskaydiaCoveNerdFontMono:size=13:antialias=true:autohint=true
+*.font: JetBrainsMonoNLNerdFont:size=13:antialias=true:autohint=true
 *.alpha: 1;
 
-!st.font: IBM Plex Mono:size=11:antialias=true:autohint=true
-!st.font: JetBrains Mono NL:size=12:antialias=true:autohint=true
-st.font: Cascadia Mono:size=13:antialias=true:autohint=true
-st.fontalt0: Nerd Font Mono:size=11:antialias=true:autohint=true
-st.alpha: 0.8;
+!st.font: CaskaydiaCoveNerdFontMono:size=13:antialias=true:autohint=true
+st.font: JetBrainsMonoNLNerdFont:size=13:antialias=true:autohint=true
+st.fontalt0: IBMPlexMono:size=13:antialias=true:autohint=true
+st.alpha: 1;
 
-!dmenu.font: IBM Plex Mono:size=11:antialias=true:autohint=true
-!dmenu.font: JetBrains Mono NL:size=11:antialias=true:autohint=true
-dmenu.font: Cascadia Mono:size=12:antialias=true:autohint=true
+!dmenu.font: CaskaydiaCoveNerdFontMono:size=12:antialias=true:autohint=true
+dmenu.font: JetBrainsMonoNLNerdFont:size=13:antialias=true:autohint=true
 dmenu.background: #212337
 dmenu.foreground: #e4f3fa
 dmenu.selbackground:#212337
 dmenu.selforeground: #2df4c0
 dmenu.hiforeground: #b4a4f4
 dmenu.hibackground: #212337
+dmenu.border: #04d1f9

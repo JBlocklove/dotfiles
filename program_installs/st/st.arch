@@ -5,4 +5,4 @@
 ########################################
 
 echo "Installing st build dependencies"
-sudo pacman -S --noconfirm fontconfig libx11 libxft ttf-inconsolata
+yay -S --noconfirm fontconfig libx11 libxft ttf-jetbrains-mono-nerd

@@ -25,7 +25,8 @@ M.setup = function()
 			additional_vim_regex_highlighting = true,
 		},
 		indent = {
-			enable = true
+			enable = true,
+			disable = { "yaml" },
 		},
 		autotag = { -- added by windwp/nvim-ts-autotag
 			enable = true,

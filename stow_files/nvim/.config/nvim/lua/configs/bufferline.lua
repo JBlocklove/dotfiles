@@ -36,6 +36,8 @@ M.setup = function()
 			enforce_regular_tabs = false,
 			always_show_bufferline = true,
 			sort_by = 'id',
+            max_name_length = 15,
+            tab_size = 15,
 		}
 	}
 end

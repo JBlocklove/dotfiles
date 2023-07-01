@@ -1,5 +1,5 @@
 # Tmux As Shell when not in a tty
-#if [[ ! -z "$DISPLAY" ]]; then
-#	export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
-#	[[ -z "$TMUX" ]] && exec tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf
-#fi
+if [[ ! -z "$DISPLAY" ]]; then
+	export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+	[[ -z "$TMUX" ]] && exec tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf
+fi

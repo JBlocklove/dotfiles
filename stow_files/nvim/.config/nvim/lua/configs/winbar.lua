@@ -53,7 +53,7 @@ M.get_filename = function()
 
     vim.api.nvim_set_hl(0, hl_group, { fg = file_icon_color })
     if M.isempty(file_icon) then
-      file_icon = ""
+      file_icon = "󰈙"
       file_icon_color = ""
     end
 

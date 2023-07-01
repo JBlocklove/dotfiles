@@ -7,12 +7,12 @@ for DOTFILE in $HOME/.shellrc/.*; do
 	[ -r "$DOTFILE" ] && source "$DOTFILE"
 done
 
-if [ -r ~/.dir_colors ]; then
-    eval $(dircolors ~/.dir_colors);
-fi
-
-# remap autosuggestion complete to <C-p> to match my nvim github copilot map
-bindkey '\C-p' autosuggest-accept
-
-# Non-controlled custom configs
-source ~/.localrc
+#if [ -r ~/.dir_colors ]; then
+#    eval $(dircolors ~/.dir_colors);
+#fi
+#
+## remap autosuggestion complete to <C-p> to match my nvim github copilot map
+#bindkey '\C-p' autosuggest-accept
+#
+## Non-controlled custom configs
+#source ~/.localrc

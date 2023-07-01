@@ -22,10 +22,4 @@ If you want to link the dotfiles for a program but not install that program usin
 ```stow -t ~/ <prog1> <prog2> ... <progN>```
 
 ## OS Support
-Due to the different ways with which each OS installs its programs, each OS has to use its own install script for now. As a result, not all are currently supported for all programs.
-### Most installs working
-* Debian/Ubuntu
-* Fedora
-* OS X (with brew)
-### All installs working
-* Arch
+Automatic installation is now only supported on Arch Linux, primarily using yay

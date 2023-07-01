@@ -1,6 +1,6 @@
 text/plain; nvim %s;
 text/html; firefox %s &; nametemplate=%s.html
-text/html; w3m -I %{charset} -T text/html &; copiousoutput;
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
 text/calendar; calcurse -i %s;
 text/csv; sc-im %s;
 text/*; nvim %s;

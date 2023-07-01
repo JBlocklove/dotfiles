@@ -14,8 +14,10 @@ local options = {
 	conceallevel = 0, -- so that `` is visible in markdown files
 	confirm = true,
 	fileencoding = "utf-8", -- the encoding written to a file
-	foldmethod = "manual", -- folding, set to "expr" for treesitter based folding
-	foldexpr = "", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+	foldmethod = "expr", -- folding, set to "expr" for treesitter based folding
+	foldexpr = "nvim_treesitter#foldexpr()", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+	--foldmethod = "manual", -- folding, set to "expr" for treesitter based folding
+	--foldexpr = "", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
 	hidden = true, -- required to keep multiple buffers and open multiple buffers
 	hlsearch = true, -- highlight all matches on previous search pattern
 	ignorecase = true, -- ignore case in search patterns
@@ -67,17 +69,3 @@ opt.shortmess:append "c"
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
-
----- transparent window overrides
---cmd "au ColorScheme * hi Normal ctermbg=none guibg=none"
---cmd "au ColorScheme * hi SignColumn ctermbg=none guibg=none"
---cmd "au ColorScheme * hi NormalNC ctermbg=none guibg=none"
---cmd "au ColorScheme * hi MsgArea ctermbg=none guibg=none"
---cmd "au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none"
---cmd "let &fcs='eob: '"
---
-----if vim.colorscheme == "moonlight" then
---	-- Fix fold colors
---cmd "au ColorScheme * hi Folded ctermfg=233 guifg=#a1abe0"
---vim.g.moonlight_disable_background = true
-----end

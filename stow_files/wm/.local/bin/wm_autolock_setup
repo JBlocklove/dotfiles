@@ -5,7 +5,7 @@ battery_status="$(cat /sys/class/power_supply/BAT1/status)"
 battery_charge="$(cat /sys/class/power_supply/BAT1/capacity)"
 
 #initial xautolock setup
-xautolock -time 20 -locker 'sudo systemctl suspend-then-hibernate' &
+xautolock -time 45 -locker 'sudo systemctl suspend-then-hibernate' &
 
 while true; do
 	if [[ "${battery_status}" == "Charging" || "${dpms_status}" == "Disabled" || ("${battery_status}" != "Charging" && $battery_charge -eq 100) ]]; then

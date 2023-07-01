@@ -67,15 +67,13 @@ def_key "2"
 def_key "2"
 	change_browse_mode
 def_key "3"
-  show_search_engine
-def_key "3"
-  reset_search_engine
-def_key "4"
 	show_playlist_editor
+def_key "4"
+  show_search_engine
+def_key "4"
+  reset_search_engine
 def_key "5"
-	show_media_library
-def_key "5"
-  toggle_media_library_columns_mode
+	dummy
 def_key "6"
 	dummy
 def_key "7"

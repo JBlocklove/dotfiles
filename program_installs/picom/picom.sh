@@ -5,6 +5,6 @@
 ########################################
 
 cd $DOTFILES_INSTALL/stow_files
-stow --verbose -t ~/ compton
+stow --verbose -t ~/ picom
 cd -
 

@@ -2,27 +2,26 @@
 
 OIFS=$IFS
 
-IFS=$'\n' connecteddevices=($(nmcli device | awk '$3=="connected" {$1=$2=$3=""; print $0}'))
-IFS=$'\n' connecteddevice_types=($(nmcli device | awk '$3=="connected" {print $2}'))
+IFS=$'\n' connected_devices=($(nmcli -g TYPE,STATE,CONNECTION device | awk -F':' '$2=="connected" {print $3}'))
+IFS=$'\n' connected_device_types=($(nmcli -g TYPE,STATE,CONNECTION device | awk -F':' '$2=="connected" {print $1}'))
 
 IFS=$OIFS
 
-
 netstatus=""
-if [[ ! -n $connecteddevices ]]; then
+if [[ ! -n $connected_devices ]]; then
 	netstatus="^c#ff757f^ ^c#eeffff^Not Connected"
 else
-	for (( i=0; i<${#connecteddevice_types[@]}; i++ )); do
-		if [[ ${connecteddevice_types[$i]} == "tun" ]]; then
+	for (( i=0; i<${#connected_device_types[@]}; i++ )); do
+		if [[ ${connected_device_types[$i]} == "tun" ]]; then
 			netstatus+="^c#b4a4f4^ ^c#eeffff^VPN"
-		elif [[ ${connecteddevice_types[$i]} == "ethernet" ]]; then
+		elif [[ ${connected_device_types[$i]} == "ethernet" ]]; then
 			netstatus+="^c#b4a4f4^ ^c#eeffff^Ethernet"
 		else
-			device=`echo ${connecteddevices[$i]}`
+			device=`echo ${connected_devices[$i]}`
 			netstatus+="^c#b4a4f4^ ^c#eeffff^$device"
 		fi
 
-		if [[ $i -lt $((${#connecteddevice_types[@]} - 1)) ]]; then
+		if [[ $i -lt $((${#connected_device_types[@]} - 1)) ]]; then
 			netstatus+="  |  "
 		fi
 	done

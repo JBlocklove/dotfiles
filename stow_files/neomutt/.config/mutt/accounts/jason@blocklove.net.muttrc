@@ -1,0 +1,20 @@
+# vim: filetype=neomuttrc
+# muttrc file for account jason@blocklove.net
+set realname = "jason"
+set from = "jason@blocklove.net"
+set sendmail = "msmtp -a jason@blocklove.net"
+alias me jason <jason@blocklove.net>
+set folder = "/home/jason/.local/share/mail/jason@blocklove.net"
+set header_cache = "/home/jason/.cache/mutt-wizard/jason_blocklove.net/headers"
+set message_cachedir = "/home/jason/.cache/mutt-wizard/jason_blocklove.net/bodies"
+set mbox_type = Maildir
+set hostname = "blocklove.net"
+source /usr/local/share/mutt-wizard/switch.muttrc
+set spoolfile = "+INBOX"
+set postponed = "+Drafts"
+set trash = "+Trash"
+set record = "+Sent"
+
+macro index o "<shell-escape>mailsync jason@blocklove.net<enter>" "sync jason@blocklove.net"
+#mailboxes "=Spam" "=Sent" "=Drafts" "=Trash" "=Folders" "=All Mail" "=INBOX" "=Archive" "=Labels" "=Starred"
+mailboxes "=INBOX" "=Drafts" "=Sent" "=Spam" "=Trash"

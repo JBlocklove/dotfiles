@@ -15,7 +15,7 @@ set postponed = +Drafts
 set trash = +Trash
 set record = +Sent
 
-macro index o "<shell-escape>mw -y ***REMOVED***<enter>" "run mbsync to sync ***REMOVED***"
+macro index o "<shell-escape>mailsync ***REMOVED***<enter>" "run mbsync to sync ***REMOVED***"
 macro index \eg "<enter-command>unset wait_key<enter><shell-escape>gpg --list-secret-keys; printf 'Enter email ID of user to publish: '; read eID; printf 'Enter fingerprint of GPG key to publish: '; read eFGPT; /usr/local/libexec/gpg-wks-client --create \$eFGPT \$eID | msmtp --read-envelope-from --read-recipients -a ***REMOVED***<enter>"  "publish GPG key to WKS provider"
 macro index \eh "<pipe-message>/usr/local/libexec/gpg-wks-client --receive | msmtp --read-envelope-from --read-recipients -a ***REMOVED***<enter>" "confirm GPG publication"
 

@@ -19,6 +19,7 @@ local conditions = {
 
 local statusline = {
 	options = {
+		globalstatus = true,
 		theme = {
 			normal = {
 				a = { fg = colors.fg, bg = colors.bg },
@@ -92,7 +93,7 @@ local statusline = {
 			{
 				'diagnostics',
 				sources = { 'nvim_diagnostic' },
-				symbols = { error = ' ', warn = ' ', info = ' ', hint = " "},
+				symbols = { error = ' ', warn = ' ', info = ' ', hint = "󰌵 "},
 				diagnostics_color = {
 					color_error = { fg = colors.red },
 					color_warn = { fg = colors.yellow },

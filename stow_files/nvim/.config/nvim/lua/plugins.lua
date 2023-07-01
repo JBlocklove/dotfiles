@@ -13,17 +13,15 @@ return packer.startup(function()
 		config = function() require('colorizer').setup() end,
 	}
 	use {
-		'catppuccin/nvim',
-		config = function() require('configs.catppuccin').setup() end,
-	 }
-	use {
 		'baliestri/aura-theme',
 		rtp = 'packages/neovim',
 		--config = function() require('configs.aura').setup() end,
 	}
 
 	-- Icons
-	use { 'kyazdani42/nvim-web-devicons' }
+	use {
+		'nvim-tree/nvim-web-devicons',
+	}
 
 	-- Floating windows
 	use { 'nvim-lua/popup.nvim' }
@@ -32,14 +30,14 @@ return packer.startup(function()
 	use {
 		'nvim-lualine/lualine.nvim',
 		config = function() require('configs.lualine').setup() end,
-		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+		requires = {'nvim-tree/nvim-web-devicons', opt = true}
 	}
 
 	-- Bufferline
 	use {
 		'akinsho/bufferline.nvim',
 		tag="v2.*",
-		requires = {'kyazdani42/nvim-web-devicons'},
+		requires = {'nvim-tree/nvim-web-devicons'},
 		config = function() require('configs.bufferline').setup() end,
 	}
 
@@ -92,10 +90,16 @@ return packer.startup(function()
 		requires = { 'SirVer/ultisnips' }
 	}
 
+	-- Telescope
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = { 'nvim-lua/plenary.nvim' },
+	}
+
 	-- Tree for files
 	use {
-		'kyazdani42/nvim-tree.lua',
-		requires = { 'kyazdani42/nvim-web-devicons' },
+		'nvim-tree/nvim-tree.lua',
+		requires = { 'nvim-tree/nvim-web-devicons' },
 		config = function() require('configs.nvim-tree').setup() end
 	}
 
@@ -129,17 +133,30 @@ return packer.startup(function()
     	opt=true
 	}
 
+	-- papis
+	--use {
+	--	'jghauser/papis.nvim',
+	--	after = { 'telescope.nvim', 'nvim-cmp' },
+	--	requires = {
+	--		'kkharji/sqlite.lua',
+	--		'nvim-lua/plenary.nvim',
+	--		'MunifTanjim/nui.nvim',
+	--		'nvim-treesitter/nvim-treesitter',
+	--	},
+	--	rocks = {
+	--		{
+	--			'lyaml',
+	--		}
+	--	},
+	--	config = function() require('configs.papis').setup() end,
+	--}
+
+
+
 	-- VHDL stuff
 	use {
 		'JBlocklove/vip',
 		ft='vhdl',
-		opt=true
-	}
-
-	-- RISC-V Syntax
-	use {
-		'henry-hsieh/riscv-asm-vim',
-		ft='riscv_asm',
 		opt=true
 	}
 
@@ -149,9 +166,19 @@ return packer.startup(function()
 		config = function() require('configs.copilot').setup() end,
 	}
 
-	-- PlatformIO stuff
-	use {
-		'normen/vim-pio',
-	}
+	--use {
+	--	'utilyre/sentiment.nvim',
+	--	config = function() require('configs.sentiment').setup() end,
+	--}
+
+	--use {
+	--	'olimorris/persisted.nvim',
+	--	config = function() require('configs.persisted').setup() end,
+	--}
+
+	--use {
+	--	'gorbit99/codewindow.nvim',
+	--	config = function() require('configs.codewindow').setup() end,
+	--}
 
 end)

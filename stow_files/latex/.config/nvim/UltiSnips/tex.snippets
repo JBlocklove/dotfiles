@@ -178,10 +178,10 @@ snippet frame "\basic frame setup"
 endsnippet
 
 snippet note "\frame note setup"
-\\note{
+\\note{%
 	\\begin{itemize}
 		\\item $0
-\\end{itemize}
+	\\end{itemize}
 }
 endsnippet
 
@@ -216,4 +216,10 @@ snippet lstlisting "\begin{lstlisting}..."
 \\begin{lstlisting}${1:[$2]}
 	$0
 \\end{lstlisting}
+endsnippet
+
+snippet posterbox "\begin{posterbox}..."
+\\begin{posterbox}[name=$1,column=$2,below=$3]{}
+	$0
+\\end{posterbox}
 endsnippet

@@ -5,4 +5,5 @@
 # A better Vi Improved
 ########################################
 
-sudo pacman -S --noconfirm --needed neovim python-neovim clang xsel curl python cmake
+yay -S --noconfirm --needed neovim python-neovim
+sudo pip3 install pynvim

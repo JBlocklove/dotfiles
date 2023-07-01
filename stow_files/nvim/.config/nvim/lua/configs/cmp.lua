@@ -4,31 +4,31 @@ M.setup = function()
 	local cmp = require('cmp')
 
 	local kind_icons = {
-	  Text = "",
+	  Text = "󰉿",
 	  Method = "m",
-	  Function = "",
+	  Function = "󰊕",
 	  Constructor = "",
 	  Field = "",
-	  Variable = "",
-	  Class = "",
+	  Variable = "󰆧",
+	  Class = "󰌗",
 	  Interface = "",
 	  Module = "",
 	  Property = "",
 	  Unit = "",
-	  Value = "",
+	  Value = "󰎠",
 	  Enum = "",
-	  Keyword = "",
+	  Keyword = "󰌆",
 	  Snippet = "",
-	  Color = "",
-	  File = "",
+	  Color = "󰸌",
+	  File = "󰈙",
 	  Reference = "",
-	  Folder = "",
+	  Folder = "󰉋",
 	  EnumMember = "",
-	  Constant = "",
+	  Constant = "󰇽",
 	  Struct = "",
 	  Event = "",
-	  Operator = "",
-	  TypeParameter = "",
+	  Operator = "󰆕",
+	  TypeParameter = "󰊄",
 	}
 
 	cmp.setup({
@@ -38,6 +38,7 @@ M.setup = function()
 			end
 		},
 		window = {
+			completion = cmp.config.window.bordered(),
 			documentation = cmp.config.window.bordered(),
 		},
 		formatting = {

@@ -5,4 +5,4 @@
 # ncurses based calendar app
 ########################################
 
-sudo pacman -S --noconfirm --needed calcurse
+yay -S --noconfirm --needed calcurse

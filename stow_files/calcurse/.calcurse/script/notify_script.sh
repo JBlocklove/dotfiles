@@ -1,6 +1,6 @@
 #!/bin/bash
 
-notify-send --icon=appointment-soon-symbolic Calcurse "$(calcurse -n)"
+notify-send -r 5132 --icon=appointment-soon-symbolic Calcurse "$(calcurse -n)"
 
 
 # UNCOMMENT FOR EMAILS

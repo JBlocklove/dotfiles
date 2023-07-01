@@ -1,15 +1,13 @@
 #!/bin/bash
 
 #
-# Calcurse Info file
+# VHDL Info file
 #
 
 export package_support="Arch"
 
-echo "Calcurse: NCurses Based Calendar"
+echo "HDL tools"
 
 PRE_INSTALL_OPTIONS() {
     echo ""
 }
-
-

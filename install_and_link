@@ -51,17 +51,22 @@ function detectos(){
 }
 
 function addDeps(){
-	echo Installing GNU Stow as a dependency for all package linking
+	echo Installing GNU Stow for config linking and yay for AUR support
 	case $DISTRO in
 		"Arch")
 			sudo pacman --noconfirm --needed -S stow
-			;;
-		"Ubuntu")
-			sudo apt install -y stow
+
+			if ! command -v yay &> /dev/null
+			then
+				git clone https://aur.archlinux.org/yay.git /tmp/yay
+				cd /tmpyay
+				makepkg -si
+				cd -
+				rm -rf /tmp/yay
+			fi
 			;;
 		*)
-			echo "NON-SUPPORTED OS -- Please install Stow if able"
-			continue=`getInputBoolean "NON-SUPPORTED OS -- Please install GNU Stow if able. Continue?" "no"`
+			continue=`getInputBoolean "NON-SUPPORTED OS -- Please install GNU Stow if able. Package installs will not be supported and linking with stow must be done manually. Continue?" "no"`
 			;;
 		esac
 }
@@ -128,14 +133,8 @@ for PROG in "${INSTALL_PROGS[@]}"; do
 
     echo "Attempting to install ${PROG}..."
     # Os specific
-    if [[ "$DISTRO" == "Debian" ]] || [[ "$DISTRO" == "Ubuntu" ]]; then
-        source "${PACKAGE_INSTALL}/${PROG}.debian"
-    elif [[ "$DISTRO" == "Darwin" ]]; then
-        source "${PACKAGE_INSTALL}/${PROG}.osx"
-    elif [[ "$DISTRO" == "Arch" ]]; then
+    if [[ "$DISTRO" == "Arch" ]]; then
         source "${PACKAGE_INSTALL}/${PROG}.arch"
-    elif [[ "$DISTRO" == "Fedora" ]]; then
-        source "${PACKAGE_INSTALL}/${PROG}.fedora"
     else
         # FYI: This shouldn't ever happen - make an issue if it does?
         echo "ERROR: This os doesn't support ${PROG} installations."

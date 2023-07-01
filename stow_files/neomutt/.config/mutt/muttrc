@@ -92,3 +92,4 @@ source /home/jason/.config/mutt/accounts/jason.blocklove@gmail.com.muttrc
 macro index,pager i1 '<sync-mailbox><enter-command>source /home/jason/.config/mutt/accounts/jason.blocklove@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to jason.blocklove@gmail.com"
 macro index,pager i2 '<sync-mailbox><enter-command>source /home/jason/.config/mutt/accounts/***REMOVED***.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to ***REMOVED***"
 macro index,pager i3 '<sync-mailbox><enter-command>source /home/jason/.config/mutt/accounts/jmb1997@comcast.net.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to jmb1997@comcast.net"
+macro index,pager i4 '<sync-mailbox><enter-command>source /home/jason/.config/mutt/accounts/jason@blocklove.net.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to jason@blocklove.net"

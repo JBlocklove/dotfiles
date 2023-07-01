@@ -7,7 +7,7 @@
 # mutt-wizard install
 pushd .
 cd /tmp
-git clone https://github.com/LukeSmithxyz/mutt-wizard.git
+git clone https://github.com/JBlocklove/mutt-wizard.git
 cd mutt-wizard
 sudo make install
 popd

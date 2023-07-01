@@ -2,11 +2,12 @@ local M = {}
 
 local servers = {
 	"pyright",
-	"sumneko_lua",
+	"lua_ls",
 	"bashls",
 	"texlab",
 	"clangd",
 	"vhdl_ls",
+	"verible",
 	--"vhdl-tool",
 	--"hdl_checker",
 }
@@ -15,6 +16,7 @@ local lspconfig  = require("lspconfig")
 local configs = require("lspconfig.configs")
 
 M.setup = function()
+	require("mason").setup()
 	require('mason-lspconfig').setup{
 		--ensure_installed = servers,
 		--automatic_installation = true,

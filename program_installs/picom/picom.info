@@ -1,13 +1,14 @@
 #!/bin/bash
 
 #
-# polybar info file
+# compton Info file
 #
 
 export package_support="Arch"
 
-echo "Polybar: A fast and easy-to-use status bar"
+echo "Picom: Window Compositor"
 
 PRE_INSTALL_OPTIONS() {
 	echo ""
 }
+

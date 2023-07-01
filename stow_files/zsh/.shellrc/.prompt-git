@@ -536,14 +536,11 @@ function git_stat() {
     if [ $? -eq 0 ]; then \
     echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
     if [ "$?" -eq "0" ]; then \
-        # @4 - Clean repository - nothing to commit
         echo $git_color_clean$(__git_ps1 "$git_clean_prefix%s$git_clean_suffix"); \
     else \
-        # @5 - Changes to working tree
         echo $git_color_dirty$(__git_ps1 "$git_dirty_prefix%s$git_dirty_suffix"); \
     fi)$Color_Off";
     else \
-    # @2 - Prompt when not in GIT repo
     echo ""; \
     fi \
     );
