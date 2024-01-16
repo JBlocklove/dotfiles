@@ -23,27 +23,26 @@ fi
 
 # start some nice programs
 
-#if [ -d /etc/X11/xinit/xinitrc.d ] ; then
-# for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-#  [ -x "$f" ] && . "$f"
-# done
-# unset f
-#fi
-#
-#[ -f ~/.xprofile ] && . ~/.xprofile
-#
-#picom #--experimental-backend &
-#wal -R &
-#
-#wm_set_last_wp &
-#dwm_statusbar &
-#
-#mopidy &
-#
-#neomutt_run &
-#signal-desktop &
-#ferdium &
-#
-##wm_autolock_setup &
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
+
+[ -f ~/.xprofile ] && . ~/.xprofile
+
+#picom &
+wal -R &
+
+wm_set_last_wp &
+dwm_statusbar &
+
+mopidy &
+mpd-notification -t 3 &
+
+neomutt_run &
+signal-desktop &
+ferdium &
 
 while type dwm >/dev/null ; do dwm && continue || break ; done

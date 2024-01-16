@@ -1,6 +1,9 @@
 #!/bin/zsh
 # PS1 Prompt
 # original git bash prompt by Mike Stewart - http://MediaDoneRight.com
+
+source $HOME/.shellrc/git.prompt
+
 # color constants
 
 # Reset
@@ -57,10 +60,11 @@ function install_prompt_precmd() {
   precmd_functions+=(prompt_precmd)
 }
 
-if [ "$TERM" != "linux" ]; then
-    install_prompt_precmd
-fi
+#if [ "$TERM" != "linux" ]; then
+#    install_prompt_precmd
+#fi
+install_prompt_precmd
 
-source $HOME/.shellrc/default.theme
+source $HOME/.shellrc/theme.prompt
 
 export PROMPT=$prompt_format

@@ -54,16 +54,17 @@ function addDeps(){
 	echo Installing GNU Stow for config linking and yay for AUR support
 	case $DISTRO in
 		"Arch")
-			sudo pacman --noconfirm --needed -S stow
-
 			if ! command -v yay &> /dev/null
 			then
 				git clone https://aur.archlinux.org/yay.git /tmp/yay
-				cd /tmpyay
+				cd /tmp/yay
 				makepkg -si
 				cd -
 				rm -rf /tmp/yay
 			fi
+
+			yay --noconfirm --needed -S stow
+
 			;;
 		*)
 			continue=`getInputBoolean "NON-SUPPORTED OS -- Please install GNU Stow if able. Package installs will not be supported and linking with stow must be done manually. Continue?" "no"`

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+notification_paused="$(dunstctl is-paused)"
+
+if [[ $notification_paused == "true" ]]; then
+    echo -ne "^c#ff757f^ ^c#eeffff^"
+fi

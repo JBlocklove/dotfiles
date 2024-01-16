@@ -64,6 +64,22 @@ function M.setup()
 		{"n", "<leader>bj", ":BufferLinePick<CR>"},
 		{"n", "<leader>bd", ":BufferLinePickClose<CR>"},
 		{"n", "<leader>bp", ":BufferLineTogglePin<CR>"},
+
+		-- Telescope
+		{"n", "<leader>ff", ":Telescope find_files<CR>"},
+		{"n", "<leader>fg", ":Telescope live_grep<CR>"},
+		{"n", "<leader>fb", ":Telescope buffers<CR>"},
+		{"n", "<leader>fh", ":Telescope help_tags<CR>"},
+		{"n", "<leader>fc", ":Telescope commands<CR>"},
+		{"n", "<leader>fm", ":Telescope marks<CR>"},
+		{"n", "<leader>fr", ":Telescope registers<CR>"},
+		{"n", "<leader>fs", ":Telescope spell_suggest<CR>"},
+		{"n", "<leader>ft", ":Telescope tags<CR>"},
+
+		-- Gitsigns
+		{"n", "<leader>hp", ":Gitsigns preview_hunk<CR>"},
+
+
 	  }
 	M.map_key_list(keys)
 end

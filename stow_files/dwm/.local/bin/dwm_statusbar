@@ -9,10 +9,11 @@ while :; do
 	power=`$SCRIPT_HOME/power`
 	date=`$SCRIPT_HOME/date`
 	time=`$SCRIPT_HOME/time`
+	notifications=`$SCRIPT_HOME/notifications`
 	dpms=`$SCRIPT_HOME/dpms`
 
 	STATUS_ARR=()
-	STATUS_BLOCKS=( "$net" "$date" "$time" "$power" "$dpms" )
+	STATUS_BLOCKS=( "$net" "$date" "$time" "$power" "$notifications" "$dpms" )
 
 	for i in "${!STATUS_BLOCKS[@]}"; do
 		if [[ ${STATUS_BLOCKS[i]} != "" ]]; then

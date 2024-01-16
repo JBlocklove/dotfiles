@@ -17,7 +17,17 @@ function get_hosts(){
 
 }
 
-SEL=$( get_hosts | dmenu -c -l 10 -z 500 -p "ssh:" | awk '{print $1}' )
+#monitor_flag=""
+#if [[ $# -gt 0 ]]; then
+#	monitor_flag="-m $1"
+#fi
+
+if [[ -z $(get_hosts) ]]; then
+	exit 1
+else
+	#SEL=$( get_hosts | dmenu $monitor_flag -c -l 10 -z 500 -p "ssh:" | awk '{print $1}' )
+	SEL=$( get_hosts | dmenu -c -l 10 -z 500 -p "ssh:" | awk '{print $1}' )
+fi
 
 if [[ ! -z $SEL ]]; then
 	$SSH_CMD $SEL

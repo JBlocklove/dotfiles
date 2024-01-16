@@ -4,6 +4,7 @@ status="$(cat /sys/class/power_supply/BAT1/status)"
 battery="$(cat /sys/class/power_supply/BAT1/capacity)"
 if [[ "${status}" == "" ]]; then
 	#DO NOTHING -- no output if no battery (desktop)
+	:
 elif [[ "${status}" == "Charging" ]]; then
     echo -ne "^c#ffc777^ ^c#eeffff^${battery}%"
 else
@@ -14,6 +15,8 @@ else
 	elif [[ $battery -le 45 && $battery -gt 15 ]]; then
 		echo -ne "^c#b4a4f4^ ^c#eeffff^${battery}%"
 	else
-		echo -ne "^c#BF616a^ ^c#eeffff^${battery}%"
+		echo -ne "^c#ff757f^ ^c#eeffff^${battery}%"
 	fi
 fi
+
+

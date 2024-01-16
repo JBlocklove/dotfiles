@@ -1,7 +1,7 @@
 local M = {}
 
 local colors = require 'moonlight.colors'
-local navic = require 'nvim-navic'
+--local navic = require 'nvim-navic'
 
 local conditions = {
 	buffer_not_empty = function()
@@ -145,8 +145,8 @@ local statusline = {
 		lualine_b = {},
 		lualine_c = {
 			{
-				navic.get_location,
-				cond = navic.is_available,
+				--navic.get_location,
+				--cond = navic.is_available,
 			},
 		},
 		lualine_x = {},

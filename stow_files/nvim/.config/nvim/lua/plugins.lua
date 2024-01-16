@@ -8,20 +8,14 @@ return packer.startup(function()
 
 	-- Colorscheme
 	use { '/home/jason/Repos/moonlight.nvim' }
+	use { 'catppuccin/nvim', as = 'catppuccin' }
 	use {
 		'norcalli/nvim-colorizer.lua',
-		config = function() require('colorizer').setup() end,
-	}
-	use {
-		'baliestri/aura-theme',
-		rtp = 'packages/neovim',
-		--config = function() require('configs.aura').setup() end,
+		--config = function() require('colorizer').setup() end,
 	}
 
 	-- Icons
-	use {
-		'nvim-tree/nvim-web-devicons',
-	}
+	use { 'nvim-tree/nvim-web-devicons' }
 
 	-- Floating windows
 	use { 'nvim-lua/popup.nvim' }
@@ -29,14 +23,13 @@ return packer.startup(function()
 	-- Statusline
 	use {
 		'nvim-lualine/lualine.nvim',
+		requires = {'nvim-tree/nvim-web-devicons', opt = true},
 		config = function() require('configs.lualine').setup() end,
-		requires = {'nvim-tree/nvim-web-devicons', opt = true}
 	}
 
 	-- Bufferline
 	use {
 		'akinsho/bufferline.nvim',
-		tag="v2.*",
 		requires = {'nvim-tree/nvim-web-devicons'},
 		config = function() require('configs.bufferline').setup() end,
 	}
@@ -58,7 +51,7 @@ return packer.startup(function()
 		run = ':TSUpdate',
 		config = function() require('configs.treesitter').setup() end,
 	}
-	use { 'windwp/nvim-ts-autotag' }
+	--use { 'windwp/nvim-ts-autotag' }
 	use { 'nvim-treesitter/playground' }
 
 	-- Navic for context
@@ -94,6 +87,7 @@ return packer.startup(function()
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = { 'nvim-lua/plenary.nvim' },
+		config = function() require('configs.telescope').setup() end,
 	}
 
 	-- Tree for files
@@ -110,11 +104,11 @@ return packer.startup(function()
 		config = function() require('gitsigns').setup() end
 	}
 
-	-- Toggleterm
-	use {
-		'akinsho/toggleterm.nvim',
-		config = function() require('configs.toggleterm').setup() end,
-	}
+	---- Toggleterm
+	--use {
+	--	'akinsho/toggleterm.nvim',
+	--	config = function() require('configs.toggleterm').setup() end,
+	--}
 
 	-- Markdown stuff
 	use {

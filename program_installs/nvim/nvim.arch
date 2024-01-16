@@ -5,5 +5,4 @@
 # A better Vi Improved
 ########################################
 
-yay -S --noconfirm --needed neovim python-neovim
-sudo pip3 install pynvim
+yay -S --noconfirm --needed neovim python-pynvim

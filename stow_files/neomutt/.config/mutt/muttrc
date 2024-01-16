@@ -7,6 +7,10 @@ set date_format="%m/%d/%Y %H:%M"
 set index_format="%2C %zs %?X?A& ? %D %-18.18F %s (%-4.4c)"
 set sidebar_format = '%B%* %?N?[%N]? %?S?%S?'
 
+set query_command = "khard email --parsable %s"
+macro index,pager a "<pipe-message>khard add-email<return>" "add the sender email address to khard"
+
+
 bind index q noop
 bind index,pager i noop
 bind index \Cf noop

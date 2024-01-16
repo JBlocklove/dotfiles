@@ -1,15 +1,16 @@
 # Aliases
 #
 
-alias ls="ls --color=auto -N"
+#alias ls="ls --color=auto -N"
+alias ls="lsd"
 
 # allow aliases in sudo
 alias sudo='sudo '
 
 # listing aliases
-alias la="ls -A"
-alias ll="ls -lhAr"
-alias lh="ls -lah"
+alias la="lsd -A"
+alias ll="lsd -lhAr"
+alias lh="lsd -lah"
 
 # vim
 alias vim="nvim"

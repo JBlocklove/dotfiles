@@ -32,7 +32,7 @@
 
     frame_width = 2
 
-    frame_color = "#04d1f9"
+    frame_color = "#d6e7f0"
     separator_color = frame
 
     sort = yes
