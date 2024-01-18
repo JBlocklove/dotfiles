@@ -1,19 +1,12 @@
-cmd = vim.cmd
-opt = vim.opt
-
 -- General settings and options
-require "settings"
-local autocmds = require "autocmds"
-autocmds.define_augroups(defined_autocommands)
+require("settings")
+require("autocmds")
 
 -- Plugin setup
-require("plugins")
+require("lazy-plugins")
 
 -- Colorscheme
 require("colorscheme")
 
 -- Set key mappings
-require("mappings").setup()
-
--- Setup LSP
-require("lsp")
+require("mappings")

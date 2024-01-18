@@ -3,7 +3,7 @@ DATA_PATH = vim.fn.stdpath "data"
 CACHE_PATH = vim.fn.stdpath "cache"
 USER = vim.fn.expand "$USER"
 
---cmd [[ set spellfile=~/.config/nvim/spell/en.utf-8.add ]]
+--vim.cmd [[ set spellfile=~/.config/nvim/spell/en.utf-8.add ]]
 
 local options = {
 	backup = false, -- creates a backup file
@@ -62,7 +62,7 @@ local options = {
 	modeline = true,
 }
 
-opt.shortmess:append "c"
+vim.opt.shortmess:append "c"
 
 -- Loop to set all options
 for k, v in pairs(options) do

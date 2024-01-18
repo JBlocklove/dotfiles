@@ -1,3 +1,4 @@
+return {}
 --local M = {}
 --
 --M.setup = function()

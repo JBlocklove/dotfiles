@@ -1,87 +1,59 @@
-local M = {}
+-- Enforce purity
+vim.keymap.set("i", "<Up>", "<Nop>")
+vim.keymap.set("i", "<Down>", "<Nop>")
+vim.keymap.set("i", "<Left>", "<Nop>")
+vim.keymap.set("i", "<Right>", "<Nop>")
+vim.keymap.set("n", "<Up>", "<Nop>")
+vim.keymap.set("n", "<Down>", "<Nop>")
+vim.keymap.set("n", "<Left>", "<Nop>")
+vim.keymap.set("n", "<Right>", "<Nop>")
 
-local function map_key(mapping) --mode, key, val, opts)
-	mode = mapping[1]
-	key = mapping[2]
-	val = mapping[3]
-	opts = mapping[4]
-	local options = {noremap = true, silent = true}
-	if opts then
-	  options = vim.tbl_extend('force', options, opts)
-	end
-	vim.api.nvim_set_keymap(mode, key, val, options)
-end
+-- Better window movement
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
 
-function M.map_key_list(keys)
-	for _, mapping in ipairs(keys) do
-		map_key(mapping)
-	end
-end
+-- Resize splits with nav keys
+vim.keymap.set("n", "<C-S-k>", ":resize -2<CR>")
+vim.keymap.set("n", "<C-S-j>", ":resize +2<CR>")
+vim.keymap.set("n", "<C-S-h>", ":vertical resize -2<CR>")
+vim.keymap.set("n", "<C-S-l>", ":vertical resize +2<CR>")
 
-function M.setup()
-	local keys = {
-		-- Enforce purity
-		{"i", "<Up>", "<Nop>"},
-		{"i", "<Down>", "<Nop>"},
-		{"i", "<Left>", "<Nop>"},
-		{"i", "<Right>", "<Nop>"},
-		{"n", "<Up>", "<Nop>"},
-		{"n", "<Down>", "<Nop>"},
-		{"n", "<Left>", "<Nop>"},
-		{"n", "<Right>", "<Nop>"},
+-- Splitting
+vim.keymap.set("n", "<leader>v", ":vsplit<CR>")
+vim.keymap.set("n", "<leader>h", ":split<CR>")
 
-		-- Better window movement
-		{"n", "<C-h>", "<C-w>h"},
-		{"n", "<C-j>", "<C-w>j"},
-		{"n", "<C-k>", "<C-w>k"},
-		{"n", "<C-l>", "<C-w>l"},
+-- Clear highlights
+vim.keymap.set("n", "<leader>c", ":noh<CR>")
 
-		-- Resize splits with nav keys
-		{"n", "<C-S-k>", ":resize -2<CR>"},
-		{"n", "<C-S-j>", ":resize +2<CR>"},
-		{"n", "<C-S-h>", ":vertical resize -2<CR>"},
-		{"n", "<C-S-l>", ":vertical resize +2<CR>"},
+-- Better searching
+vim.keymap.set("n", "/", "/\\v")
+vim.keymap.set("v", "/", "/\\v")
 
-		-- Splitting
-		{"n", "<leader>v", ":vsplit<CR>"},
-		{"n", "<leader>h", ":split<CR>"},
+-- Nvim Tree
+vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
 
-		-- Clear highlights
-		{"n", "<leader>c", ":noh<CR>"},
+-- Bufferline
+vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>")
+vim.keymap.set("n", "<leader><Tab>", ":BufferLineMoveNext<CR>")
+vim.keymap.set("n", "<leader><S-Tab>", ":BufferLineMovePrev<CR>")
+vim.keymap.set("n", "<leader>bj", ":BufferLinePick<CR>")
+vim.keymap.set("n", "<leader>bd", ":BufferLinePickClose<CR>")
+vim.keymap.set("n", "<leader>bp", ":BufferLineTogglePin<CR>")
 
-		-- Better searching
-		{"n", "/", "/\\v"},
-		{"v", "/", "/\\v"},
+-- Telescope
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>")
+vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
+vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>")
+vim.keymap.set("n", "<leader>fc", ":Telescope commands<CR>")
+vim.keymap.set("n", "<leader>fm", ":Telescope marks<CR>")
+vim.keymap.set("n", "<leader>fr", ":Telescope registers<CR>")
+vim.keymap.set("n", "<leader>fs", ":Telescope spell_suggest<CR>")
+vim.keymap.set("n", "<leader>ft", ":Telescope tags<CR>")
 
-		-- Nvim Tree
-	  	{"n", "<leader>t", ":NvimTreeToggle<CR>"},
+-- Gitsigns
+vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>")
 
-		-- Bufferline
-		{"n", "<Tab>", ":BufferLineCycleNext<CR>"},
-		{"n", "<S-Tab>", ":BufferLineCyclePrev<CR>"},
-		{"n", "<leader><Tab>", ":BufferLineMoveNext<CR>"},
-		{"n", "<leader><S-Tab>", ":BufferLineMovePrev<CR>"},
-		{"n", "<leader>bj", ":BufferLinePick<CR>"},
-		{"n", "<leader>bd", ":BufferLinePickClose<CR>"},
-		{"n", "<leader>bp", ":BufferLineTogglePin<CR>"},
-
-		-- Telescope
-		{"n", "<leader>ff", ":Telescope find_files<CR>"},
-		{"n", "<leader>fg", ":Telescope live_grep<CR>"},
-		{"n", "<leader>fb", ":Telescope buffers<CR>"},
-		{"n", "<leader>fh", ":Telescope help_tags<CR>"},
-		{"n", "<leader>fc", ":Telescope commands<CR>"},
-		{"n", "<leader>fm", ":Telescope marks<CR>"},
-		{"n", "<leader>fr", ":Telescope registers<CR>"},
-		{"n", "<leader>fs", ":Telescope spell_suggest<CR>"},
-		{"n", "<leader>ft", ":Telescope tags<CR>"},
-
-		-- Gitsigns
-		{"n", "<leader>hp", ":Gitsigns preview_hunk<CR>"},
-
-
-	  }
-	M.map_key_list(keys)
-end
-
-return M
