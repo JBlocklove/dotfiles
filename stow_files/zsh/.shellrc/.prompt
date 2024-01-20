@@ -1,11 +1,7 @@
 #!/bin/zsh
-# PS1 Prompt
-# original git bash prompt by Mike Stewart - http://MediaDoneRight.com
-
-source $HOME/.shellrc/git.prompt
-
-# color constants
-
+####################
+## Colors
+####################
 # Reset
 Color_Off="%b%f"       # Text Reset
 
@@ -29,42 +25,40 @@ BPurple="%B%F{magenta}"  # Purple
 BCyan="%B%F{cyan}"      # Cyan
 BWhite="%B%F{white}"    # White
 
-# Various variables you might want for your PS1 prompt instead
-User="$USER" #Capitalize username
-if [ "$PROMPT_UCFUSER" != "" ]; then
-    User="$(tr '[:lower:]' '[:upper:]' <<< ${User:0:1})${User:1}"
-fi
-
-HostName="%m"
+####################
+## Human readable variables
+####################
+User="$USER"
+Hostname="$HOST"
 PathShort="[%~]"
 PathFull="%/"
 
-Title="$User@%m: %~"
+####################
+## Prompt setup
+####################
 
-function prompt_precmd() {
+# Git
+####################
+autoload -Uz add-zsh-hook vcs_info
+setopt prompt_subst
+add-zsh-hook precmd vcs_info
 
-    #only show last 3 directories
-    export PROMPT_DIRTRIM=3
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr "$Yellow"
+zstyle ':vcs_info:*' unstagedstr "$Red"
+zstyle ':vcs_info:*' formats " $Green%u%c{󰘬 %b}"
+zstyle ':vcs_info:*' actionformats " $Purple%u%c{󰘬 %b|%a}"
 
-    pre_cmd
-
-    print -Pn "\e]0;$Title\a"
+# Venv
+####################
+function set_virtualenv_info() {
+	if [[ -n $VIRTUAL_ENV ]]; then
+		venv_info="$BYellow "
+	else
+		venv_info=""
+	fi
 }
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+add-zsh-hook precmd set_virtualenv_info
 
-function install_prompt_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "prompt_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(prompt_precmd)
-}
-
-#if [ "$TERM" != "linux" ]; then
-#    install_prompt_precmd
-#fi
-install_prompt_precmd
-
-source $HOME/.shellrc/theme.prompt
-
-export PROMPT=$prompt_format
+export PROMPT='$venv_info$BBlue$User$BWhite:$BCyan$PathShort$BYellow${vcs_info_msg_0_}%f '

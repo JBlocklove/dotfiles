@@ -11,8 +11,10 @@ if [ -r ~/.dir_colors ]; then
     eval $(dircolors ~/.dir_colors);
 fi
 
-## remap autosuggestion complete to <C-p> to match my nvim github copilot map
-#bindkey '\C-p' autosuggest-accept
+## Remap keys to navigate better without arrow keys
+bindkey '\C-l' autosuggest-accept
+bindkey '\C-k' up-history
+bindkey '\C-j' down-history
 
 # Non-controlled custom configs
 source ~/.localrc

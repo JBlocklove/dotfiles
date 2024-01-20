@@ -25,5 +25,3 @@ alias py="python"
 bindkey '^R' history-incremental-search-backward
 
 alias yt-audio="youtube-dl -ic --extract-audio --audio-format mp3 --audio-quality 0"
-
-alias lg=lazygit
