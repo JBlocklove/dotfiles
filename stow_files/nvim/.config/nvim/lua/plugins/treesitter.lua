@@ -6,10 +6,10 @@ return {
 		build = ":TSUpdate",
 		config = function()
 			local servers = {
-				'python',
-				'lua',
-				--'vhdl',
-				'latex',
+				"python",
+				"lua",
+				--"vhdl",
+				"latex",
 			}
 			--local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 			--parser_config.vhdl = {
@@ -19,7 +19,7 @@ return {
 			--  },
 			--  filetype = "vhdl"
 			--}
-			require('nvim-treesitter.configs').setup{
+			require("nvim-treesitter.configs").setup({
 				ensure_installed = servers,
 				highlight = {
 					enable = true,
@@ -36,7 +36,18 @@ return {
 				matchup = {
 					enable = true,
 				},
-			}
+			})
+		end,
+	},
+
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		depends = "nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("treesitter-context").setup({
+				line_numbers = true,
+				separator = '─', -- U+2500
+			})
 		end,
 	},
 }

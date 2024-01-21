@@ -31,8 +31,12 @@ vim.keymap.set("n", "<leader>c", ":noh<CR>")
 vim.keymap.set("n", "/", "/\\v")
 vim.keymap.set("v", "/", "/\\v")
 
+-- Move lines in visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- Nvim Tree
-vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>-", ":NvimTreeToggle<CR>")
 
 -- Bufferline
 vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
@@ -44,7 +48,7 @@ vim.keymap.set("n", "<leader>bd", ":BufferLinePickClose<CR>")
 vim.keymap.set("n", "<leader>bp", ":BufferLineTogglePin<CR>")
 
 -- Telescope
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>ff", function() require("telescope.builtin").find_files({ cwd = vim.fn.expand "%:p:h:h" }) end) -- find files one directory above the current buffer
 vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
 vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>")
@@ -53,7 +57,21 @@ vim.keymap.set("n", "<leader>fm", ":Telescope marks<CR>")
 vim.keymap.set("n", "<leader>fr", ":Telescope registers<CR>")
 vim.keymap.set("n", "<leader>fs", ":Telescope spell_suggest<CR>")
 vim.keymap.set("n", "<leader>ft", ":Telescope tags<CR>")
+vim.keymap.set("n", "<leader>fm", ":Telescope keymaps<CR>")
+vim.keymap.set("n", "<leader>fl", ":Telescope loclist<CR>")
+vim.keymap.set("n", "<leader>fq", ":Telescope quickfix<CR>")
+vim.keymap.set("n", "<C-g>", ":Telescope git_files<CR>")
 
 -- Gitsigns
 vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>")
 
+-- Trouble
+vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
+vim.keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
+vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
+vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
+vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
+
+-- Diffs
+vim.keymap.set("v", "<leader>dg", ":'<,'>diffget<CR>")
+vim.keymap.set("v", "<leader>dp", ":'<,'>diffput<CR>")

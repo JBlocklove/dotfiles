@@ -3,70 +3,61 @@ DATA_PATH = vim.fn.stdpath "data"
 CACHE_PATH = vim.fn.stdpath "cache"
 USER = vim.fn.expand "$USER"
 
---vim.cmd [[ set spellfile=~/.config/nvim/spell/en.utf-8.add ]]
+vim.opt.backup = false -- creates a backup file
+vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
+vim.opt.cmdheight = 2 -- more space in the neovim command line for displaying messages
+vim.opt.colorcolumn = "99999" -- fixes indentline for now
+vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
+vim.opt.confirm = true
+vim.opt.fileencoding = "utf-8" -- the encoding written to a file
+--foldmethod = "expr" -- folding set to "expr" for treesitter based folding
+--foldexpr = "nvim_treesitter#foldexpr()" -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+vim.opt.foldmethod = "manual" -- folding set to "expr" for treesitter based folding
+vim.opt.foldexpr = "" -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+vim.opt.hidden = true -- required to keep multiple buffers and open multiple buffers
+vim.opt.hlsearch = true -- highlight all matches on previous search pattern
+vim.opt.ignorecase = true -- ignore case in search patterns
+vim.opt.pumheight = 10 -- pop up menu height
+vim.opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
+vim.opt.showtabline = 2 -- always show tabs
+vim.opt.smartcase = true -- smart case
+vim.opt.smartindent = true -- make indenting smarter again
+vim.opt.splitbelow = true -- force all horizontal splits to go below current window
+vim.opt.splitright = true -- force all vertical splits to go to the right of current window
+vim.opt.swapfile = false -- creates a swapfile
+vim.opt.termguicolors = true -- set term gui colors (most terminals support this)
+vim.opt.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.opt.title = true -- set the title of window to the value of the titlestring
+vim.opt.titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
+vim.opt.undodir = CACHE_PATH .. "/undo" -- set an undo directory
+vim.opt.undofile = true -- enable persistent undo
+vim.opt.updatetime = 300 -- faster completion
+vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program) it is not allowed to be edited
+vim.opt.expandtab = false -- convert tabs to spaces
+vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
+vim.opt.tabstop = 4 -- insert 4 spaces for a tab
+vim.opt.softtabstop = 4 -- insert 4 spaces for a tab
+vim.opt.cursorline = true -- highlight the current line
+vim.opt.number = true -- set numbered lines
+vim.opt.relativenumber = true -- set relative numbered lines
+vim.opt.numberwidth = 2 -- set number column width to 2 {default 4}
+vim.opt.signcolumn = "yes" -- always show the sign column otherwise it would shift the text each time
+vim.opt.wrap = true -- display lines as one long line
+vim.opt.spell = false
+vim.opt.spelllang = "en"
+vim.opt.scrolloff = 5
+vim.opt.sidescrolloff = 8
+vim.opt.gdefault = true
+vim.opt.incsearch = true
+vim.opt.showmatch = true
+vim.opt.autoindent = true
+vim.opt.autoread = true
+vim.opt.undolevels = 1000
+vim.opt.udf = true
+vim.opt.mouse = ''
+vim.opt.modeline = true
 
-local options = {
-	backup = false, -- creates a backup file
-	clipboard = "unnamedplus", -- allows neovim to access the system clipboard
-	cmdheight = 2, -- more space in the neovim command line for displaying messages
-	colorcolumn = "99999", -- fixes indentline for now
-	completeopt = { "menuone", "noselect" },
-	conceallevel = 0, -- so that `` is visible in markdown files
-	confirm = true,
-	fileencoding = "utf-8", -- the encoding written to a file
-	foldmethod = "expr", -- folding, set to "expr" for treesitter based folding
-	foldexpr = "nvim_treesitter#foldexpr()", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
-	--foldmethod = "manual", -- folding, set to "expr" for treesitter based folding
-	--foldexpr = "", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
-	hidden = true, -- required to keep multiple buffers and open multiple buffers
-	hlsearch = true, -- highlight all matches on previous search pattern
-	ignorecase = true, -- ignore case in search patterns
-	pumheight = 10, -- pop up menu height
-	showmode = false, -- we don't need to see things like -- INSERT -- anymore
-	showtabline = 2, -- always show tabs
-	smartcase = true, -- smart case
-	smartindent = true, -- make indenting smarter again
-	splitbelow = true, -- force all horizontal splits to go below current window
-	splitright = true, -- force all vertical splits to go to the right of current window
-	swapfile = false, -- creates a swapfile
-	termguicolors = true, -- set term gui colors (most terminals support this)
-	timeoutlen = 1000, -- time to wait for a mapped sequence to complete (in milliseconds)
-	title = true, -- set the title of window to the value of the titlestring
-	titlestring = "%<%F%=%l/%L - nvim", -- what the title of the window will be set to
-	undodir = CACHE_PATH .. "/undo", -- set an undo directory
-	undofile = true, -- enable persistent undo
-	updatetime = 300, -- faster completion
-	writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-	expandtab = false, -- convert tabs to spaces
-	shiftwidth = 4, -- the number of spaces inserted for each indentation
-	tabstop = 4, -- insert 4 spaces for a tab
-	softtabstop = 4, -- insert 4 spaces for a tab
-	cursorline = true, -- highlight the current line
-	number = true, -- set numbered lines
-	relativenumber = true, -- set relative numbered lines
-	numberwidth = 2, -- set number column width to 2 {default 4}
-	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
-	wrap = true, -- display lines as one long line
-	spell = false,
-	spelllang = "en",
-	scrolloff = 5,
-	sidescrolloff = 8,
-	gdefault = true,
-	incsearch = true,
-	showmatch = true,
-	autoindent = true,
-	autoread = true,
-	undolevels = 1000,
-	udf = true,
-	mouse = '',
-	modeline = true,
-}
 
 vim.opt.shortmess:append "c"
-
--- Loop to set all options
-for k, v in pairs(options) do
-	vim.opt[k] = v
-end
-
 vim.g.python3_host_prog = '/usr/bin/python3'

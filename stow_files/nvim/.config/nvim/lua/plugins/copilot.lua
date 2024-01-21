@@ -5,7 +5,7 @@ return {
 		"github/copilot.vim",
 		config = function()
 			vim.cmd [[
-			  imap <silent><script><expr> <C-P> copilot#Accept("\<CR>")
+			  imap <silent><script><expr> <C-l> copilot#Accept("\<CR>")
 			  let g:copilot_no_tab_map = v:true
 			]]
 			vim.g.copilot_filetypes = {

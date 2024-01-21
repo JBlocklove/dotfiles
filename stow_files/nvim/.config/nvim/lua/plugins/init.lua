@@ -39,16 +39,21 @@ return{
 	{
 		"lewis6991/gitsigns.nvim",
 		dependencies= { "nvim-lua/plenary.nvim" },
-		config = function() require('gitsigns').setup() end,
+		config = function() require("gitsigns").setup() end,
 
 	},
 
 
 	-- VHDL stuff
 	{
-		'JBlocklove/vip',
-		ft='vhdl',
+		"JBlocklove/vip",
+		ft="vhdl",
 		lazy=true
+	},
+
+	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
 }

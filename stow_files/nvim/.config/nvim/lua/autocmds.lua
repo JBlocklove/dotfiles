@@ -161,15 +161,16 @@ autocmd(
 			local opts = { buffer = ev.buf }
 			vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 			vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-			vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+			--vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 			vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-			vim.keymap.set("n", "<C-f>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-			vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-			vim.keymap.set("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "single" })<CR>', opts)
-			vim.keymap.set("n", "gl", '<cmd>lua vim.diagnostic.open_float({ border = "single" })<CR>', opts)
-			vim.keymap.set("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "single" })<CR>', opts)
-			vim.keymap.set("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-			vim.keymap.set("n", "<leader>ff", "<cmd>lua vim.lsp.buf.format{async=true}<CR>", opts)
+			vim.keymap.set("n", "<C-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+			--vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+			vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
+			vim.keymap.set("n", "<leader>ad", '<cmd>lua vim.diagnostic.open_float({ border = "single" })<CR>', opts)
+			vim.keymap.set("n", "[d", function() require("trouble").previous({skip_groups = true, jump = true}) end, opts)
+			vim.keymap.set("n", "]d", function() require("trouble").next({skip_groups = true, jump = true}) end, opts)
+			vim.keymap.set("n", "<leader>al", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+			vim.keymap.set("n", "<leader>af", "<cmd>lua vim.lsp.buf.format{async=true}<CR>", opts)
 
 		end,
 	}
