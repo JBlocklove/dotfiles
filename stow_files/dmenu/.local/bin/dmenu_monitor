@@ -112,3 +112,4 @@ if [[ $match == 1 ]]; then
 else
 	$( ${COMMANDS[$SEL]} )
 fi
+wm_set_last_wp

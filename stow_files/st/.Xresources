@@ -1,16 +1,31 @@
 XTerm*allowSendEvents: true
 
-! Defaults
-!*.font: JetBrainsMonoNLNerdFont:size=11:antialias=true:autohint=true
+! Default font
 *.font: JetBrainsMonoNLNF:size=11:antialias=true:autohint=true
-*.alpha: 1;
 
-!st.font: JetBrainsMonoNLNerdFont:size=11:antialias=true:autohint=true
+! st font and color setup (wildcard used for all st instances and anything else that might need to match this)
 st.font: JetBrainsMonoNLNF:size=11:antialias=true:autohint=true
-st.fontalt0: IBMPlexMono:size=13:antialias=true:autohint=true
-st.alpha: 1;
+*.color0: #212337
+*.color1: #ff757f
+*.color2: #2df4c0
+*.color3: #ffc777
+*.color4: #04d1f9
+*.color5: #b4a4f4
+*.color6: #b994f1
+*.color7: #a1abe0
+*.color8: #303250
+*.color9: #f67f81
+*.color10: #6bf1ce
+*.color11: #ffdca9
+*.color12: #7de5f9
+*.color13: #d4c1f4
+*.color14: #ecb2f0
+*.color15: #eeffff
+*.background: #212337
+*.foreground: #e4f3fa
+*.cursorColor: #e4f3fa
 
-!dmenu.font: JetBrainsMonoNLNerdFont:size=11:antialias=true:autohint=true
+! dmenu font and color setup
 dmenu.font: JetBrainsMonoNLNF:size=11:antialias=true:autohint=true
 dmenu.background: #212337
 dmenu.foreground: #e4f3fa
@@ -19,3 +34,7 @@ dmenu.selforeground: #2df4c0
 dmenu.hiforeground: #b4a4f4
 dmenu.hibackground: #212337
 dmenu.border: #04d1f9
+
+! cursor
+Xcursor.theme: Adwaita
+Xcursor.size: 12

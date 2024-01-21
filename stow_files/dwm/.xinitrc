@@ -33,7 +33,7 @@ fi
 [ -f ~/.xprofile ] && . ~/.xprofile
 
 #picom &
-wal -R &
+#wal -R &
 
 wm_set_last_wp &
 dwm_statusbar &

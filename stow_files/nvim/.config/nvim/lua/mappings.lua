@@ -49,6 +49,7 @@ vim.keymap.set("n", "<leader>bp", ":BufferLineTogglePin<CR>")
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", function() require("telescope.builtin").find_files({ cwd = vim.fn.expand "%:p:h:h" }) end) -- find files one directory above the current buffer
+vim.keymap.set("n", "<leader>fo", function() require("telescope.builtin").find_files({ cwd = "~/" }) end) -- find files one directory above the current buffer
 vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
 vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>")
