@@ -1,2 +1,2 @@
-./stow_files/mopidy/.config/mopidy/mopidy.conf=ignoremopauth
-./stow_files/mopidy/.config/mopidy/mopidy.conf=ignoremophost
+./stow_files/mopidy/.config/mopidy/mopidy.conf filter=ignoremopauth
+./stow_files/mopidy/.config/mopidy/mopidy.conf filter=ignoremophost
