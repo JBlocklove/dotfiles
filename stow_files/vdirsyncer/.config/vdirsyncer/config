@@ -1,0 +1,58 @@
+[general]
+status_path = "~/.local/share/vdirsyncer/status/"
+
+### CALDAV
+[pair nextcloud_cal]
+a = "nextcloud_cal_local"
+b = "nextcloud_cal_remote"
+collections = ["from a", "from b"]
+metadata = ["displayname", "color"]
+conflict_resolution = "b wins"
+
+[storage nextcloud_cal_local]
+type = "filesystem"
+path = "~/.local/share/calendars/nextcloud/"
+fileext = ".ics"
+
+[storage nextcloud_cal_remote]
+type = "caldav"
+url = ***REDACTED***
+username = ***REDACTED***
+password = ***REDACTED***
+
+# Google Calendar
+[pair google_cal]
+a = "google_cal_local"
+b = "google_cal_remote"
+collections = ["from a", "from b"]
+metadata = ["displayname", "color"]
+
+[storage google_cal_local]
+type = "filesystem"
+path = "~/.local/share/calendars/google/"
+fileext = ".ics"
+
+[storage google_cal_remote]
+type = "google_calendar"
+token_file = "~/.config/vdirsyncer/token"
+client_id = ***REDACTED***
+client_secret = ***REDACTED***
+
+### CARDDAV
+[pair nextcloud_card]
+a = "nextcloud_card_local"
+b = "nextcloud_card_remote"
+collections = ["from a", "from b"]
+conflict_resolution = "b wins"
+
+[storage nextcloud_card_local]
+type = "filesystem"
+path = "~/.local/share/contacts/nextcloud/"
+fileext = ".vcf"
+
+[storage nextcloud_card_remote]
+type = "carddav"
+url = ***REDACTED***
+username = ***REDACTED***
+password = ***REDACTED***
+

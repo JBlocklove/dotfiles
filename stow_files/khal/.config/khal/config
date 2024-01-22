@@ -1,0 +1,21 @@
+[locale]
+timeformat = %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
+
+[default]
+default_calendar = personal
+highlight_event_days = true
+enable_mouse = false
+
+[highlight_days]
+color = ''
+
+[palette]
+header = black, black, '', black, black
+dayname = light cyan, black, bold, light green, black
+monthname = white, black, bold, white, black
+date header = white, black, bold, white, black
+date header selected = white, black, bold, white, black

@@ -12,9 +12,10 @@ if [ -r ~/.dir_colors ]; then
 fi
 
 ## Remap keys to navigate better without arrow keys
-bindkey '\C-l' autosuggest-accept
-bindkey '\C-k' up-history
-bindkey '\C-j' down-history
+bindkey '\C-l' forward-char
+bindkey '\C-h' backward-char
+bindkey '\C-k' up-line-or-history
+bindkey '\C-j' down-line-or-history
 
 # Non-controlled custom configs
 source ~/.localrc
