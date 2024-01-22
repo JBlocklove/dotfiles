@@ -2,3 +2,4 @@
 *.daemon.pid
 stow_files/wm/Pictures/lockscreen/cache
 stow_files/wm/Pictures/Screenshots/*
+stow_files/vdirsyncer/.config/vdirsyncer/token

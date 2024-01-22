@@ -1,1 +1,3 @@
 mopidy.conf filter=ignoremopauth
+stow_files/khal/.config/kahl/config filter=ignorecalendars
+stow_files/vdirsyncer/.config/vdirsyncer/config filter=ignorevdirsyncauth
