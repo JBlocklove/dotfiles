@@ -1,4 +1,15 @@
 return {
+	-- Snippets
+	{
+		"L3MON4D3/LuaSnip",
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+		},
+		config = function()
+			require("luasnip.loaders.from_vscode").lazy_load()
+		end,
+	},
+
 	-- Completion
 	{
 		"hrsh7th/nvim-cmp",
@@ -36,8 +47,8 @@ return {
 			cmp.setup({ ---@diagnostic disable-line: redundant-parameter
 				snippet = {
 					expand = function(args)
-						vim.fn["UltiSnips#Anon"](args.body)
-					end
+						require("luasnip").lsp_expand(args.body)
+					end,
 				},
 				window = {
 					completion = cmp.config.window.bordered(),
@@ -52,7 +63,7 @@ return {
 						vim_item.menu = ({
 							nvim_lsp = "[LSP]",
 							nvim_lua = "[NVIM_LUA]",
-							ultisnips = "[Snippet]",
+							luasnip = "[Snippet]",
 							buffer = "[Buffer]",
 							path = "[Path]",
 						})[entry.source.name]
@@ -68,12 +79,12 @@ return {
 						i = cmp.mapping.abort(),
 						c = cmp.mapping.close(),
 					}),
-					["<C-o>"] = cmp.mapping.confirm({ select = true }),
+					["<C-j>"] = cmp.mapping.confirm({ select = true }),
 				},
 				sources = cmp.config.sources({
 					{ name = "nvim_lua" },
 					{ name = "nvim_lsp" },
-					{ name = "ultisnips" },
+					{ name = "luasnip" },
 					{ name = "buffer" },
 					{ name = "path" },
 				})
@@ -104,6 +115,8 @@ return {
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lua",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
 		}
 	},
 
