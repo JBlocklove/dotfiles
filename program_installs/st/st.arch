@@ -5,4 +5,4 @@
 ########################################
 
 echo "Installing st build dependencies"
-yay -S --noconfirm fontconfig libx11 libxft ttf-jetbrains-mono-nerd
+yay -S --noconfirm fontconfig libx11 libxft ttf-jetbrains-mono-nerd lsd

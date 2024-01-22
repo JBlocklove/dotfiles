@@ -1,11 +1,4 @@
 *.log
 *.daemon.pid
-stow_files/nvim/.config/nvim/plugged
-stow_files/nvim/.config/nvim/undo
-stow_files/calcurse/.calcurse/apts*
-stow_files/calcurse/.calcurse/caldav
-stow_files/calcurse/.calcurse/notes
-stow_files/calcurse/.calcurse/todo*
-stow_files/calcurse/.calcurse/script/tmp
 stow_files/wm/Pictures/lockscreen/cache
 stow_files/wm/Pictures/Screenshots/*
