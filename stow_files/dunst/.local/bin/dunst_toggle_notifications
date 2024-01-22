@@ -1,0 +1,14 @@
+#!/bin/bash
+
+pasued_status=`dunstctl is-paused`
+echo "$pasued_status"
+
+if [ "$pasued_status" = "true" ]; then
+	dunstctl set-paused false
+	notify-send -t 3000 "Notifications unpaused"
+else
+	notify-send -t 3000 "Notifications paused"
+	sleep 4
+	dunstctl set-paused true
+fi
+

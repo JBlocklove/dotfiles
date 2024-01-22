@@ -16,5 +16,5 @@ popd
 rm -rf /tmp/dwm /tmp/dmenu
 
 cd $DOTFILES_INSTALL/stow_files
-stow --verbose -t ~/ dwm wm pywal dmenu
+stow --verbose -t ~/ dwm wm dmenu
 cd -
