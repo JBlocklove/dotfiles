@@ -16,9 +16,9 @@ fileext = ".ics"
 
 [storage nextcloud_cal_remote]
 type = "caldav"
-url = ***REDACTED***
-username = ***REDACTED***
-password = ***REDACTED***
+url = ***REMOVED***
+username = "***REMOVED***"
+password.fetch = ["command", "pass", "nextcloud-***REMOVED***"]
 
 # Google Calendar
 [pair google_cal]
@@ -35,8 +35,8 @@ fileext = ".ics"
 [storage google_cal_remote]
 type = "google_calendar"
 token_file = "~/.config/vdirsyncer/token"
-client_id = ***REDACTED***
-client_secret = ***REDACTED***
+client_id = ***REMOVED***
+client_secret = ***REMOVED***
 
 ### CARDDAV
 [pair nextcloud_card]
@@ -52,7 +52,6 @@ fileext = ".vcf"
 
 [storage nextcloud_card_remote]
 type = "carddav"
-url = ***REDACTED***
-username = ***REDACTED***
-password = ***REDACTED***
-
+url = ***REMOVED***
+username = "***REMOVED***"
+password.fetch = ["command", "pass", "nextcloud-***REMOVED***"]

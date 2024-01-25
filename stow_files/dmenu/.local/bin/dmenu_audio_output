@@ -1,0 +1,48 @@
+#!/bin/bash
+
+function get_sinks(){
+    # Get the list of sinks with card names and their indices
+    sinks_with_indices="$(pacmd list-sinks | awk -F'[:"]' '/index:/{idx=$2} /alsa.card_name/{print idx, $2}')"
+
+    # Create a list of options with indices and card names, without extra newline
+    options=""
+    while read -r index card_name; do
+        options+="${index}: $card_name"$'\n'
+    done <<< "$sinks_with_indices"
+
+	options=$(echo "$options" | sed '$d')
+    # Use dmenu to select an audio output
+    chosen_option="$(echo "$options" | dmenu -i -c -l 20 -z 500 -p "Output:")"
+
+    # Extract the index from the chosen option
+    index="${chosen_option%%:*}"
+
+    # Set the selected sink as the default
+    if [[ -n "$index" ]]; then
+        pacmd set-default-sink "$index"
+    fi
+}
+
+#function get_sinks(){
+#	card_names="$(pacmd list-sinks | awk -F'[:"]' '/alsa.card_name/ {printf "%s\n",$2}')"
+#	sink_names="$(pacmd list-sinks | awk -F'[:"]' '/name:/ {print $2}')"
+#	chosen_card="$(echo "$card_names" | dmenu -i -c -l 20 -z 500 -p "Output:")"
+#
+#	index=0
+#    for card in $card_names; do
+#        if [ "$card" == "$chosen_card" ]; then
+#            break
+#        fi
+#        ((index++))
+#    done
+#
+#    # Get the corresponding sink name by index
+#    sink_name="$(echo "$sink_names" | sed -n "${index + 1}p")"
+#
+#    # Set the selected sink as the default
+#    if [[ -n "$sink_name" ]]; then
+#        pacmd set-default-sink "$sink_name"
+#    fi
+#}
+
+get_sinks

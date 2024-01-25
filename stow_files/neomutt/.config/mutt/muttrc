@@ -24,7 +24,7 @@ bind index,pager \Ch sidebar-toggle-visible
 # Modified colors to look good with Moonlight:
 color index yellow default '.*'
 color index_author green default '.*'
-color index_number blue default
+color index_number red default
 color index_subject magenta default '.*'
 
 # New mail is boldened:
@@ -33,9 +33,9 @@ color index_author brightgreen default "~N"
 color index_subject brightmagenta default "~N"
 
 # Tagged mail is highlighted:
-color index brightyellow blue "~T"
-color index_author brightgreen blue "~T"
-color index_subject brightwhite blue "~T"
+color index brightyellow cyan "~T"
+color index_author brightgreen cyan "~T"
+color index_subject brightwhite cyan "~T"
 
 # Other colors and aesthetic settings:
 mono bold bold
@@ -43,7 +43,7 @@ mono underline underline
 mono indicator reverse
 mono error bold
 color normal default default
-color indicator brightblack blue
+color indicator brightblack cyan
 color sidebar_highlight blue default
 color sidebar_divider brightblack default
 color sidebar_flagged red default

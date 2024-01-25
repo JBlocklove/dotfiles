@@ -3,7 +3,7 @@ return{
 	-- Colors
 	{
 		"moonlight",
-		dir="/home/jason/Repos/nvim-plugins/moonlight.nvim",
+		dir="/home/jason/repos/nvim-plugins/moonlight.nvim",
 		lazy=true,
 	},
 	{ "norcalli/nvim-colorizer.lua" },
@@ -54,6 +54,16 @@ return{
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+
+	{
+		"jinh0/eyeliner.nvim",
+		config = function()
+			require("eyeliner").setup({
+				highlight_on_key=true,
+				dim = true,
+			})
+		end
 	},
 
 }

@@ -10,7 +10,7 @@
 # ##############################
 
 echo "Installing LaTeX"
-yay -S --noconfirm --needed texlive-basic texlive-latex texlive-bibtexextra texlive-latexextra texlive-mathscience texlive-pictures
+yay -S --noconfirm --needed texlive
 
 
 # ##############################

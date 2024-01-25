@@ -79,7 +79,7 @@ return {
 						i = cmp.mapping.abort(),
 						c = cmp.mapping.close(),
 					}),
-					["<C-j>"] = cmp.mapping.confirm({ select = true }),
+					["<C-o>"] = cmp.mapping.confirm({ select = true }),
 				},
 				sources = cmp.config.sources({
 					{ name = "nvim_lua" },

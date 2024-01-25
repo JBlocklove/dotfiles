@@ -1,3 +1,16 @@
+[calendars]
+	[[NYU]]
+		path=~/.local/share/calendars/google/***REMOVED***/
+		color=dark magenta
+
+	[[Personal]]
+		path=~/.local/share/calendars/nextcloud/personal/
+		color=dark blue
+
+	[[Teaching]]
+		path=~/.local/share/calendars/google/c_9a3b5760bb191337e80e3db2d9461f2662f782573a7ebcaf0322c9a34b93b304@group.calendar.google.com/
+		color=dark red
+
 [locale]
 timeformat = %H:%M
 dateformat = %Y-%m-%d
@@ -6,7 +19,7 @@ datetimeformat = %Y-%m-%d %H:%M
 longdatetimeformat = %Y-%m-%d %H:%M
 
 [default]
-default_calendar = personal
+default_calendar = Personal
 highlight_event_days = true
 enable_mouse = false
 

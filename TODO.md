@@ -1,4 +1,11 @@
-## Dots
+# Dots
+
+## Potential big changes
+Order of changes:
+- [ ] dmenu -> rofi
+- [ ] st -> another terminal emulator?
+- [ ] dwm -> awesomewm
+
 ### zsh
 - [x] Evaluate zap-zsh for zsh plugins
     - Not using

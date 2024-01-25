@@ -3,27 +3,66 @@ XTerm*allowSendEvents: true
 ! Default font
 *.font: JetBrainsMonoNLNF:size=11:antialias=true:autohint=true
 
+!!! Default colors
+!!*.color0: #212337
+!!*.color1: #ff757f
+!!*.color2: #2df4c0
+!!*.color3: #ffc777
+!!*.color4: #04d1f9
+!!*.color5: #b4a4f4
+!!*.color6: #b994f1
+!!*.color7: #a1abe0
+!!*.color8: #303250
+!!*.color9: #f67f81
+!!*.color10: #6bf1ce
+!!*.color11: #ffdca9
+!!*.color12: #7de5f9
+!!*.color13: #d4c1f4
+!!*.color14: #ecb2f0
+!!*.color15: #eeffff
+!!*.background: #212337
+!!*.foreground: #e4f3fa
+!!*.cursorColor: #e4f3fa
+
+! special
+*.foreground:   #dce2f5
+*.background:   #212337
+*.cursorColor:  #c8d3f5
+
+! black
+*.color0:       #131421
+*.color8:       #363645
+
+! red
+*.color1:       #ff757f
+*.color9:       #f67f81
+
+! green
+*.color2:       #2df4c0
+*.color10:      #6bf1ce
+
+! yellow
+*.color3:       #ffc777
+*.color11:      #ffdca9
+
+! blue
+*.color4:       #4f99ff
+*.color12:      #86b0ea
+
+! magenta
+*.color5:       #c4a2ff
+*.color13:      #d6ccff
+
+! cyan
+*.color6:       #04dff9
+*.color14:      #41cfd9
+
+! white
+*.color7:       #8585bb
+*.color15:      #e4f3fa
+
 ! st font and color setup (wildcard used for all st instances and anything else that might need to match this)
 st.font: JetBrainsMonoNLNF:size=11:antialias=true:autohint=true
-*.color0: #212337
-*.color1: #ff757f
-*.color2: #2df4c0
-*.color3: #ffc777
-*.color4: #04d1f9
-*.color5: #b4a4f4
-*.color6: #b994f1
-*.color7: #a1abe0
-*.color8: #303250
-*.color9: #f67f81
-*.color10: #6bf1ce
-*.color11: #ffdca9
-*.color12: #7de5f9
-*.color13: #d4c1f4
-*.color14: #ecb2f0
-*.color15: #eeffff
-*.background: #212337
-*.foreground: #e4f3fa
-*.cursorColor: #e4f3fa
 
 ! dmenu font and color setup
 dmenu.font: JetBrainsMonoNLNF:size=11:antialias=true:autohint=true

@@ -46,8 +46,8 @@ add-zsh-hook precmd vcs_info
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "$Yellow"
 zstyle ':vcs_info:*' unstagedstr "$Red"
-zstyle ':vcs_info:*' formats " $Green%u%c{󰘬 %b}"
-zstyle ':vcs_info:*' actionformats " $Purple%u%c{󰘬 %b|%a}"
+zstyle ':vcs_info:*' formats "$Green%u%c{󰘬 %b} "
+zstyle ':vcs_info:*' actionformats "$Purple%u%c{󰘬 %b|%a} "
 
 # Venv
 ####################
@@ -61,4 +61,5 @@ function set_virtualenv_info() {
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 add-zsh-hook precmd set_virtualenv_info
 
-export PROMPT='$venv_info$BBlue$User$BWhite:$BCyan$PathShort$BYellow${vcs_info_msg_0_}%f '
+export PROMPT="$BPurple$PathShort%f "$'\n'"\${venv_info}$BYellow\${vcs_info_msg_0_}$BCyan%f "
+#export PROMPT='$venv_info$Cyan$User$Red@$Purple$Hostname$White:$BCyan$PathShort$BYellow${vcs_info_msg_0_}%f '
