@@ -1,12 +1,12 @@
 # vim: filetype=neomuttrc
-# muttrc file for account ***REMOVED***
+# muttrc file for account jmb9986@nyu.edu
 set realname = "Jason Blocklove"
 set from = "jason.blocklove@nyu.edu"
-set sendmail = "msmtp -a ***REMOVED***"
-alias me jmb9986 <***REMOVED***>
-set folder = "/home/jason/.local/share/mail/***REMOVED***"
-set header_cache = /home/jason/.cache/mutt-wizard/***REMOVED***/headers
-set message_cachedir = /home/jason/.cache/mutt-wizard/***REMOVED***/bodies
+set sendmail = "msmtp -a jmb9986@nyu.edu"
+alias me jmb9986 <jmb9986@nyu.edu>
+set folder = "/home/jason/.local/share/mail/jmb9986@nyu.edu"
+set header_cache = /home/jason/.cache/mutt-wizard/jmb9986@nyu.edu/headers
+set message_cachedir = /home/jason/.cache/mutt-wizard/jmb9986@nyu.edu/bodies
 set mbox_type = Maildir
 set hostname = "nyu.edu"
 source /usr/local/share/mutt-wizard/switch.muttrc
@@ -15,8 +15,8 @@ set postponed = +Drafts
 set trash = +Trash
 set record = +Sent
 
-macro index o "<shell-escape>mailsync ***REMOVED***<enter>" "run mbsync to sync ***REMOVED***"
-macro index \eg "<enter-command>unset wait_key<enter><shell-escape>gpg --list-secret-keys; printf 'Enter email ID of user to publish: '; read eID; printf 'Enter fingerprint of GPG key to publish: '; read eFGPT; /usr/local/libexec/gpg-wks-client --create \$eFGPT \$eID | msmtp --read-envelope-from --read-recipients -a ***REMOVED***<enter>"  "publish GPG key to WKS provider"
-macro index \eh "<pipe-message>/usr/local/libexec/gpg-wks-client --receive | msmtp --read-envelope-from --read-recipients -a ***REMOVED***<enter>" "confirm GPG publication"
+macro index o "<shell-escape>mailsync jmb9986@nyu.edu<enter>" "run mbsync to sync jmb9986@nyu.edu"
+macro index \eg "<enter-command>unset wait_key<enter><shell-escape>gpg --list-secret-keys; printf 'Enter email ID of user to publish: '; read eID; printf 'Enter fingerprint of GPG key to publish: '; read eFGPT; /usr/local/libexec/gpg-wks-client --create \$eFGPT \$eID | msmtp --read-envelope-from --read-recipients -a jmb9986@nyu.edu<enter>"  "publish GPG key to WKS provider"
+macro index \eh "<pipe-message>/usr/local/libexec/gpg-wks-client --receive | msmtp --read-envelope-from --read-recipients -a jmb9986@nyu.edu<enter>" "confirm GPG publication"
 
 mailboxes "=INBOX" "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Trash"
