@@ -1,11 +1,8 @@
 [filter "ignoremopauth"]
 	smudge = cat
 	clean = sed -e \"s/password = .*/password = ***REDACTED***/\" -e \"s/hostname = .*/hostname = ***REDACTED***/\"
-[filter "ignoremophost"]
-	smudge = cat
 [filter "ignorecalendars"]
-	clean = "sed -i '/^\\[calendars\\]/,/^\\[locale\\]/{/^\\[locale\\]!d;}'"
 	smudge = cat
+	clean = "sed \"/\\[calendars\\]/,/^\\[locale\\]/{/^\\[locale\\]/!d;}\""
 [filter "ignorevdirsyncauth"]
 	clean = sed -e \"s/url.*/url = ***REDACTED***/\" -e \"s/username.*/username = ***REDACTED***/\" -e \"s/password.*/password = ***REDACTED***/\" -e \"s/client_id.*/client_id = ***REDACTED***/\" -e \"s/client_secret.*/client_secret = ***REDACTED***/\"
-
