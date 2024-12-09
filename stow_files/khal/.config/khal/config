@@ -1,21 +1,61 @@
+[calendars]
+    	***REDACTED***
 [locale]
 timeformat = %H:%M
 dateformat = %Y-%m-%d
 longdateformat = %Y-%m-%d
 datetimeformat = %Y-%m-%d %H:%M
 longdatetimeformat = %Y-%m-%d %H:%M
+firstweekday = 6
 
 [default]
 default_calendar = Personal
 highlight_event_days = true
 enable_mouse = false
 
+default_event_alarm = 20m
+
 [highlight_days]
 color = ''
 
 [palette]
-header = black, black, '', black, black
-dayname = light cyan, black, bold, light green, black
-monthname = white, black, bold, white, black
-date header = white, black, bold, white, black
-date header selected = white, black, bold, white, black
+# key = <foreground>, <background>, <mono>, <foreground_high>, <background_high>
+
+header = '', '', '', '', '' #use background and foreground colors
+footer = '', '', '', '', '' #use background and foreground colors
+
+date header = '', '', bold, '', ''
+date header selected = yellow, '', bold, yellow, ''
+date header focused= '', '', bold, yellow, ''
+
+today = yellow, '', bold, yellow, ''
+today focus = '', '', bold, white, ''
+reveal focus = '', '', bold, black, '#DCE2F5' # invert background and foreground (sorta)
+
+dayname = light cyan, '', bold, light green, ''
+monthname = light cyan, '', bold, light green, ''
+
+edit = white, '', '', '', ''
+edit focus = dark cyan, '', bold, light cyan, ''
+
+button = dark cyan, '', '', dark cyan, ''
+# button focused = light cyan, '', '', light cyan, ''
+
+list = '', '', '', '', ''
+list focused = yellow, '', '', yellow, ''
+
+frame = '', '', '', '', ''
+frame focus = '', '', '', light cyan, ''
+frame color = '', '', '', light red, '' ## DOES NOT WORK -- NO EFFECT
+frame top = '', '', '', light magenta, '' ## DOES NOT WORK -- NO EFFECT
+
+popupbg = '', '', '', '', ''
+popupper = '', '', '', '', ''
+# caption = '', '', '', '', ''
+
+[view]
+# agenda_day_format = {bold}{name}, {date-long}{reset} ## DOES NOT WORK -- CAUSES ERROR
+agenda_event_format = {calendar-color}{cancelled}{start-end-time-style} {title}{repeat-symbol}{alarm-symbol}{reset} ## STILL PUSHES FRAME TO NEXT LINE
+
+event_view_always_visible = true
+frame = width
