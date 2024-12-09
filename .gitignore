@@ -1,5 +1,6 @@
 *.log
 *.daemon.pid
-stow_files/wm/Pictures/lockscreen/cache
-stow_files/wm/Pictures/Screenshots/*
+stow_files/wm/pictures/lockscreen/cache
+stow_files/wm/pictures/screenshots/*
 stow_files/vdirsyncer/.config/vdirsyncer/token
+
