@@ -41,13 +41,43 @@ PathFull="%/"
 ####################
 autoload -Uz add-zsh-hook vcs_info
 setopt prompt_subst
-add-zsh-hook precmd vcs_info
+
+function precmd_update_vcs_info() {
+	get_worktree_status
+	vcs_info
+}
 
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "$Yellow"
 zstyle ':vcs_info:*' unstagedstr "$Red"
-zstyle ':vcs_info:*' formats "$Green%u%c{󰘬 %b} "
+zstyle ':vcs_info:*' formats "$Green%u%c%m{󰘬 %b} "
 zstyle ':vcs_info:*' actionformats "$Purple%u%c{󰘬 %b|%a} "
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
+
++vi-git-untracked() {
+  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+     git status --porcelain | grep -m 1 '^??' &>/dev/null
+  then
+    hook_com[misc]="$Red"
+  fi
+}
+
+function get_worktree_status() {
+	# Git and Worktree detection
+	if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+		if [[ "$(git rev-parse --is-bare-repository)" == "true" ]]; then
+			zstyle ':vcs_info:git:*' formats "$Blue{󰘬 bare} "
+		elif [[ "$(git rev-parse --is-inside-work-tree)" == "true" && "$(git worktree list | awk '{if ($2 == "(bare)") {print "true"; exit} }')" == "true" ]]; then
+			zstyle ':vcs_info:git:*' formats "$Green%u%c%m{󰘬 %b|worktree} "
+  		else
+		  zstyle ':vcs_info:git:*' formats "$Green%u%c%m{󰘬 %b} "
+  		fi
+	fi
+}
+
+#add-zsh-hook precmd vcs_info
+#add-zsh-hook precmd get_worktree_status
+add-zsh-hook precmd precmd_update_vcs_info
 
 # Venv
 ####################
@@ -61,5 +91,5 @@ function set_virtualenv_info() {
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 add-zsh-hook precmd set_virtualenv_info
 
-export PROMPT="$BPurple$PathShort%f "$'\n'"\${venv_info}$BYellow\${vcs_info_msg_0_}$BCyan%f "
+export PROMPT="$Purple$PathShort%f "$'\n'"\${venv_info}$BYellow\${vcs_info_msg_0_}$BCyan%f "
 #export PROMPT='$venv_info$Cyan$User$Red@$Purple$Hostname$White:$BCyan$PathShort$BYellow${vcs_info_msg_0_}%f '

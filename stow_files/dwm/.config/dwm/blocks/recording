@@ -1,0 +1,15 @@
+#!/bin/sh
+
+unique_command_part="x11grab"
+
+# Check if there is an FFmpeg process with the unique command part
+recording="false"
+
+if [[ -n $(pgrep -f "ffmpeg.*$unique_command_part") ]]; then
+    recording="true"
+fi
+
+if [[ $recording == "true" ]]; then
+    echo -ne "^c#ff757f^^c#eeffff^"
+fi
+

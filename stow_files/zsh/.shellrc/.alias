@@ -12,6 +12,8 @@ alias la="lsd -A"
 alias ll="lsd -lhAr"
 alias lh="lsd -lah"
 
+alias tree="lsd --tree"
+
 # vim
 alias vim="nvim"
 
