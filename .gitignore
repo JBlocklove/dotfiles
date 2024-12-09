@@ -3,4 +3,5 @@
 stow_files/wm/pictures/lockscreen/cache
 stow_files/wm/pictures/screenshots/*
 stow_files/vdirsyncer/.config/vdirsyncer/token
-
+secrets.conf
+restore_credentials.sh
