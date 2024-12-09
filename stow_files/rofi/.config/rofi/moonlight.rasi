@@ -1,0 +1,152 @@
+* {
+	bg: #212337;
+	fg: #dce2f5;
+
+	black: #131421;
+	red: #ff757f;
+	green: #2df4c0;
+	yellow: #ffc777;
+	blue: #4f99ff;
+	magenta: #c4a2ff;
+	cyan: #04dff9;
+	white: #8585bb;
+
+	highlight: @magenta;
+}
+window {
+    border:           1;
+    padding:          0;
+
+	width: 500;
+
+    background-color: @bg;
+	border-color: @cyan;
+
+	children: [ mainbox ];
+}
+mainbox {
+    border:  0;
+    padding: 4;
+
+	background-color: inherit;
+
+	children: [ inputbar, listview ];
+}
+
+inputbar {
+    spacing:    0;
+    padding:    0;
+    text-color: @fg;
+	background-color: inherit;
+
+	children: [ prompt, textbox-prompt-colon, entry, num-filtered-rows, textbox-num-sep, num-rows, case-indicator ];
+}
+prompt {
+    spacing:    0;
+    text-color: inherit;
+    background-color: inherit;
+}
+textbox-prompt-colon {
+    expand:     false;
+    str:        ": ";
+    margin:     0;
+    text-color: inherit;
+    background-color: inherit;
+}
+entry {
+    spacing:    0;
+    text-color: inherit;
+    background-color: inherit;
+}
+textbox-num-sep {
+	expand: false;
+	str: "/";
+	text-color: @blue;
+	background-color: inherit;
+}
+num-filtered-rows {
+	text-color: @red;
+	background-color: inherit;
+}
+num-rows {
+	text-color: @green;
+	background-color: inherit;
+}
+case-indicator {
+	text-color: @yellow;
+	background-color: inherit;
+}
+
+message {
+    border: 0;
+    padding: 0;
+
+	children: [ textbox ];
+}
+textbox {
+    text-color: @fg;
+}
+
+listview {
+    fixed-height: 0;
+    border: 1px solid 0 0;
+    border-color: @blue;
+    spacing: 2px ;
+    scrollbar: false;
+    padding: 2;
+
+	lines: 20;
+	dynamic: false;
+
+	background-color: inherit;
+
+	children: [ element ];
+}
+element {
+    border:  0;
+    padding: 0;
+
+	children: [ element-text ];
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element.normal.normal {
+    background-color: @bg;
+    text-color:       @fg;
+}
+element.normal.urgent {
+    background-color: @bg;
+    text-color:       @red;
+}
+element.normal.active {
+    background-color: @bg;
+    text-color:       @yellow;
+}
+element.selected.normal {
+    background-color: @bg;
+    text-color:       @green;
+}
+element.selected.urgent {
+    background-color: @bg;
+    text-color:       @blue;
+}
+element.selected.active {
+    background-color: @bg;
+    text-color:       @cyan;
+}
+element.alternate.normal {
+    background-color: @bg;
+    text-color:       @fg;
+}
+element.alternate.urgent {
+    background-color: @bg;
+    text-color:       @red;
+}
+element.alternate.active {
+    background-color: @bg;
+    text-color:       @yellow;
+}
+

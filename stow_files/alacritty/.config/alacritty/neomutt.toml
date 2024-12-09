@@ -1,0 +1,18 @@
+[general]
+import = ["~/.config/alacritty/alacritty.toml"]
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[keyboard]
+bindings = [
+	{ key = "L", mods = "Control", chars = "l" },
+	{ key = "H", mods = "Control", chars = "h" },
+	{ key = "K", mods = "Control", chars = "k" },
+	{ key = "J", mods = "Control", chars = "j" },
+
+	{ key = "L", mods = "Control|Shift", chars = "l" },
+	{ key = "H", mods = "Control|Shift", chars = "h" },
+	{ key = "K", mods = "Control|Shift", chars = "k" },
+	{ key = "J", mods = "Control|Shift", chars = "j" }
+]

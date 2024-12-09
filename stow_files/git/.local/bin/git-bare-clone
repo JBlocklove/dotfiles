@@ -1,0 +1,11 @@
+#!/bin/bash
+
+git_repo_url="$1"
+repo_name="$(basename "$git_repo_url" .git)"
+
+
+mkdir -p "$repo_name"
+cd "$repo_name"
+git clone --bare "$git_repo_url" .bare
+echo "gitdir: ./.bare" > .git
+git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"

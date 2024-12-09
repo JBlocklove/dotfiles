@@ -1,0 +1,57 @@
+
+[env]
+#TERM = "xterm-256color"
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[font]
+size = 10.0
+
+[font.bold]
+family = "monospace"
+style = "Bold"
+
+[font.bold_italic]
+family = "monospace"
+style = "Bold Italic"
+
+[font.italic]
+family = "monospace"
+style = "Italic"
+
+[font.normal]
+family = "monospace"
+style = "Regular"
+
+[window]
+decorations = "None"
+
+[window.padding]
+x = 2
+y = 2
+
+[keyboard]
+bindings = [
+	{ key = "L", mods = "Control", chars = "\u001b[C" },
+	{ key = "H", mods = "Control", chars = "\u001b[D" },
+	{ key = "K", mods = "Control", chars = "\u001b[A" },
+	{ key = "J", mods = "Control", chars = "\u001b[B" },
+
+	{ key = "L", mods = "Control|Shift", chars = "\u001b[108;6u" },
+	{ key = "H", mods = "Control|Shift", chars = "\u001b[104;6u" },
+	{ key = "K", mods = "Control|Shift", chars = "\u001b[107;6u" },
+	{ key = "J", mods = "Control|Shift", chars = "\u001b[106;6u" },
+	{ key = "x", mods = "Control|Shift", chars = "\u001b[120;6u" },
+]
+
+[[hints.enabled]]
+command = "xdg-open"
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = false
+binding = { key = "F", mods = "Alt" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+
+[general]
+import = ["~/.config/alacritty/moonlight.toml"]

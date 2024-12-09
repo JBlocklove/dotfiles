@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [[ -z "$@" ]]; then
+	echo -en "\0prompt\x1fPower\n"
+	echo -e "logout\nsuspend\nhibernate\nreboot\npoweroff"
+else
+	power=$1
+	if [[ "$power" = "logout" ]]; then
+	    exec pkill dwm
+	elif [[ "$power" = "suspend" ]]; then
+	    exec sudo systemctl suspend-then-hibernate
+	elif [[ "$power" = "hibernate" ]]; then
+		exec sudo systemctl hibernate
+	elif [[ "$power" = "reboot" ]]; then
+	    exec sudo reboot
+	elif [[ "$power" = "poweroff" ]]; then
+	    exec sudo shutdown now
+	else
+		notify-send "Power" "Invalid option"
+	fi
+fi

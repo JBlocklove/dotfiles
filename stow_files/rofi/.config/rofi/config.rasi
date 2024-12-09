@@ -1,0 +1,21 @@
+configuration {
+	modes: "run,ssh";
+	font: "mono 11";
+	fixed-num-lines: false;
+	disable-history: true;
+	sort: true;
+	sorting-method: "normal";
+	click-to-exit: false;
+
+	case-sensitive: false;
+
+	terminal: "alacritty";
+
+	kb-accept-entry: "Control+m,Return,KP_Enter";
+	kb-remove-to-eol: "";
+	kb-row-up: "Up,Control+p,Control+k";
+	kb-row-down: "Down,Control+n,Control+j";
+}
+
+@theme "~/.config/rofi/moonlight.rasi"
+

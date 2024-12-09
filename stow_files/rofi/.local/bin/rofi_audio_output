@@ -1,0 +1,72 @@
+#!/bin/bash
+
+## function rofi_list_sinks() {
+##     # Get the list of sinks with card names and their indices
+##     sinks_with_indices="$(pactl list sinks short | awk -F'[:"]' '/index:/{idx=$2} /alsa.card_name/{print idx, $2}')"
+##
+##     # Create a list of options with indices and card names, without extra newline
+##     options=""
+##     while read -r index card_name; do
+##         options+="${index}: $card_name"$'\n'
+##     done <<< "$sinks_with_indices"
+##
+## 	options=$(echo "$options" | sed '$d')
+##     # Use dmenu to select an audio output
+##
+## 	echo -en "\0prompt\x1fAudio\n"
+##
+##     echo "$options"
+## }
+##
+## function switch_audio() {
+## 	# Extract the index from the chosen option
+## 	index="${1%%:*}"
+##
+## 	# Set the selected sink as the default
+## 	if [[ -n "$index" ]]; then
+## 		pacmd set-default-sink "$index"
+## 	fi
+## }
+##
+## if [[ -z "$@" ]]; then
+## 	rofi_list_sinks
+## else
+## 	switch_audio $1
+## 	notify-send "Audio Output" "Switched to $1"
+## 	exit 0
+## fi
+
+function rofi_list_sinks() {
+    # Use pactl to get detailed information, then parse it for more descriptive names
+    sinks_with_indices=$(pactl list sinks | awk '
+        /Sink #/ {sink = $2; gsub("#", "", sink)}
+		/Description: / {
+            description = $0;
+            gsub("Description: ", "", description); # Remove the "Description: " label
+            gsub("^[ \t]+", "", description); # Remove leading whitespace (tabs or spaces)
+            print sink ": " description
+        }
+    ')
+
+    # Prepare options for rofi, with improved sink names
+    echo -en "\0prompt\x1fAudio\n"
+    echo "$sinks_with_indices"
+}
+
+function switch_audio() {
+    # Extract the index from the chosen option
+    index="${1%%:*}"
+
+    # Set the selected sink as the default using pactl for better compatibility
+    if [[ -n "$index" ]]; then
+        pactl set-default-sink "$index"
+    fi
+}
+
+if [[ -z "$@" ]]; then
+    rofi_list_sinks
+else
+    switch_audio "$1"
+    notify-send "Audio Output" "Switched to $1"
+    exit 0
+fi

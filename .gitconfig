@@ -1,9 +1,0 @@
-[filter "ignoremopauth"]
-	clean = "sed -e \"s/password = .*/password = ***REDACTED***/\" -e \"s/hostname = .*/hostname = ***REDACTED***/\" -e \"s/username = .*/username = ***REDACTED***/\""
-	smudge = ./stow_files/mopidy/.config/mopidy/restore_credentials.sh
-[filter "ignorecalendars"]
-	clean = "sed \"/\\[calendars\\]/,/^\\[locale\\]/{/^\\[locale\\]/!d;}\""
-	smudge = ./restore_credentials.sh
-[filter "ignorevdirsyncauth"]
-	clean = sed -e \"s/url.*/url = ***REDACTED***/\" -e \"s/username.*/username = ***REDACTED***/\" -e \"s/password.*/password = ***REDACTED***/\" -e \"s/client_id.*/client_id = ***REDACTED***/\" -e \"s/client_secret.*/client_secret = ***REDACTED***/\"
-
