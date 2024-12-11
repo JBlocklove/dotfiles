@@ -24,55 +24,95 @@ XTerm*allowSendEvents: true
 !!*.foreground: #e4f3fa
 !!*.cursorColor: #e4f3fa
 
-! special
-*.foreground:   #dce2f5
-*.background:   #212337
-*.cursorColor:  #c8d3f5
+!!! MOONLIGHT
+!!!
+!!! ! special
+!!! *.foreground:   #dce2f5
+!!! !*.background:	#14162a
+!!! *.background:   #212337
+!!! !*.cursorColor:  #c8d3f5
+!!! *.cursorColor:  #dce2f5
+!!!
+!!! ! black
+!!! *.color0:       #131421
+!!! *.color8:       #363645
+!!!
+!!! ! red
+!!! *.color1:       #ff757f
+!!! *.color9:       #f67f81
+!!!
+!!! ! green
+!!! *.color2:       #2df4c0
+!!! *.color10:      #6bf1ce
+!!!
+!!! ! yellow
+!!! *.color3:       #ffc777
+!!! *.color11:      #ffdca9
+!!!
+!!! ! blue
+!!! *.color4:       #4f99ff
+!!! *.color12:      #86b0ea
+!!!
+!!! ! magenta
+!!! *.color5:       #c4a2ff
+!!! *.color13:      #d6ccff
+!!!
+!!! ! cyan
+!!! *.color6:       #04dff9
+!!! *.color14:      #41cfd9
+!!!
+!!! ! white
+!!! *.color7:       #8585bb
+!!! *.color15:      #e4f3fa
+
+*background: #1E1E2E
+*foreground: #CDD6F4
 
 ! black
-*.color0:       #131421
-*.color8:       #363645
+*color0: #45475A
+*color8: #585B70
 
 ! red
-*.color1:       #ff757f
-*.color9:       #f67f81
+*color1: #F38BA8
+*color9: #F38BA8
 
 ! green
-*.color2:       #2df4c0
-*.color10:      #6bf1ce
+*color2: #A6E3A1
+*color10: #A6E3A1
 
 ! yellow
-*.color3:       #ffc777
-*.color11:      #ffdca9
+*color3: #F9E2AF
+*color11: #F9E2AF
 
 ! blue
-*.color4:       #4f99ff
-*.color12:      #86b0ea
+*color4: #89B4FA
+*color12: #89B4FA
 
 ! magenta
-*.color5:       #c4a2ff
-*.color13:      #d6ccff
+*color5: #F5C2E7
+*color13: #F5C2E7
 
 ! cyan
-*.color6:       #04dff9
-*.color14:      #41cfd9
+*color6: #94E2D5
+*color14: #94E2D5
 
 ! white
-*.color7:       #8585bb
-*.color15:      #e4f3fa
+*color7: #BAC2DE
+*color15: #A6ADC8
+
 
 ! st font and color setup (wildcard used for all st instances and anything else that might need to match this)
-st.font: JetBrainsMonoNLNF:size=11:antialias=true:autohint=true
+!st.font: JetBrainsMonoNLNF:size=11:antialias=true:autohint=true
 
 ! dmenu font and color setup
-dmenu.font: JetBrainsMonoNLNF:size=11:antialias=true:autohint=true
-dmenu.background: #212337
-dmenu.foreground: #e4f3fa
-dmenu.selbackground:#212337
-dmenu.selforeground: #2df4c0
-dmenu.hiforeground: #b4a4f4
-dmenu.hibackground: #212337
-dmenu.border: #04d1f9
+!dmenu.font: JetBrainsMonoNLNF:size=11:antialias=true:autohint=true
+!dmenu.background: #212337
+!dmenu.foreground: #e4f3fa
+!dmenu.selbackground:#212337
+!dmenu.selforeground: #2df4c0
+!dmenu.hiforeground: #b4a4f4
+!dmenu.hibackground: #212337
+!dmenu.border: #04d1f9
 
 ! cursor
 Xcursor.theme: Adwaita

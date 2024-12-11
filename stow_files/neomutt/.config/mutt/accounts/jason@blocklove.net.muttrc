@@ -16,5 +16,4 @@ set trash = "+Trash"
 set record = "+Sent"
 
 macro index o "<shell-escape>mailsync jason@blocklove.net<enter>" "sync jason@blocklove.net"
-#mailboxes "=Spam" "=Sent" "=Drafts" "=Trash" "=Folders" "=All Mail" "=INBOX" "=Archive" "=Labels" "=Starred"
-mailboxes "=INBOX" "=Drafts" "=Sent" "=Spam" "=Trash"
+mailboxes "=All Mail" "=INBOX" "=Drafts" "=Trash" "=Archive" "=Folders/Protonmail" "=Labels" "=Sent" "=Spam" "=Folders" "=Starred"

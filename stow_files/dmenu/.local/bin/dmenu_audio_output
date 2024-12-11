@@ -23,26 +23,4 @@ function get_sinks(){
     fi
 }
 
-#function get_sinks(){
-#	card_names="$(pacmd list-sinks | awk -F'[:"]' '/alsa.card_name/ {printf "%s\n",$2}')"
-#	sink_names="$(pacmd list-sinks | awk -F'[:"]' '/name:/ {print $2}')"
-#	chosen_card="$(echo "$card_names" | dmenu -i -c -l 20 -z 500 -p "Output:")"
-#
-#	index=0
-#    for card in $card_names; do
-#        if [ "$card" == "$chosen_card" ]; then
-#            break
-#        fi
-#        ((index++))
-#    done
-#
-#    # Get the corresponding sink name by index
-#    sink_name="$(echo "$sink_names" | sed -n "${index + 1}p")"
-#
-#    # Set the selected sink as the default
-#    if [[ -n "$sink_name" ]]; then
-#        pacmd set-default-sink "$sink_name"
-#    fi
-#}
-
 get_sinks

@@ -9,7 +9,7 @@ return {
 				"python",
 				"lua",
 				--"vhdl",
-				"latex",
+				-- "latex",
 			}
 			--local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 			--parser_config.vhdl = {
@@ -23,7 +23,7 @@ return {
 				ensure_installed = servers,
 				highlight = {
 					enable = true,
-					disable = { "" },
+					disable = { "latex" },
 					additional_vim_regex_highlighting = true,
 				},
 				indent = {

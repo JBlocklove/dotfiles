@@ -8,6 +8,7 @@
 XRANDR=$(which xrandr)
 
 MONITORS=( $( ${XRANDR} | awk '( $2 == "connected" ){ print $1 }' ) )
+echo "Monitors: ${MONITORS[@]}"
 
 NUM_MONITORS=${#MONITORS[@]}
 
@@ -42,42 +43,42 @@ do
     index+=1
 done
 
-##
-# Dual screen options
-##
-for entry_a in $(seq 0 $((${NUM_MONITORS}-1)))
-do
-    for entry_b in $(seq 0 $((${NUM_MONITORS}-1)))
-    do
-        if [ $entry_a != $entry_b ]
-        then
-            TILES[$index]="Dual Screen ${MONITORS[$entry_a]} -> ${MONITORS[$entry_b]}"
-            COMMANDS[$index]="xrandr --output ${MONITORS[$entry_a]} --auto \
-                              --output ${MONITORS[$entry_b]} --auto --left-of ${MONITORS[$entry_a]}"
+###
+## Dual screen options
+###
+#for entry_a in $(seq 0 $((${NUM_MONITORS}-1)))
+#do
+#    for entry_b in $(seq 0 $((${NUM_MONITORS}-1)))
+#    do
+#        if [ $entry_a != $entry_b ]
+#        then
+#            TILES[$index]="Dual Screen ${MONITORS[$entry_a]} -> ${MONITORS[$entry_b]}"
+#            COMMANDS[$index]="xrandr --output ${MONITORS[$entry_a]} --auto \
+#                              --output ${MONITORS[$entry_b]} --auto --left-of ${MONITORS[$entry_a]}"
+#
+#            index+=1
+#        fi
+#    done
+#done
 
-            index+=1
-        fi
-    done
-done
 
-
-##
-# Clone monitors
-##
-for entry_a in $(seq 0 $((${NUM_MONITORS}-1)))
-do
-    for entry_b in $(seq 0 $((${NUM_MONITORS}-1)))
-    do
-        if [ $entry_a != $entry_b ]
-        then
-            TILES[$index]="Clone Screen ${MONITORS[$entry_a]} -> ${MONITORS[$entry_b]}"
-            COMMANDS[$index]="xrandr --output ${MONITORS[$entry_a]} --auto \
-                              --output ${MONITORS[$entry_b]} --auto --same-as ${MONITORS[$entry_a]}"
-
-            index+=1
-        fi
-    done
-done
+###
+## Clone monitors
+###
+#for entry_a in $(seq 0 $((${NUM_MONITORS}-1)))
+#do
+#    for entry_b in $(seq 0 $((${NUM_MONITORS}-1)))
+#    do
+#        if [ $entry_a != $entry_b ]
+#        then
+#            TILES[$index]="Clone Screen ${MONITORS[$entry_a]} -> ${MONITORS[$entry_b]}"
+#            COMMANDS[$index]="xrandr --output ${MONITORS[$entry_a]} --auto \
+#                              --output ${MONITORS[$entry_b]} --auto --same-as ${MONITORS[$entry_a]}"
+#
+#            index+=1
+#        fi
+#    done
+#done
 
 
 layouts=(`ls -1 $XDG_CONFIG_HOME/screenlayout | cut -d'.' -f1`)
@@ -98,18 +99,19 @@ function gen_entries()
 
 # Call menu
 SEL=$( gen_entries | dmenu -c -l 10 -z 500 -p "monitor:" | awk '{print $1}' )
+echo $SEL
 
-# Call xrandr
-for layout in "${layouts[@]}"; do
-	if [[ $SEL = "$layout" ]]; then
-		match=1
-		break
-	fi
-done
-
-if [[ $match == 1 ]]; then
-	$XDG_CONFIG_HOME/screenlayout/$SEL.sh
-else
-	$( ${COMMANDS[$SEL]} )
-fi
-wm_set_last_wp
+## Call xrandr
+#for layout in "${layouts[@]}"; do
+#	if [[ $SEL = "$layout" ]]; then
+#		match=1
+#		break
+#	fi
+#done
+#
+#if [[ $match == 1 ]]; then
+#	$XDG_CONFIG_HOME/screenlayout/$SEL.sh
+#else
+#	$( ${COMMANDS[$SEL]} )
+#fi
+#wm_set_last_wp

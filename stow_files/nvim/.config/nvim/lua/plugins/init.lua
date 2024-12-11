@@ -4,9 +4,19 @@ return{
 	{
 		"moonlight",
 		dir="/home/jason/repos/nvim-plugins/moonlight.nvim",
-		lazy=true,
+		--lazy=true,
 	},
-	{ "norcalli/nvim-colorizer.lua" },
+	{
+		"catppuccin/nvim",
+		name = "catpuccin",
+	},
+	{
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end
+	},
+
 
 	-- Icons
 	{
@@ -18,23 +28,6 @@ return{
 	-- Plenary
 	{ "nvim-lua/plenary.nvim" },
 
-	-- Floating windows
-	{ "nvim-lua/popup.nvim" },
-
-	-- Snippets
-	{
-		"SirVer/ultisnips",
-		name = "ultisnips",
-	},
-	{
-		"quangnguyen30192/cmp-nvim-ultisnips",
-		dependencies = { "ultisnips"} ,
-	},
-	{
-		"honza/vim-snippets",
-		dependencies = { "ultisnips" },
-	},
-
 	-- Git signs for the gutter
 	{
 		"lewis6991/gitsigns.nvim",
@@ -43,17 +36,11 @@ return{
 
 	},
 
-
 	-- VHDL stuff
 	{
 		"JBlocklove/vip",
 		ft="vhdl",
 		lazy=true
-	},
-
-	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
 	{

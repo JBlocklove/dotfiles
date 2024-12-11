@@ -1,7 +1,4 @@
-CONFIG_PATH = os.getenv "XDG_CONFIG_HOME" .. "/nvim/"
-DATA_PATH = vim.fn.stdpath "data"
 CACHE_PATH = vim.fn.stdpath "cache"
-USER = vim.fn.expand "$USER"
 
 vim.opt.backup = false -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard

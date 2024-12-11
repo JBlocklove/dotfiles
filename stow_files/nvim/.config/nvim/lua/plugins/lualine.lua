@@ -25,6 +25,7 @@ return {
 			local statusline = {
 				options = {
 					globalstatus = true,
+					--theme = "catpuccin",
 					theme = {
 						normal = {
 							a = { fg = colors.fg, bg = colors.bg },
@@ -74,7 +75,7 @@ return {
 						{
 							'branch',
 							icon = '',
-							color = { fg = colors.cyan, gui = 'bold' }
+							color = { fg = colors.purple, gui = 'bold' }
 						},
 						{
 							'diff',

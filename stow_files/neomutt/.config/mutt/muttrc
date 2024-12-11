@@ -17,6 +17,10 @@ bind index \Cf noop
 bind index S sort-mailbox
 bind index s sort-reverse
 
+bind index,pager K sidebar-prev
+bind index,pager J sidebar-next
+bind index,pager L sidebar-open
+
 macro index O "<shell-escape>mailsync<enter>" "run mbsync to collect all mail"
 
 bind index,pager \Ch sidebar-toggle-visible

@@ -149,7 +149,7 @@ autocmd(
 	{
 		group = latex,
 		pattern = "*.tex",
-		command = "set spell",
+		command = "set nospell",
 	}
 )
 
@@ -167,8 +167,8 @@ autocmd(
 			--vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 			vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
 			vim.keymap.set("n", "<leader>ad", '<cmd>lua vim.diagnostic.open_float({ border = "single" })<CR>', opts)
-			vim.keymap.set("n", "[d", function() require("trouble").previous({skip_groups = true, jump = true}) end, opts)
-			vim.keymap.set("n", "]d", function() require("trouble").next({skip_groups = true, jump = true}) end, opts)
+			vim.keymap.set("n", "[d", function() require("trouble").open("diagnostics") require("trouble").prev({skip_groups = true, jump = true}) end, opts)
+			vim.keymap.set("n", "]d", function() require("trouble").open("diagnostics") require("trouble").next({skip_groups = true, jump = true}) end, opts)
 			vim.keymap.set("n", "<leader>al", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 			vim.keymap.set("n", "<leader>af", "<cmd>lua vim.lsp.buf.format{async=true}<CR>", opts)
 

@@ -1,7 +1,7 @@
 text/plain; nvim %s;
 text/html; firefox %s &; nametemplate=%s.html
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
-text/calendar; calcurse -i %s;
+text/calendar; khal import %s;
 text/csv; sc-im %s;
 text/*; nvim %s;
 image/*; sxiv %s &;
@@ -13,5 +13,5 @@ application/vnd.openxmlformats-officedocument.wordprocessingml.document; libreof
 application/vnd.oasis.opendocument.spreadsheet; libreoffice %s &; copiousoutput;
 application/msword; libreoffice %s &; copiousoutput;
 application/octet-stream; nvim %s;
-application/ics; calcurse -i %s;
+application/ics; khal import %s;
 application/*; nvim %s;
