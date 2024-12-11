@@ -4,3 +4,15 @@
 [submodule "stow_files/zsh/.shellrc/highlighting"]
 	path = stow_files/zsh/.shellrc/highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "stow_files/tmux/.config/tmux/plugins/tmux-sensible"]
+	path = stow_files/tmux/.config/tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible
+[submodule "stow_files/tmux/.config/tmux/plugins/tmux-yank"]
+	path = stow_files/tmux/.config/tmux/plugins/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank
+[submodule "stow_files/tmux/.config/tmux/plugins/tpm"]
+	path = stow_files/tmux/.config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "stow_files/tmux/.config/tmux/plugins/vim-tmux-navigator"]
+	path = stow_files/tmux/.config/tmux/plugins/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
