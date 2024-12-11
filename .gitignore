@@ -4,3 +4,4 @@ stow_files/wm/pictures/lockscreen/cache
 stow_files/wm/pictures/screenshots/*
 stow_files/vdirsyncer/.config/vdirsyncer/token
 secrets.conf
+stow_files/nvim/.config/nvim/lazy-lock.json
