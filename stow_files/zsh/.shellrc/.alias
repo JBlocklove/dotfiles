@@ -15,7 +15,7 @@ alias lh="lsd -lah"
 alias tree="lsd --tree"
 
 # vim
-alias vim="nvim"
+#alias vim="nvim"
 
 [[ "$DISTRO" != "Darwin" ]] && alias open="xdg-open &> /dev/null"
 
