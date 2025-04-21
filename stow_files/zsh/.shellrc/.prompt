@@ -91,5 +91,15 @@ function set_virtualenv_info() {
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 add-zsh-hook precmd set_virtualenv_info
 
-export PROMPT="$Purple$PathShort%f "$'\n'"\${venv_info}$BYellow\${vcs_info_msg_0_}$BCyan%f "
+# Username and hostname if sshing
+####################
+if [[ -n "$SSH_CONNECTION" ]]; then
+	# SSH connection
+	user_host="$BBlue$User$BWhite@$BBlue$Hostname "
+else
+	# Local connection
+	user_host=""
+fi
+
+export PROMPT="$Purple$PathShort%f "$'\n'"\${venv_info}$BYellow\${vcs_info_msg_0_}\${user_host}$BCyan%f "
 #export PROMPT='$venv_info$Cyan$User$Red@$Purple$Hostname$White:$BCyan$PathShort$BYellow${vcs_info_msg_0_}%f '
