@@ -2,8 +2,8 @@ return{
 
 	-- Colors
 	{
-		"moonlight",
-		dir="/home/jason/repos/nvim-plugins/moonlight.nvim",
+		"ghostmatter",
+		dir="/home/jason/repos/nvim-plugins/ghostmatter.nvim",
 		--lazy=true,
 	},
 	{
