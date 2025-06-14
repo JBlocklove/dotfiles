@@ -1,0 +1,74 @@
+####################################################
+# Define your email accounts you want to sync here #
+####################################################
+
+
+
+# Example Generic IMAP profile ################################################
+#
+# Change ACCOUNT_ALIAS to something meaningful (e.g. personal, work) - this should
+# match the account alias used in .config/mutt/accounts/*
+IMAPStore jmb1997-remote
+# (check your email providers imap documentation)
+Host imap.comcast.net
+# (check your email providers imap documentation)
+Port 993
+User jmb1997@comcast.net
+# how to get your password ('pass' and 'gpg' are good for these)
+# using 'pass')
+PassCmd "pass emails/comcast/jmb1997@comcast.net"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore jmb1997-local
+Subfolders Verbatim
+Path ~/.local/share/mail/jmb1997/
+Inbox ~/.local/share/mail/jmb1997/INBOX
+Flatten .
+
+Channel jmb1997
+Expunge Both
+Far :jmb1997-remote:
+Near :jmb1997-local:
+Patterns *
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+
+
+## # Example Google IMAP profile ##################################################
+## #
+## # Change ACCOUNT_ALIAS to something meaningful (e.g. personal, work) - this should
+## # match the account alias used in .config/mutt/accounts/*
+## IMAPStore jason.blocklove-remote
+## Host imap.gmail.com
+## Port 993
+## User jason.blocklove@gmail.com
+## # NOTE that if you use 2FA you will have to generate an app password to use
+## # here instead: https://support.google.com/accounts/answer/185833?hl=en
+## # how to get your password ('pass' and 'gpg' are good for these)
+## # using 'pass')
+## PassCmd "pass my-gmail-password"
+## # using 'gpg'
+## #PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d my-gmail-password.gpg"
+## AuthMechs LOGIN
+## SSLType IMAPS
+## CertificateFile /etc/ssl/certs/ca-certificates.crt
+##
+## MaildirStore ACCOUNT_ALIAS-local
+## Subfolders Verbatim
+## Path ~/.local/share/mail/ACCOUNT_ALIAS/
+## Inbox ~/.local/share/mail/ACCOUNT_ALIAS/INBOX
+## Flatten .
+##
+## Channel ACCOUNT_ALIAS
+## Expunge Both
+## Far :ACCOUNT_ALIAS-remote:
+## Near :ACCOUNT_ALIAS-local:
+## Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
+## Create Both
+## SyncState *
+## MaxMessages 1000
+## ExpireUnread no

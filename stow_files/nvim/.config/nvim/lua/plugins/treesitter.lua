@@ -3,6 +3,7 @@ return {
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
+		cond = not nixos,
 		build = ":TSUpdate",
 		config = function()
 			local servers = {

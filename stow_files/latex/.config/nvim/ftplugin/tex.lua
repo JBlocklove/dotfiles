@@ -1,2 +1,2 @@
 vim.o.spell = true
-vim.cmd('TSDisable highlight')
+-- vim.cmd('TSDisable highlight')

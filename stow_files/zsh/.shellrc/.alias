@@ -1,6 +1,8 @@
 # Aliases
 #
 
+alias nix-shell="nix-shell --run zsh"
+
 #alias ls="ls --color=auto -N"
 alias ls="lsd"
 

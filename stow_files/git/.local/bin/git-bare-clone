@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 git_repo_url="$1"
 repo_name="$(basename "$git_repo_url" .git)"

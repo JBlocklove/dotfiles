@@ -101,5 +101,16 @@ else
 	user_host=""
 fi
 
-export PROMPT="$Purple$PathShort%f "$'\n'"\${venv_info}$BYellow\${vcs_info_msg_0_}\${user_host}$BCyan%f "
+
+# Snowflake if nix shell
+####################
+if [[ -n "$IN_NIX_SHELL" ]]; then
+	# SSH connection
+	nix_shell="$BBlue󱄅 "
+else
+	# Local connection
+	nix_shell=""
+fi
+
+export PROMPT="$Purple$PathShort%f "$'\n'"\${nix_shell}\${venv_info}$BYellow\${vcs_info_msg_0_}\${user_host}$BCyan%f "
 #export PROMPT='$venv_info$Cyan$User$Red@$Purple$Hostname$White:$BCyan$PathShort$BYellow${vcs_info_msg_0_}%f '

@@ -6,7 +6,7 @@ if [[ -z "$@" ]]; then
 else
 	power=$1
 	if [[ "$power" = "logout" ]]; then
-	    exec pkill dwm
+	    exec hyprctl dispatch exit
 	elif [[ "$power" = "suspend" ]]; then
 	    exec sudo systemctl suspend-then-hibernate
 	elif [[ "$power" = "hibernate" ]]; then
@@ -16,6 +16,6 @@ else
 	elif [[ "$power" = "poweroff" ]]; then
 	    exec sudo shutdown now
 	else
-		notify-send "Power" "Invalid option"
+		dunstify "Power" "Invalid option"
 	fi
 fi

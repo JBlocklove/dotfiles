@@ -1,0 +1,34 @@
+# vim:filetype=msmtp
+## Used to configure your SMTP settings
+# the ACCOUNT_ALIAS used here should match the one you used in your mutt and
+# isync configs
+
+defaults
+auth	on
+tls	on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile	~/.config/msmtp/msmtp.log
+
+
+# Example generic SMTP
+account jmb1997
+# (check your email providers smtp documentation)
+host smtp.comcast.net
+port 587
+from jmb1997@comcast.net
+user jmb1997@comcast.net
+passwordeval "pass emails/comcast/jmb1997@comcast.net"
+
+## # Example google SMTP
+## account jmb1997
+## host smtp.gmail.com
+## port 587
+## from myemail@gmail.com
+## user myemail@gmail.com
+## # NOTE that if you use 2FA you will have to generate an app password to use
+## # here instead: https://support.google.com/accounts/answer/185833?hl=en
+## # how to get your password ('pass' example)
+## passwordeval "pass my-email-password"
+## # how to get your password ('gpg' example)
+## # passwordeval "gpg --quiet --for-your-eyes-only --no-tty --decrypt my-email-password"
+

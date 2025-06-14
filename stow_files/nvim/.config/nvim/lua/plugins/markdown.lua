@@ -12,7 +12,6 @@ return {
 			  let g:mkdp_auto_start = 1
 			]]
 		end,
-		lazy=true
 	},
 
 }

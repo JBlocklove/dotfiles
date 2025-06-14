@@ -1,147 +1,104 @@
 #!/bin/sh
 
-##LAYOUT=`ls -1 $XDG_CONFIG_HOME/screenlayout | cut -d'.' -f1 | dmenu -c -l 20 -p "monitor:"`
-#
-##$XDG_CONFIG_HOME/screenlayout/$LAYOUT.sh
-#
-#
-#XRANDR=$(which xrandr)
-#
-#MONITORS=( $( ${XRANDR} | awk '( $2 == "connected" ){ print $1 }' ) )
-#
-#NUM_MONITORS=${#MONITORS[@]}
-#
-#TITLES=()
-#COMMANDS=()
-#
-#
-#function gen_xrandr_only()
-#{
-#    selected=$1
-#
-#    cmd="xrandr --output ${MONITORS[$selected]} --auto "
-#
-#    for entry in $(seq 0 $((${NUM_MONITORS}-1)))
-#    do
-#        if [ $selected != $entry ]
-#        then
-#            cmd="$cmd --output ${MONITORS[$entry]} --off"
-#        fi
-#    done
-#
-#    echo $cmd
-#}
-#
-#
-#
-#declare -i index=0
-#for entry in $(seq 0 $((${NUM_MONITORS}-1)))
-#do
-#    TILES[$index]="Only ${MONITORS[$entry]}"
-#    COMMANDS[$index]=$(gen_xrandr_only $entry)
-#    index+=1
-#done
-#
+### # Call menu
+### function rofi_get_layouts()
+### {
+### 	local layouts=(`ls -1 $XDG_CONFIG_HOME/screenlayout | cut -d'.' -f1`)
+### 	echo -en "\0prompt\x1fMonitor\n"
+### 	for layout in "${layouts[@]}"; do
+### 		echo $layout
+### 	done
+### 	local screens=$(xrandr | grep ' connected' | cut -d ' ' -f1)
+### 	echo "$screens"
+### }
 ###
-## Dual screen options
+### function check_if_layout()
+### {
+### 	local layout="$1"
+### 	local layouts=(`ls -1 $XDG_CONFIG_HOME/screenlayout | cut -d'.' -f1`)
+### 	for l in "${layouts[@]}"; do
+### 		if [[ "$l" == "$layout" ]]; then
+### 			echo "true"
+### 			return
+### 		fi
+### 	done
+### 	echo "false"
+### }
 ###
-#for entry_a in $(seq 0 $((${NUM_MONITORS}-1)))
-#do
-#    for entry_b in $(seq 0 $((${NUM_MONITORS}-1)))
-#    do
-#        if [ $entry_a != $entry_b ]
-#        then
-#            TILES[$index]="Dual Screen ${MONITORS[$entry_a]} -> ${MONITORS[$entry_b]}"
-#            COMMANDS[$index]="xrandr --output ${MONITORS[$entry_a]} --auto \
-#                              --output ${MONITORS[$entry_b]} --auto --left-of ${MONITORS[$entry_a]}"
-#
-#            index+=1
-#        fi
-#    done
-#done
-#
-#
+### function set_xrandr_monitor()
+### {
+### 	local monitor="$1"
+### 	local screens=$(xrandr | grep ' connected' | cut -d ' ' -f1)
+### 	local cmd="xrandr --output $monitor --auto "
+### 	for screen in $screens; do
+### 		if [[ "$screen" != "$monitor" ]]; then
+### 			cmd="$cmd --output $screen --off"
+### 		fi
+### 	done
+### 	eval $cmd
+### }
 ###
-## Clone monitors
+### if [[ -z "$@" ]]; then
+### 	rofi_get_layouts
+### else
+### 	#layout="$(echo -e "$1" | awk '{print $1}')"
+### 	if [[ $(check_if_layout "$1") == "true" ]]; then
+### 		$XDG_CONFIG_HOME/screenlayout/$1.sh
+### 	else
+### 		set_xrandr_monitor "$1"
+### 	fi
+### 	wm_set_last_wp
+### fi
 ###
-#for entry_a in $(seq 0 $((${NUM_MONITORS}-1)))
-#do
-#    for entry_b in $(seq 0 $((${NUM_MONITORS}-1)))
-#    do
-#        if [ $entry_a != $entry_b ]
-#        then
-#            TILES[$index]="Clone Screen ${MONITORS[$entry_a]} -> ${MONITORS[$entry_b]}"
-#            COMMANDS[$index]="xrandr --output ${MONITORS[$entry_a]} --auto \
-#                              --output ${MONITORS[$entry_b]} --auto --same-as ${MONITORS[$entry_a]}"
-#
-#            index+=1
-#        fi
-#    done
-#done
-#
-#
-#
-###
-##  Generate entries, where first is key.
-###
-#function gen_entries()
-#{
-#	for layout in "${layouts[@]}"; do
-#		echo $layout
-#	done
-#    for a in $(seq 0 $(( ${#TILES[@]} -1 )))
-#    do
-#        echo ${TILES[a]}
-#    done
-#}
-#
-# Call menu
-function rofi_get_layouts()
-{
-	local layouts=(`ls -1 $XDG_CONFIG_HOME/screenlayout | cut -d'.' -f1`)
-	echo -en "\0prompt\x1fMonitor\n"
-	for layout in "${layouts[@]}"; do
-		echo $layout
-	done
-	local screens=$(xrandr | grep ' connected' | cut -d ' ' -f1)
-	echo "$screens"
+
+# where you keep your per-layout scripts
+XDG_CONFIG_SCREENLAYOUT="${XDG_CONFIG_HOME:-$HOME/.config}/screenlayouts"
+
+# print layouts + monitor names for Rofi
+function rofi_get_layouts() {
+    local mons
+    # strip extensions
+    mapfile -t layouts < <(ls -1 "$XDG_CONFIG_SCREENLAYOUT" 2>/dev/null | sed 's/\..*//')
+ 	#local layouts=(`ls -1 $XDG_CONFIG_HOME/screenlayout | cut -d'.' -f1`)
+    echo -en "\0prompt\x1fMonitor Layout\n"
+    for l in "${layouts[@]}"; do
+        echo "$l"
+    done
+    # list all active monitors
+    mapfile -t mons < <(hyprctl monitors all | grep '^Monitor ' | sed -E 's/^Monitor (.*) \(ID.*$/\1/')
+    for m in "${mons[@]}"; do
+        echo "$m"
+    done
 }
 
-function check_if_layout()
-{
-	local layout="$1"
-	local layouts=(`ls -1 $XDG_CONFIG_HOME/screenlayout | cut -d'.' -f1`)
-	for l in "${layouts[@]}"; do
-		if [[ "$l" == "$layout" ]]; then
-			echo "true"
-			return
-		fi
-	done
-	echo "false"
+# enable selected via "preferred, auto, 1", disable the rest
+function set_single_monitor() {
+    local sel="$1" other
+    # enable the chosen monitor using its preferred mode
+    hyprctl keyword monitor "$sel, preferred, auto, 1"       # :contentReference[oaicite:0]{index=0}
+    # disable every other monitor
+    for other in $(hyprctl monitors | grep '^Monitor ' \
+                   | sed -E 's/^Monitor (.*) \(ID.*$/\1/'); do
+        [[ "$other" == "$sel" ]] && continue
+        hyprctl keyword monitor "$other, disable"             # :contentReference[oaicite:1]{index=1}
+    done
 }
 
-function set_xrandr_monitor()
-{
-	local monitor="$1"
-	local screens=$(xrandr | grep ' connected' | cut -d ' ' -f1)
-	local cmd="xrandr --output $monitor --auto "
-	for screen in $screens; do
-		if [[ "$screen" != "$monitor" ]]; then
-			cmd="$cmd --output $screen --off"
-		fi
-	done
-	eval $cmd
-}
-
-if [[ -z "$@" ]]; then
-	rofi_get_layouts
-else
-	#layout="$(echo -e "$1" | awk '{print $1}')"
-	if [[ $(check_if_layout "$1") == "true" ]]; then
-		$XDG_CONFIG_HOME/screenlayout/$1.sh
-	else
-		set_xrandr_monitor "$1"
-	fi
-	wm_set_last_wp
+if [[ $# -eq 0 ]]; then
+    rofi_get_layouts
+	exit 0
 fi
 
+exec >/dev/null 2>&1
+
+sel="$1"
+# if you have a custom layout script, run it
+if [[ -f "$XDG_CONFIG_SCREENLAYOUT/$sel.sh" ]]; then
+    bash "$XDG_CONFIG_SCREENLAYOUT/$sel.sh"
+# else if it matches a monitor name set that
+elif hyprctl monitors | grep -q "^Monitor $sel "; then
+    set_single_monitor "$sel"
+else
+    echo "Unknown selection: $sel" >&2
+    exit 1
+fi

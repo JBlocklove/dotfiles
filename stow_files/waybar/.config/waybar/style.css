@@ -1,22 +1,24 @@
-@define-color rosewater #f5e0dc;
-@define-color flamingo #f2cdcd;
-@define-color pink #f5c2e7;
-@define-color mauve #cba6f7;
-@define-color red #f38ba8;
-@define-color maroon #eba0ac;
+@define-color pink #d6ccff;
+@define-color mauve #c4a2ff;
+@define-color red #ff757f;
+@define-color maroon #f67f81;
 @define-color peach #fab387;
-@define-color yellow #f9e2af;
-@define-color green #a6e3a1;
-@define-color teal #94e2d5;
-@define-color sky #89dceb;
-@define-color sapphire #74c7ec;
-@define-color blue #89b4fa;
-@define-color lavender #b4befe;
+@define-color yellow #ffc777;
+@define-color green #2df4c0;
+@define-color teal #41cfd9;
+@define-color cyan #04dff9;
+@define-color sapphire #86b0ea;
+@define-color blue #4f99ff;
+/*@define-color lavender #b4befe;*/
+@define-color black #000000;
 
+@define-color null alpha(#000000, 0.0);
 @define-color base alpha(#000000, 0.1);
 /* @define-color surface alpha(@lavender, 0.15); */
-@define-color surface alpha(#000000, 0.5);
-@define-color text #cdd6f4;
+@define-color surface alpha(#212337, 1);
+@define-color solidSurface alpha(#000000, 1);
+@define-color shadowDark alpha(#000000, 0.9);
+@define-color text #dce2f5;
 @define-color hoverBg alpha(@mauve, 1);
 @define-color hoverFg #000000;
 @define-color activeBg alpha(@mauve, 1);
@@ -25,22 +27,19 @@
 
 * {
   all: unset;
-  font-size: 1rem;
-  font-weight: 900;
+  font-size: 0.8rem;
+  font-weight: 900; /* No effect? */
   font-family:
     JetBrainsMonoNerdFont,
-    Font Awesome,
-    Roboto,
-    Helvetica,
-    Arial,
     sans-serif;
   background-clip: border-box;
 }
 
 button {
-  min-width: 32px;
-  min-height: 32px;
-  border-radius: 999px;
+  min-width: 24px;
+  min-height: 20px;
+  border-radius: 8px;
+  border: 1px solid @null;
   color: @text;
   /*box-shadow: 0px 0px 8px 4px @shadow inset;*/
   transition:
@@ -52,11 +51,40 @@ button {
 button:hover {
   color: @hoverFg;
   background: @hoverBg;
+  border: 1px solid @hoverFg;
+}
+
+button.visible {
+	color: @teal;
+	border: 1px solid @teal;
+}
+
+button.visible:hover {
+	color: @hoverFg;
+	background: @green;
+	border: 1px solid @hoverFg;
 }
 
 button.active {
-  color: @activeFg;
-  background: @activeBg;
+  color: @activeBg;
+  border: 1px solid @activeBg;
+}
+
+button.active:hover {
+  color: @hoverFg;
+  background: @peach;
+  border: 1px solid @hoverFg;
+}
+
+button.urgent {
+  color: @hoverFg;
+  background: @red;
+  border: 1px solid @red;
+}
+
+button:nth-last-child(-n+2) label {
+	font-size: 0.9rem;
+	padding: 0px 3px 0px 0px;
 }
 
 tooltip {
@@ -68,7 +96,7 @@ window#waybar.empty #window {
 }
 
 #window {
-  margin-right: 8px;
+  margin-right: 0px;
 }
 
 #workspaces,
@@ -79,9 +107,11 @@ window#waybar.empty #window {
 #clock,
 #network,
 #tray,
+#battery,
 #custom-notification {
   background-color: @surface;
-  border-radius: 999px;
+  border: 1px solid @mauve;
+  border-radius: 8px;
   box-shadow: 0px 0px 8px 4px @shadow inset;
 }
 
@@ -89,8 +119,13 @@ window#waybar.empty #window {
 #hardware,
 #network,
 #tray,
+#battery,
 #clock {
   padding: 0 8px;
+}
+
+#workspaces {
+	padding: 2px 2px;
 }
 
 #custom-quicklink1,
@@ -122,7 +157,7 @@ window#waybar.empty #window {
   min-width: 32px;
   min-height: 32px;
   padding-right: 4px;
-  border-radius: 999px;
+  border-radius: 8px;
 }
 
 #workspaces button {
@@ -144,12 +179,20 @@ window#waybar.empty #window {
 }
 
 #battery.critical:not(.charging) {
-  background-color: @activeBg;
+  background-color: @red;
+  color: @hoverFg;
+  border: 1px solid @red;
+  /*
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  */
+}
+
+#battery.charging {
+	color: @yellow;
 }
 
 #tray > .passive {
@@ -165,10 +208,36 @@ label:focus {
   background-color: @activeBg;
 }
 
-#backlight {
-  background-color: @activeBg;
+window.popup,
+.menu,
+.popover,
+tooltip,
+window.tooltip {
+  background-color: @surface;
+  box-shadow: 0px 0px 8px 4px @shadow inset;
+  background-image: none;
+  border: 1px solid @text;
+  border-radius: 8px;
+  background-clip: padding-box;
+  padding: 4px 8px;
+  opacity: 1;
 }
 
-#quicklinks {
+window.popup menuitem,
+.menu menuitem,
+.popover box menuitem {
+  padding: 6px 16px;
+  background: transparent;
 }
 
+window.popup menuitem:hover,
+.menu menuitem:hover,
+.popover box menuitem:hover {
+  color: @mauve;
+}
+
+window.popup menuitem + menuitem,
+.menu menuitem + menuitem,
+.popover box menuitem + menuitem {
+  margin-top: 2px;
+}
