@@ -1,7 +1,17 @@
 {
-  "group/media": {
-    "orientation": "horizontal",
-    "modules": []
+  "custom/mpc": {
+    "exec": "~/.config/waybar/mpc-nowplaying.sh",
+	"return-type": "json",
+	"hide-empty-text": true,
+	"on-click": "mpc toggle 2>/dev/null",
+	"format": " {icon} {text} ",
+	"format-icons": {
+	  "playing": " ",
+	  "paused": ""
+	},
+	"escape": true,
+	"max-length": 60
+
   }
 }
 

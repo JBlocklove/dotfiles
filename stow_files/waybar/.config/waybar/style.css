@@ -99,6 +99,9 @@ window#waybar.empty #window {
   margin-right: 0px;
 }
 
+#idle_inhibitor,
+#custom-mpc,
+#custom-tomat,
 #workspaces,
 #custom-appmenu,
 #quicklinks,
@@ -113,6 +116,14 @@ window#waybar.empty #window {
   border: 1px solid @mauve;
   border-radius: 8px;
   box-shadow: 0px 0px 8px 4px @shadow inset;
+}
+
+#idle_inhibitor {
+  background-color: @surface;
+  border: 1px solid @mauve;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px 4px @shadow inset;
+  padding-left: 4px
 }
 
 #sound,
